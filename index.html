@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/EnmaManualidadesLogoMini.png" sizes="16x16" type="image/png">
+  <title>Enma Manualidades</title>
+  <style>
+ body {
+      background: linear-gradient(180deg, rgb(127.5, 24.97, 92.64) 0%, rgb(29.75, 9.3, 27.7) 100%);
+      margin: 0;
+      padding: 0;
+    }
+
+    #slider {
+      display: flex;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    #titulo {
+      flex: 1; /* El otro 50% del ancho total */
+      max-height: 945px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #logosmall{
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 150px;
+        height: 60px; 
+    }
+
+    #logo{
+       width: 553px !important;
+       margin-top: 40px !important;
+      
+    }
+
+    h1 {
+      color: rgb(175, 114, 21);
+      font-size: 24px; /* Ajusta el tamaño según tus preferencias */
+      display: inline-block; /* Agregado para colocar en línea */
+    }
+
+    #titulomore h2 {
+      font-size: 72px;
+      background: -webkit-linear-gradient(rgb(209, 135, 24), #c70eae);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block; /* Agregado para colocar en línea */
+      margin-left: 10px; /* Ajusta el margen según tus preferencias */
+    }
+
+
+
+ #titulomore button {
+    display: block;
+    color: rgb(175, 114, 21);
+    border-color: rgb(214, 135, 17);
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 15px 30px; /* Ajusta el padding para dar más altura y anchura al botón */
+    background-color: rgba(206, 136, 32, 0.103);
+    font-size: 18px; /* Ajusta el tamaño de la fuente para dar más importancia al botón */
+ }
+
+
+/* HEADER */
+ header {
+  display: flex;
+  justify-content: space-between; /* Distribuye los elementos a los extremos */
+  align-items: center;
+  padding: 10px 20px; /* Ajusta el padding según tus preferencias */
+}
+header button {
+    display: block;
+    color: rgb(175, 114, 21);
+    border-color: rgb(214, 135, 17);
+    margin: 20px;
+    border-radius: 10px;
+    padding: 15px 30px; /* Ajusta el padding para dar más altura y anchura al botón */
+    background-color: rgba(206, 136, 32, 0.103);
+    font-size: 18px; /* Ajusta el tamaño de la fuente para dar más importancia al botón */
+ }
+
+
+/* Estilos para el lado izquierdo del header */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para el lado derecho del header */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+#pedidos img {
+width: 89px;
+height: 79px;
+
+}
+#pedidos{
+  margin-right: 5px !important;
+  float: right !important;
+  display: flex;
+  width: 80px;
+  height: 80px;
+}
+
+header a.header-btn {
+  display: block;
+  border-radius: 20px;
+  margin: 5px; /* Ajusta el margen entre los botones según tus preferencias */
+}
+
+/* TERMINA EL HEADER */
+
+
+    body {
+      min-width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+
+
+button.header-btn {
+  border-radius: 20px;
+  margin: 10px; /* Ajusta el margen entre los botones según tus preferencias */
+}
+
+
+    main {
+      margin-top: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+
+    #catalogoh2 {
+      margin-top: 100vh; /* espacio del footer */
+      display: flex;
+      color: #b67218;
+      font-size: 72px;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+
+
+/* Palabra cambia automaticamente animacion*/
+@keyframes word {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    25% {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    50% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    75%, 100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-word {
+    animation: word 6s infinite;
+  }
+
+  .animate-word-delay-1 {
+    animation: word 6s infinite;
+    animation-delay: -1.4s;
+  }
+
+  .animate-word-delay-2 {
+    animation: word 6s infinite;
+    animation-delay: -2.8s;
+  }
+
+  .animate-word-delay-3 {
+    animation: word 6s infinite;
+    animation-delay: -4.2s;
+  }
+
+  .animate-word-delay-4 {
+    animation: word 6s infinite;
+    animation-delay: -5.6s;
+  }
+  
+
+/* categorias */
+.categoria {
+  width: calc(70% / 4);
+  height: 300px;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 20px;
+  float: left;
+  background: linear-gradient(126deg, rgba(226, 148, 45, 1) 0%, rgba(167, 34, 88, 1) 100%);
+  border-radius: 10px;
+  text-align: center;
+  transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  font-family: sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+.categoria img {
+  width: auto;
+  max-width: 100%;
+  height: 224px;
+  display: block;
+  margin: 0 auto 10px;
+  object-fit: cover;
+  user-select: none; /* Evita que la imagen sea seleccionable */
+}
+
+.categoria p {
+  margin: 0;
+  
+}
+
+.categoria button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.categoria button p {
+    text-decoration: none;
+    color: inherit;
+  }
+
+.categoria button:hover {
+  color: #ffd700; /* Cambia el color al pasar el ratón */
+}
+
+
+/* Cambia  al pasar el cursor para resaltar */
+.categoria:hover {
+  color: #ffffff;
+  background: linear-gradient(126deg,  rgb(172, 47, 88)0%, rgb(219, 129, 11) 100%);
+  border: 1px solid #5c063b;
+  text-shadow: 0 0 5px #ffffff,
+              0 0 10px #ffffff,
+              0 0 10px #b31717;
+  box-shadow: 0 0 5px #b67218,
+              0 0 20px #ff7b0069,
+              0 0 50px #ffa60071,
+              0 0 90px #ff910081;
+}
+
+
+.categoria .box {
+    width: 11.875em;
+    height: 15.875em;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.074);
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 0.7rem;
+    transition: all ease 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+    .shadow {
+      box-shadow: inset 0 -3em 3em rgba(194, 102, 26, 0.925),
+            0 0  0 2px rgb(182, 126, 5),
+            0.3em 0.3em 1em rgba(0,0,0,0.3);
+    }
+  
+    #conjuntosimg{
+      height: 100%;
+      
+    }
+
+    .slider-container {
+    display: flex;
+    flex-direction: column-reverse; /* Cambia la dirección de apilamiento a invertir */
+    width: 50%;
+    border-radius: 20px;
+}
+    
+.slider-container,img {
+  display: flex;
+  margin-right: 200px;
+  width: 400px;
+  height: 600px;
+  object-fit: cover; /* Para mantener la relación de aspecto */
+}
+.slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    /* Agregue la siguiente regla CSS para ocultar el cursor al pasar sobre el slider */
+    .slider:hover {
+      cursor: none;
+    }
+
+
+  
+    #titulomore{
+      float: left;
+      margin-left: 4%;
+   
+    }
+
+
+/* footer */
+footer {
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-between; /* Distribuye los elementos a ambos lados */
+  align-items: center;
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  border-radius: 20px;
+  background-color: #7C185A;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center;
+}
+
+/* Ajustes para el logo en el footer */
+.footer-logo {
+  margin-right: auto; /* Empuja el logo hacia la izquierda */
+}
+
+/* Agrega un nuevo estilo para el nav en el footer */
+.footer-info.nav {
+  margin-left: auto; /* Empuja el nav hacia la derecha */
+  display: flex;
+}
+
+/* Estilos adicionales según sea necesario */
+.footer-info nav a {
+  margin: 0 10px; /* Ajusta según sea necesario */
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.footer-logo img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px; /* Ajusta el espacio entre el logo y los enlaces */
+}
+
+.footer-info nav a:hover {
+  color: #ffd700;
+}
+
+
+a {
+    color: goldenrod; /* Puedes cambiar "goldenrod" al valor de color dorado que prefieras */
+    text-decoration: none; /* Esto elimina el subrayado predeterminado de los enlaces, si no lo quieres */
+  }
+
+ /* MEDIDAS DE LAS PANTALLAS */
+ /* MEDIAS @media para las pantallas */
+
+/* @MEDIA MOVIL */
+@media screen and (max-width: 1182px) {
+  .producto-titulo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .producto {
+    width: 500px; /* Hacer el producto ocupar el ancho completo en dispositivos móviles */
+  }
+
+  .slider-container {
+    width: 100%; /* Hacer el slider-container ocupar el ancho completo en dispositivos móviles */
+  }
+
+  .slide img {
+    width: 80%; /* Hacer las imágenes del slider ocupar el ancho completo del contenedor */
+    height: 420px; /* Ajustar la altura automáticamente */
+  
+  }
+  .slider-container,img {
+  display: flex;
+  margin-right: 0px;
+  width: 400px;
+  height: 600px;
+  object-fit: cover; /* Para mantener la relación de aspecto */
+}
+  .producto-info {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #titulo, #titulo2, #titulo3, #titulo4 {
+    padding: 20px; /* Ajustar el padding según sea necesario en dispositivos móviles */
+  }
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between; /* Distribuye los elementos a los extremos */
+  align-items: center;
+  padding: 10px 20px; /* Ajusta el padding según tus preferencias */
+}
+header button {
+    display: block;
+    color: rgb(175, 114, 21);
+    border-color: rgb(214, 135, 17);
+    margin: 20px;
+    border-radius: 10px;
+    padding: 5px 10px; /* Ajusta el padding para dar más altura y anchura al botón */
+    background-color: rgba(206, 136, 32, 0.103);
+    font-size: 16px; /* Ajusta el tamaño de la fuente para dar más importancia al botón */
+ }
+ .slide{
+  display: none;
+
+}
+
+
+/* Estilos para el lado izquierdo del header */
+.header-left {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+/* Estilos para el lado derecho del header */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+
+header a.header-btn {
+  display: block;
+  border-radius: 20px;
+  margin: 5px; /* Ajusta el margen entre los botones según tus preferencias */
+}
+
+#logo {
+    height: 100% !important;
+}
+
+}/* FIN DEL @MEDIA */
+
+
+
+
+  </style>
+
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <a href="index.html"><img id="logosmall" src="/EnmaManualidadesLogo.png" alt="Enma Manualidades"></a> 
+      <a href="/#catalogoh2">
+        <button class="header-btn">Productos</button>
+      </a>
+      
+      <a href="/index.html">
+        <button class="header-btn">Temporada De Navidad</button>
+      </a>
+      
+      <a href="/EnmaManualidades/HacerUnEncargo.html">
+        <button class="header-btn">Hacer un Encargo</button>
+      </a>
+    </div>
+    <div class="header-right">
+      <a href="/EnmaManualidades/HacerUnEncargo.html" id="pedidos">
+        <img src="/pedidos.png" alt="Pedir">
+      </a>
+    </div>
+
+    
+  </header>
+ 
+  <section id="titulo">
+     <div id="titulomore">
+       <img id="logo" src="EnmaManualidadesLogo.png" alt="Enma Manualidades" style="width: 753px !important; height: 300px !important;">
+       <br>
+       <h1>Productos personalizados <br>con amor y adornos únicos, como</h1>
+       <h2 id="dynamicText" class="animate-word animate-word-delay-1">
+         tazas
+       </h2>
+       <button id="verCatalogoBtn">Ver Catalogo</button>
+     </div>
+     <div class="slider-container">
+       <div id="slider" class="slider">
+         <div class="slide active" style="background-image: url('tazas.png');"></div>
+         <div class="slide" style="background-image: url('camisas.png');"></div>
+         <div class="slide" style="background-image: url('TOALLA.png');"></div>
+         <div class="slide" style="background-image: url('conjuntos.png');"></div>
+         <div class="slide" style="background-image: url('alfombrilla.png');"></div>
+         <div class="slide" style="background-image: url('LetrasconFotos.png');"></div>
+       </div>
+     </div>
+  </section>
+         <h2 id="catalogoh2">CATALOGO</h2>
+         <main>
+          <div id="conjuntos" class="categoria" onclick="redirectTo('https://enma-manualidades.jimdofree.com/productos/conjuntos/');">
+            <button>
+              <img src="categorias/categoria1.png" alt="Conjuntos">
+              <p>Conjuntos</p>
+            </button>
+          </div>
+        
+          <div id="camisetas" class="categoria" onclick="redirectTo('/EnmaManualidades/Catalogo/camisetas.html');">
+            <button>
+              <img src="categorias/categoria2.png" alt="Camisetas">
+              <p>Camisetas</p>
+            </button>
+          </div>
+        
+          <div id="tazas-personalizadas" class="categoria" onclick="redirectTo('https://www.ejemplo.com/tazas-personalizadas');">
+            <button>
+              <img src="categorias/categoria3.png" alt="Tazas Personalizadas">
+              <p>Tazas Personalizadas</p>
+            </button>
+          </div>
+        
+          <div id="mantas-cojines" class="categoria" onclick="redirectTo('https://enma-manualidades.jimdofree.com/');">
+            <button>
+              <img src="categorias/categoria4.png" alt="Mantas y Cojines">
+              <p>Mantas y Cojines</p>
+            </button>
+          </div>
+        
+          <div id="toallas-personalizadas" class="categoria" onclick="redirectTo('https://www.ejemplo.com/toallas-personalizadas');">
+            <button>
+              <img src="categorias/categoria5.png" alt="Toallas Personalizadas">
+              <p>Toallas Personalizadas</p>
+            </button>
+          </div>
+        
+          <div id="accesorios-personalizados" class="categoria" onclick="redirectTo('https://www.ejemplo.com/accesorios-personalizados');">
+            <button>
+              <img src="categorias/categoria6.png" alt="Accesorios Personalizados">
+              <p>Accesorios Personalizados</p>
+            </button>
+          </div>
+        
+          <div id="decoracion-personalizada" class="categoria" onclick="redirectTo('https://www.ejemplo.com/decoracion-personalizada');">
+            <button>
+              <img src="categorias/categoria7.png" alt="Decoración Personalizada">
+              <p>Decoración Personalizada</p>
+            </button>
+          </div>
+        
+          <div id="juegos-personalizados" class="categoria" onclick="redirectTo('https://www.ejemplo.com/juegos-personalizados');">
+            <button>
+              <img src="categorias/categoria8.png" alt="Juegos Personalizados">
+              <p>Juegos Personalizados</p>
+            </button>
+          </div>
+        
+          <div id="calcetines" class="categoria" onclick="redirectTo('https://www.ejemplo.com/calcetines');">
+            <button>
+              <img src="categorias/categoria9.png" alt="Calcetines">
+              <p>Calcetines</p>
+            </button>
+          </div>
+        
+          <div id="alfombrillas" class="categoria" onclick="redirectTo('https://www.ejemplo.com/alfombrillas');">
+            <button>
+              <img src="categorias/categoria10.png" alt="Alfombrillas">
+              <p>Alfombrillas</p>
+            </button>
+          </div>
+        </main>
+        
+        <footer>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d410404.8590365639!2d-6.423374270709594!3d36.52304662488185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x644bb9ec6abaa235%3A0x4fd198efdf8fa5dc!2sEnma%20Manualidades!5e0!3m2!1ses!2ses!4v1702396602259!5m2!1ses!2ses" width="230" height="180" style="border-radius:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          
+          <div class="footer-container">
+            <div class="footer-logo">
+              <img src="EnmaManualidadesLogoMini.png" alt="Enma Manualidades Logo">
+            </div>
+          </div>
+
+
+          <nav class="footer-info" >
+            <a href="#">Home</a> |
+            <a href="#catalogoh2">Catálogo</a> |
+            <a href="EnmaManualidades/HacerUnEncargo.html">Hacer un Encargo</a> |
+            <a href="EnmaManualidades/AboutMe.html">About Enma</a>
+        </nav>
+        
+          <div class="footer-info">
+            
+            <p>&copy; 2023 Enma Manualidades. Todos los derechos reservados.</p>
+            <p>Dirección: [Dirección]</p>
+            <p>Teléfono: [Número de Teléfono]</p>
+            <p>Página Web creada Por: <a href="https://www.youtube.com/@AgusTheKingYT" target="_blank">AgusTheKing</a></p>
+          </div>
+        </footer>
+ <script>
+      // Función para url categorias
+function redirectTo(url) {
+  window.location.href = url;
+}
+document.querySelectorAll('.categoria').forEach(function(categoryDiv) {
+  categoryDiv.addEventListener('click', function(event) {
+    event.stopPropagation();
+  });
+});
+
+      // Boton Ir a ver catalogo
+
+      document.addEventListener('DOMContentLoaded', function () {
+    // Obtén el botón de "Ver Catálogo"
+    var verCatalogoBtn = document.querySelector('#titulo button');
+
+    // Añade un evento de clic al botón
+    verCatalogoBtn.addEventListener('click', function () {
+        // Obtiene la posición y dimensiones de la sección "catalogoh2"
+        var catalogoSection = document.querySelector('#catalogoh2');
+        var catalogoSectionRect = catalogoSection.getBoundingClientRect();
+
+        // Desplázate hacia la posición de la sección "catalogoh2" con animación suave
+        window.scroll({
+            top: catalogoSectionRect.top + window.scrollY,
+            behavior: 'smooth'
+        });
+    });
+});
+
+ 
+ document.addEventListener('DOMContentLoaded', function () {
+      // Obtén el elemento de texto dinámico
+      const dynamicText = document.getElementById('dynamicText');
+ 
+      // Palabras que deseas mostrar
+      const words = [
+          'Camisetas',
+          'Toallas',
+          'Conjunto',
+          'Alfombrillas',
+          'Letras con Fotos',
+          'Tazas',
+          'Camisetas'
+        
+      ];
+ 
+      let currentWordIndex = 0;
+ 
+      // Función para cambiar la palabra con animación de desaparición y aparición
+      function changeWord() {
+          // Desaparecer la palabra actual
+          dynamicText.style.opacity = 0;
+ 
+          // Esperar 500 milisegundos antes de cambiar la palabra
+          setTimeout(() => {
+              // Cambiar la palabra
+              dynamicText.innerHTML = words[currentWordIndex];
+ 
+              // Aumentar el índice para la próxima palabra
+              currentWordIndex = (currentWordIndex + 1) % words.length;
+ 
+              // Aparecer la nueva palabra
+              dynamicText.style.opacity = 1;
+          }, 500);
+      }
+ 
+      // Cambiar la palabra cada 3.5 segundos (puedes ajustar el tiempo según tus preferencias)
+      setInterval(changeWord, 3500);
+ 
+      // Iniciar la animación con la primera palabra
+      dynamicText.classList.add('animate-word');
+      dynamicText.classList.add('animate-word-delay-1');
+ });
+ 
+ document.addEventListener('DOMContentLoaded', function () {
+    var slider = document.querySelector('#slider');
+    var slides = slider.getElementsByClassName('slide');
+    var currentSlideIndex = 0;
+
+    function changeSlide() {
+        slides[currentSlideIndex].classList.remove('active');
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        slides[currentSlideIndex].classList.add('active');
+    }
+
+    setInterval(changeSlide, 4700);
+    changeSlide(changeSlide, 4700);
+});
+
+window.addEventListener('resize', function () {
+    adjustSliderPosition();
+});
+
+function adjustSliderPosition() {
+    var sliderContainer = document.querySelector('.slider-container');
+    var titulomore = document.getElementById('titulomore');
+
+    if (window.innerWidth <= 1427) {  // Ajusta el valor según tus necesidades
+        sliderContainer.style.position = 'relative';
+        sliderContainer.style.float = 'right';
+        sliderContainer.style.marginTop = '-600px';
+        titulomore.style.marginRight = '200px';
+    } else {
+        sliderContainer.style.position = 'static';
+        sliderContainer.style.float = 'none';
+        sliderContainer.style.marginTop = '0';
+        titulomore.style.marginRight = '0';
+    }
+}
+
+// Ajusta la posición del slider al cargar la página
+document.addEventListener('DOMContentLoaded', adjustSliderPosition);
+
+    </script>
+
+</body>
+
+</html>
