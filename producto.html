@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div id="cart-icon" class="icon">🛒</div>
+    <h1>Enma Manualidades</h1>
+    <div id="profile-icon" class="icon">👤</div>
+  </header>
+
+  <main>
+    <div id="product-details"></div>
+    <button id="back-to-store">Volver a la tienda</button>
+  </main>
+
+  <script>
+    // Leer el ID del producto desde la URL
+    const productId = window.location.hash.slice(9); // Obtener el ID del producto (#productoX)
+    const productDetailsContainer = document.getElementById("product-details");
+    const backToStoreButton = document.getElementById("back-to-store");
+
+    let products = [];
+
+    // Cargar productos desde el archivo JSON
+    fetch("productos.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al cargar el archivo JSON");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        products = data;
+        renderProductDetails(productId);
+      })
+      .catch((error) => {
+        console.error("Hubo un problema con la carga del JSON:", error);
+      });
+
+    // Renderizar los detalles del producto
+    function renderProductDetails(id) {
+      const product = products.find(p => p.id == id);
+      if (product) {
+        productDetailsContainer.innerHTML = `
+          <div class="product-detail">
+            <img src="${product.imgUrl}" alt="${product.title}">
+            <h2>${product.title}</h2>
+            <p>${product.description}</p>
+            <p><strong>Precio:</strong> ${product.price}€</p>
+            <div class="tags">
+              ${product.tags.map(tag => `<div class="tag">${tag}</div>`).join('')}
+            </div>
+            <button class="add-to-cart" data-index="${id}">
+              <i class="fas fa-shopping-cart"></i> Añadir al carrito
+            </button>
+          </div>
+        `;
+      }
+    }
+
+    // Volver a la tienda
+    backToStoreButton.addEventListener('click', () => {
+      window.location.href = "index.html";  // Redirigir a la página principal
+    });
+
+  </script>
+</body>
+</html>

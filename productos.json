@@ -1,0 +1,65 @@
+[
+  {
+      "id": 1,
+      "title": "Camiseta Personalizada",
+      "description": "Camisetas con vinilo personalizado con dibujos que usted pida.",
+      "price": 20,
+      "category": "Camisetas",
+      "tags": ["Camisetas", "Personalizado"],
+      "imgUrl": "camisas.png"
+  },
+  {
+      "id": 2,
+      "title": "Taza Personalizada",
+      "description": "Tazas con sublimación imágenes & diseños personalizados.",
+      "price": 5,
+      "category": "Tazas",
+      "tags": ["Tazas", "Personalizado"],
+      "imgUrl": "Tazas.png"
+  },
+  {
+      "id": 3,
+      "title": "Conjuntos Toallas",
+      "description": "Tazas con sublimación imágenes & diseños personalizados.",
+      "price": 5,
+      "category": "Tazas",
+      "tags": ["Conjuntos", "Personalizado"],
+      "imgUrl": "conjunto2.png"
+  },
+  {
+      "id": 4,
+      "title": "Taza Personalizada",
+      "description": "Tazas con sublimación imágenes & diseños personalizados.",
+      "price": 5,
+      "category": "Tazas",
+      "tags": ["Conjuntos", "Personalizado"],
+      "imgUrl": "Conjuntos.png"
+  },
+  {
+      "id":5,
+      "title": "Taza Personalizada",
+      "description": "Tazas con sublimación imágenes & diseños personalizados.",
+      "price": 5,
+      "category": "Tazas",
+      "tags": ["Tazas", "Personalizado"],
+      "imgUrl": "Conjuntos.png"
+  },
+  {
+      "id": 6,
+      "title": "Taza Personalizada",
+      "description": "Tazas con sublimación imágenes & diseños personalizados.",
+      "price": 5,
+      "category": "Tazas",
+      "tags": ["Tazas", "Personalizado"],
+      "imgUrl": "Conjuntos.png"
+  },
+  {
+      "id": 7,
+      "title": "Taza Personalizada",
+      "description": "Tazas con sublimación imágenes & diseños personalizados.",
+      "price": 5,
+      "category": "Tazas",
+      "tags": ["Tazas", "Personalizado"],
+      "imgUrl": "Conjuntos.png"
+  }
+]
