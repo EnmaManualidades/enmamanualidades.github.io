@@ -24,6 +24,19 @@
   background: #681847;
 }
 
+/* Estilo normal del enlace */
+a {
+  color:  rgb(54, 9, 39); /* Color del enlace no visitado */
+  text-decoration: none;
+}
+
+/* Estilo cuando el enlace es visitado */
+a:visited {
+  color: rgb(54, 9, 39); /* Se establece el mismo color que el no visitado */
+  text-decoration: none;
+}
+
+
 /* General */
 body {
     font-family: Arial, sans-serif;
