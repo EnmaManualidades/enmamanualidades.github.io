@@ -44,9 +44,7 @@ fetch("productos.json")
     menuItems.forEach((item) => {
       item.addEventListener("click", () => {
         const category = item.dataset.category; // Obtener la categoría del atributo data-category
-        const filteredProducts = filterProducts(allProducts, "", category, priceFilter.value); // Filtrar por categoría
-        resetDisplay();
-        renderFilteredProducts(filteredProducts);
+        resetCategoryFilter(category); // Resetea la categoría seleccionada y aplica el nuevo filtro
         menuOverlay.classList.add("hidden"); // Cerrar el menú
         document.body.style.overflow = "auto"; // Rehabilitar scroll
       });
@@ -56,13 +54,27 @@ fetch("productos.json")
     console.error("Hubo un problema con la carga del JSON:", error);
   });
 
-  function renderNextProducts() {
-    const nextProducts = allProducts.slice(displayedProducts, displayedProducts + PRODUCTS_PER_LOAD);
+// Función para resetear el filtro de categoría
+function resetCategoryFilter(category) {
+  // Reseteamos los filtros previos (búsqueda, etiquetas, precio)
+  searchInput.value = ""; // Limpia el campo de búsqueda
+  priceFilter.value = priceFilter.max; // Resetea el rango de precios al máximo
+  priceValue.textContent = `${priceFilter.max}€`; // Actualiza la visualización del rango de precios
+
+  // Establecemos el filtro de etiquetas a la categoría seleccionada
+  tagsFilter.value = category; // Cambia el filtro de etiquetas a la categoría seleccionada
+
+  // Forzar la aplicación del filtro de etiquetas y actualización de los productos
+  applyFilters();
+}
+
+// Función para renderizar los próximos productos
+function renderNextProducts() {
+  const nextProducts = allProducts.slice(displayedProducts, displayedProducts + PRODUCTS_PER_LOAD);
   
-    renderProducts(nextProducts, false); // No limpiar productos previos
-    displayedProducts += nextProducts.length; // Incrementa el contador
-  }
-  
+  renderProducts(nextProducts, false); // No limpiar productos previos
+  displayedProducts += nextProducts.length; // Incrementa el contador
+}
 
 // Renderizar productos en la página
 function renderProducts(products, clear = true) {
@@ -90,8 +102,6 @@ function renderProducts(products, clear = true) {
     productsContainer.appendChild(card);
   });
 
-
-
   // Agregar eventos al botón "Añadir al carrito"
   document.querySelectorAll(".add-to-cart").forEach((button) =>
     button.addEventListener("click", (e) => {
@@ -106,23 +116,27 @@ function renderProducts(products, clear = true) {
     })
   );
 }
+
+// Cargar más productos cuando se hace scroll
 window.addEventListener("scroll", () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
   if (scrollTop + clientHeight >= scrollHeight - 10 && displayedProducts < allProducts.length) {
     renderNextProducts(); // Cargar más productos
   }
 });
+
+// Función para resetear la visualización de productos
 function resetDisplay() {
   displayedProducts = 0;
   productsContainer.innerHTML = "";
 }
 
+// Renderizar productos filtrados
 function renderFilteredProducts(filteredProducts) {
   resetDisplay();
   allProducts = filteredProducts; // Actualiza los productos a filtrar
   renderNextProducts(); // Renderiza los primeros resultados filtrados
 }
-
 
 // Llenar las opciones de filtro de etiquetas
 function fillTagFilter(products) {
@@ -139,42 +153,46 @@ function fillTagFilter(products) {
   });
 }
 
-// Filtrar productos según los criterios
+// Configurar filtros
 function setupFilters(products) {
   // Filtrar por búsqueda
   searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase();
-    const filteredProducts = filterProducts(products, query, tagsFilter.value, priceFilter.value);
-    renderProducts(filteredProducts);
+    applyFilters();
   });
 
   // Filtrar por etiquetas
   tagsFilter.addEventListener("change", () => {
-    const query = searchInput.value.toLowerCase();
-    const filteredProducts = filterProducts(products, query, tagsFilter.value, priceFilter.value);
-    renderProducts(filteredProducts);
+    applyFilters();
   });
 
   // Filtrar por rango de precios
   priceFilter.addEventListener("input", () => {
     priceValue.textContent = `${priceFilter.value}€`;
-    const query = searchInput.value.toLowerCase();
-    const filteredProducts = filterProducts(products, query, tagsFilter.value, priceFilter.value);
-    renderProducts(filteredProducts);
+    applyFilters();
   });
 }
 
+// Función para aplicar todos los filtros
+function applyFilters() {
+  const query = searchInput.value.toLowerCase();
+  const category = tagsFilter.value; // Filtro por categoría
+  const price = priceFilter.value;
+
+  const filteredProducts = filterProducts(allProducts, query, category, price);
+  renderProducts(filteredProducts);
+}
+
 // Función de filtrado
-function filterProducts(products, query, tag, price) {
+function filterProducts(products, query, category, price) {
   return products.filter(product => {
     const matchesQuery = product.title.toLowerCase().includes(query) || product.description.toLowerCase().includes(query);
-    const matchesTag = tag ? product.tags.includes(tag) : true;
-
+    const matchesCategory = category ? product.category === category : true; // Filtra solo por categoría si se especifica
+    const matchesTag = category ? product.tags.includes(category) : true; // Filtra por etiquetas si se selecciona una categoría
     let matchesPrice = true;
     if (price) {
       matchesPrice = product.price <= price;
     }
 
-    return matchesQuery && matchesTag && matchesPrice;
+    return matchesQuery && matchesCategory && matchesTag && matchesPrice;
   });
 }

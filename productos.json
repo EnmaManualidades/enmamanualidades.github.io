@@ -6,10 +6,9 @@
     "price": 12,
     "category": "Camisetas",
     "tags": [
-      "Camisetas",
-      "Personalizado"
+      "Camisetas"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 2,
@@ -18,8 +17,7 @@
     "price": 12,
     "category": "Camisetas",
     "tags": [
-      "Camisetas",
-      "Personalizado"
+      "Camisetas"
     ],
     "imgUrl": "camisas.png"
   },
@@ -30,10 +28,9 @@
     "price": 6,
     "category": "tazas personalizadas",
     "tags": [
-      "tazas personalizadas",
-      "Personalizado"
+      "tazas personalizadas"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 4,
@@ -42,10 +39,9 @@
     "price": "12€ a 15€",
     "category": "tazas personalizadas",
     "tags": [
-      "tazas personalizadas",
-      "Personalizado"
+      "tazas personalizadas"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 5,
@@ -54,10 +50,9 @@
     "price": 28,
     "category": "mantas y cojines",
     "tags": [
-      "mantas y cojines",
-      "Personalizado"
+      "mantas y cojines"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 6,
@@ -66,10 +61,9 @@
     "price": 10,
     "category": "Sacos y Calentadores",
     "tags": [
-      "Sacos y Calentadores",
-      "Personalizado"
+      "Sacos y Calentadores"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 7,
@@ -78,10 +72,9 @@
     "price": 23,
     "category": "Sacos y Calentadores",
     "tags": [
-      "Sacos y Calentadores",
-      "Personalizado"
+      "Sacos y Calentadores"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 8,
@@ -90,10 +83,9 @@
     "price": 8,
     "category": "Calcetines",
     "tags": [
-      "Calcetines",
-      "Personalizado"
+      "Calcetines"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 9,
@@ -102,10 +94,9 @@
     "price": 9,
     "category": "tazas personalizadas",
     "tags": [
-      "tazas personalizadas",
-      "Personalizado"
+      "tazas personalizadas"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 10,
@@ -114,10 +105,9 @@
     "price": 12.5,
     "category": "Accesorios Personalizados",
     "tags": [
-      "Accesorios Personalizados",
-      "Personalizado"
+      "Accesorios Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 11,
@@ -126,10 +116,9 @@
     "price": 9,
     "category": "Accesorios de Resina",
     "tags": [
-      "Accesorios de Resina",
-      "Personalizado"
+      "Accesorios de Resina"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 12,
@@ -138,10 +127,9 @@
     "price": 10,
     "category": "Calcetines",
     "tags": [
-      "Calcetines",
-      "Personalizado"
+      "Calcetines"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 13,
@@ -150,10 +138,9 @@
     "price": "nada",
     "category": "Decoración Personalizada",
     "tags": [
-      "Decoración Personalizada",
-      "Personalizado"
+      "Decoración Personalizada"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 14,
@@ -162,10 +149,9 @@
     "price": 13,
     "category": "Accesorios de Resina",
     "tags": [
-      "Accesorios de Resina",
-      "Personalizado"
+      "Accesorios de Resina"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 15,
@@ -174,10 +160,9 @@
     "price": 18,
     "category": "Accesorios de Resina",
     "tags": [
-      "Accesorios de Resina",
-      "Personalizado"
+      "Accesorios de Resina"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 16,
@@ -186,10 +171,9 @@
     "price": 4,
     "category": "Accesorios de Resina",
     "tags": [
-      "Accesorios de Resina",
-      "Personalizado"
+      "Accesorios de Resina"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 17,
@@ -198,10 +182,9 @@
     "price": 5,
     "category": "Accesorios de Resinas",
     "tags": [
-      "Accesorios de Resinas",
-      "Personalizado"
+      "Accesorios de Resinas"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 18,
@@ -210,10 +193,9 @@
     "price": 10,
     "category": "Accesorios Personalizados",
     "tags": [
-      "Accesorios Personalizados",
-      "Personalizado"
+      "Accesorios Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 19,
@@ -222,10 +204,9 @@
     "price": 12,
     "category": "Bebes",
     "tags": [
-      "Bebes",
-      "Personalizado"
+      "Bebes"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 20,
@@ -234,10 +215,9 @@
     "price": 12.5,
     "category": "Bolsos",
     "tags": [
-      "Bolsos",
-      "Personalizado"
+      "Bolsos"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 21,
@@ -246,10 +226,9 @@
     "price": 12,
     "category": "Bebes",
     "tags": [
-      "Bebes",
-      "Personalizado"
+      "Bebes"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 22,
@@ -258,10 +237,9 @@
     "price": 0,
     "category": "Accesorios Personalizados",
     "tags": [
-      "Accesorios Personalizados",
-      "Personalizado"
+      "Accesorios Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 23,
@@ -270,10 +248,9 @@
     "price": 25,
     "category": "Bebes",
     "tags": [
-      "Bebes",
-      "Personalizado"
+      "Bebes"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 24,
@@ -282,10 +259,9 @@
     "price": 20,
     "category": "Toallas",
     "tags": [
-      "Toallas",
-      "Personalizado"
+      "Toallas"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 25,
@@ -294,10 +270,9 @@
     "price": 17,
     "category": "Toallas",
     "tags": [
-      "Toallas",
-      "Personalizado"
+      "Toallas"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 26,
@@ -306,10 +281,9 @@
     "price": 16,
     "category": "Bebes",
     "tags": [
-      "Bebes",
-      "Personalizado"
+      "Bebes"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 27,
@@ -318,10 +292,9 @@
     "price": 20,
     "category": "Decoración Personalizados",
     "tags": [
-      "Decoración Personalizados",
-      "Personalizado"
+      "Decoración Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 28,
@@ -330,10 +303,9 @@
     "price": 22,
     "category": "Bebes",
     "tags": [
-      "Bebes",
-      "Personalizado"
+      "Bebes"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 29,
@@ -342,10 +314,9 @@
     "price": 8,
     "category": "Bebes",
     "tags": [
-      "Bebes",
-      "Personalizado"
+      "Bebes"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 30,
@@ -354,10 +325,9 @@
     "price": 30,
     "category": "Bebes",
     "tags": [
-      "Bebes",
-      "Personalizado"
+      "Bebes"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 31,
@@ -366,10 +336,9 @@
     "price": 99,
     "category": "Bebes",
     "tags": [
-      "Bebes",
-      "Personalizado"
+      "Bebes"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 32,
@@ -378,10 +347,9 @@
     "price": 8,
     "category": "Decoración Personalizados",
     "tags": [
-      "Decoración Personalizados",
-      "Personalizado"
+      "Decoración Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 33,
@@ -390,10 +358,9 @@
     "price": "Cada tabla 3€",
     "category": "Decoración Personalizados",
     "tags": [
-      "Decoración Personalizados",
-      "Personalizado"
+      "Decoración Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 34,
@@ -402,10 +369,9 @@
     "price": 6,
     "category": "Accesorios Personalizados",
     "tags": [
-      "Accesorios Personalizados",
-      "Personalizado"
+      "Accesorios Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 35,
@@ -414,10 +380,9 @@
     "price": 9,
     "category": "Accesorios Personalizados",
     "tags": [
-      "Accesorios Personalizados",
-      "Personalizado"
+      "Accesorios Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 36,
@@ -426,10 +391,9 @@
     "price": 10,
     "category": "Mantas Cojines",
     "tags": [
-      "Mantas Cojines",
-      "Personalizado"
+      "Mantas Cojines"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 37,
@@ -438,10 +402,9 @@
     "price": 15,
     "category": "Mantas Cojines",
     "tags": [
-      "Mantas Cojines",
-      "Personalizado"
+      "Mantas Cojines"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 38,
@@ -450,10 +413,9 @@
     "price": "5€ +1€",
     "category": "Bebes",
     "tags": [
-      "Bebes",
-      "Personalizado"
+      "Bebes"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 39,
@@ -462,10 +424,9 @@
     "price": 14,
     "category": "Bolsos",
     "tags": [
-      "Bolsos",
-      "Personalizado"
+      "Bolsos"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 40,
@@ -474,10 +435,9 @@
     "price": 12,
     "category": "Bolsos",
     "tags": [
-      "Bolsos",
-      "Personalizado"
+      "Bolsos"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 41,
@@ -486,10 +446,9 @@
     "price": 8,
     "category": "Informatica",
     "tags": [
-      "Informatica",
-      "Personalizado"
+      "Informatica"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 42,
@@ -498,10 +457,9 @@
     "price": 5,
     "category": "Informatica",
     "tags": [
-      "Informatica",
-      "Personalizado"
+      "Informatica"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 43,
@@ -510,10 +468,9 @@
     "price": 25,
     "category": "Toallas",
     "tags": [
-      "Toallas",
-      "Personalizado"
+      "Toallas"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 44,
@@ -522,10 +479,9 @@
     "price": 15,
     "category": "Accesorios Personalizados",
     "tags": [
-      "Accesorios Personalizados",
-      "Personalizado"
+      "Accesorios Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 45,
@@ -534,10 +490,9 @@
     "price": 15,
     "category": "Accesorios Personalizados",
     "tags": [
-      "Accesorios Personalizados",
-      "Personalizado"
+      "Accesorios Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 46,
@@ -546,10 +501,9 @@
     "price": 6,
     "category": "Decoración Personalizados",
     "tags": [
-      "Decoración Personalizados",
-      "Personalizado"
+      "Decoración Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 47,
@@ -558,10 +512,9 @@
     "price": 6,
     "category": "Accesorios Personalizados",
     "tags": [
-      "Accesorios Personalizados",
-      "Personalizado"
+      "Accesorios Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 48,
@@ -570,10 +523,9 @@
     "price": 6,
     "category": "Accesorios Personalizados",
     "tags": [
-      "Accesorios Personalizados",
-      "Personalizado"
+      "Accesorios Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 49,
@@ -582,10 +534,9 @@
     "price": 6,
     "category": "Decoración Personalizados",
     "tags": [
-      "Decoración Personalizados",
-      "Personalizado"
+      "Decoración Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 50,
@@ -594,10 +545,9 @@
     "price": 15,
     "category": "Decoración Personalizados",
     "tags": [
-      "Decoración Personalizados",
-      "Personalizado"
+      "Decoración Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 51,
@@ -606,10 +556,9 @@
     "price": 20,
     "category": "Toallas",
     "tags": [
-      "Toallas",
-      "Personalizado"
+      "Toallas"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 52,
@@ -618,10 +567,9 @@
     "price": 5,
     "category": "Decoración Personalizados",
     "tags": [
-      "Decoración Personalizados",
-      "Personalizado"
+      "Decoración Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   },
   {
     "id": 53,
@@ -630,9 +578,8 @@
     "price": 12,
     "category": "Accesorios Personalizados",
     "tags": [
-      "Accesorios Personalizados",
-      "Personalizado"
+      "Accesorios Personalizados"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "NoFound.png"
   }
 ]
