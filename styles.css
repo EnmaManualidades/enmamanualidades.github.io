@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
+  
 }
 
 /* scroll bar */
@@ -32,6 +33,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; 
+    scroll-behavior: smooth;
   }
   
   footer {
@@ -378,17 +380,20 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    flex-direction: column;
+    color: #fff;
   }
   
-  /* Contenedor del menú */
   #menu-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    background: #fff;
     padding: 20px;
     border-radius: 10px;
-  }
+    color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+}
   
   
   /* Elementos del menú */
@@ -396,9 +401,28 @@ body {
     text-align: center;
     cursor: pointer;
   }
+  .menu-item:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    animation: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s infinite alternate slidein;
+  }
+  
+  @keyframes slidein {
+    0% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .menu-logo{
+    width: 25%;
+    top: 2%;
+    object-fit: contain;
+  }
   
   .menu-item img {
-    width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 10px;
@@ -493,4 +517,34 @@ body {
       padding: 20px;
       width: 100%;
   }
+
+  #menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex-direction: row;
+  
+    /* Habilitar scroll pero ocultar la barra */
+    overflow-y: scroll; /* Activar desplazamiento vertical */
+    max-height: 80vh; /* Limitar la altura máxima */
+    
+    /* Ocultar scroll */
+    scrollbar-width: none; /* Para navegadores compatibles (Firefox) */
+  }
+  
+  #menu-container::-webkit-scrollbar {
+    display: none; /* Para navegadores basados en WebKit (Chrome, Safari) */
+  }
+
+  .menu-item img {
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
   }

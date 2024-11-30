@@ -1,4 +1,8 @@
 // Seleccionamos los elementos del DOM
+let allProducts = []; // Para almacenar todos los productos
+let displayedProducts = 0; // Contador de productos ya mostrados
+const PRODUCTS_PER_LOAD = 10; // Cantidad de productos a cargar por bloque
+
 const productsContainer = document.getElementById("products");
 const searchInput = document.getElementById("search-input");
 const tagsFilter = document.getElementById("tags-filter");
@@ -31,16 +35,18 @@ fetch("productos.json")
     return response.json();
   })
   .then((products) => {
-    renderProducts(products);
-    fillTagFilter(products);
-    setupFilters(products);
+    allProducts = products; // Almacena todos los productos
+    renderNextProducts(); // Carga los primeros productos
+    fillTagFilter(allProducts);
+    setupFilters(allProducts);
 
     // Configurar eventos de clic para los elementos del menú
     menuItems.forEach((item) => {
       item.addEventListener("click", () => {
         const category = item.dataset.category; // Obtener la categoría del atributo data-category
-        const filteredProducts = filterProducts(products, "", category, priceFilter.value); // Filtrar por categoría
-        renderProducts(filteredProducts); // Renderizar los productos filtrados
+        const filteredProducts = filterProducts(allProducts, "", category, priceFilter.value); // Filtrar por categoría
+        resetDisplay();
+        renderFilteredProducts(filteredProducts);
         menuOverlay.classList.add("hidden"); // Cerrar el menú
         document.body.style.overflow = "auto"; // Rehabilitar scroll
       });
@@ -50,14 +56,21 @@ fetch("productos.json")
     console.error("Hubo un problema con la carga del JSON:", error);
   });
 
+  function renderNextProducts() {
+    const nextProducts = allProducts.slice(displayedProducts, displayedProducts + PRODUCTS_PER_LOAD);
+  
+    renderProducts(nextProducts, false); // No limpiar productos previos
+    displayedProducts += nextProducts.length; // Incrementa el contador
+  }
+  
+
 // Renderizar productos en la página
-function renderProducts(products) {
-  productsContainer.innerHTML = ""; // Limpiar productos previos
+function renderProducts(products, clear = true) {
+  if (clear) productsContainer.innerHTML = ""; // Limpiar productos previos solo si se indica
 
   products.forEach((product, index) => {
     const card = document.createElement("div");
     card.classList.add("card");
-
     card.innerHTML = `
       <a href="producto.html#producto${product.id}">
         <div class="card-image-container">
@@ -74,9 +87,10 @@ function renderProducts(products) {
         </div>
       </a>
     `;
-
     productsContainer.appendChild(card);
   });
+
+
 
   // Agregar eventos al botón "Añadir al carrito"
   document.querySelectorAll(".add-to-cart").forEach((button) =>
@@ -92,6 +106,23 @@ function renderProducts(products) {
     })
   );
 }
+window.addEventListener("scroll", () => {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+  if (scrollTop + clientHeight >= scrollHeight - 10 && displayedProducts < allProducts.length) {
+    renderNextProducts(); // Cargar más productos
+  }
+});
+function resetDisplay() {
+  displayedProducts = 0;
+  productsContainer.innerHTML = "";
+}
+
+function renderFilteredProducts(filteredProducts) {
+  resetDisplay();
+  allProducts = filteredProducts; // Actualiza los productos a filtrar
+  renderNextProducts(); // Renderiza los primeros resultados filtrados
+}
+
 
 // Llenar las opciones de filtro de etiquetas
 function fillTagFilter(products) {
