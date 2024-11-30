@@ -13,7 +13,7 @@
   {
     "id": 2,
     "title": "Camiseta Vinilada",
-    "description": "Camisetas de alta calidad con diseños vinilados personalizados. Perfectas para destacar en eventos especiales o como regalo único.",
+    "description": "Camisetas con diseños vinilados personalizados. Perfectas para destacar en eventos especiales o como regalo único.",
     "price": 12,
     "category": "Camisetas",
     "tags": [
@@ -234,7 +234,7 @@
     "id": 22,
     "title": "Conjunto para Profesores",
     "description": "Conjuntos personalizados para profesores, ideales como detalles agradecidos y únicos para educadores especiales.",
-    "price": 0,
+    "price": 5,
     "category": "Accesorios Personalizados",
     "tags": [
       "Accesorios Personalizados"
