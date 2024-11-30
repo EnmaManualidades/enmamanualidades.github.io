@@ -436,7 +436,7 @@ body {
     #filters {
       width: 100%;
       position: relative;
-      margin: 10px 0;
+      margin: 10px 10px;
     }
     #menu-button {
         background-color: transparent;
@@ -449,4 +449,48 @@ body {
         height: 100%;
         object-fit: contain;
       }
+      footer {
+        bottom: 0;
+        height: 0;
+        width: 100%;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+    footer .footer-container {
+      display: flex;
+      align-items: center;
+    }
+    footer .footer-logo {
+      margin-right: 20px;
+    }
+    footer .footer-info {
+      align-items: center;
+      gap: 10px;
+    }
+    footer .footer-info a {
+      color: #fff;
+      text-decoration: none;
+    }
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      color: #fff;
+    }
+    .iframefootermap{
+      display: none;
+    }
+
+    #products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+      width: 100%;
+  }
   }

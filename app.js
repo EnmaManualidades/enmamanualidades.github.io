@@ -1,4 +1,4 @@
-// Selección de elementos
+// Seleccionamos los elementos del DOM
 const productsContainer = document.getElementById("products");
 const searchInput = document.getElementById("search-input");
 const tagsFilter = document.getElementById("tags-filter");
@@ -6,7 +6,7 @@ const priceFilter = document.getElementById("price-filter");
 const priceValue = document.getElementById("price-value");
 const menuButton = document.getElementById("menu-button");
 const menuOverlay = document.getElementById("menu-overlay");
-const menuItems = document.querySelectorAll(".menu-item");
+const menuItems = document.querySelectorAll(".menu-item"); // Seleccionamos los elementos del menú
 
 // Abrir el menú al hacer clic en el botón
 menuButton.addEventListener("click", () => {
@@ -22,7 +22,7 @@ menuOverlay.addEventListener("click", (e) => {
   }
 });
 
-// Leer productos desde el JSON y configurar los filtros
+// Cargar productos desde el archivo JSON
 fetch("productos.json")
   .then((response) => {
     if (!response.ok) {
@@ -31,57 +31,24 @@ fetch("productos.json")
     return response.json();
   })
   .then((products) => {
-    // Leer filtros iniciales de la URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const initialCategory = urlParams.get("category") || "";
-    const initialSearch = urlParams.get("search") || "";
-    const initialPrice = urlParams.get("price") || priceFilter.value;
-
-    // Preseleccionar los valores del formulario
-    searchInput.value = initialSearch;
-    tagsFilter.value = initialCategory;
-    priceFilter.value = initialPrice;
-    priceValue.textContent = `${initialPrice}€`;
-
-    // Renderizar los productos iniciales según los filtros
-    const filteredProducts = filterProducts(products, initialSearch, initialCategory, initialPrice);
-    renderProducts(filteredProducts);
-
-    // Configurar filtros y menú
+    renderProducts(products);
     fillTagFilter(products);
     setupFilters(products);
-    setupMenu(products);
+
+    // Configurar eventos de clic para los elementos del menú
+    menuItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const category = item.dataset.category; // Obtener la categoría del atributo data-category
+        const filteredProducts = filterProducts(products, "", category, priceFilter.value); // Filtrar por categoría
+        renderProducts(filteredProducts); // Renderizar los productos filtrados
+        menuOverlay.classList.add("hidden"); // Cerrar el menú
+        document.body.style.overflow = "auto"; // Rehabilitar scroll
+      });
+    });
   })
   .catch((error) => {
     console.error("Hubo un problema con la carga del JSON:", error);
   });
-
-// Configurar el menú para filtrar productos
-function setupMenu(products) {
-  menuItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      const category = item.dataset.category; // Obtener la categoría del atributo data-category
-
-      // Actualizar el formulario
-      tagsFilter.value = category;
-
-      // Actualizar los productos filtrados
-      const filteredProducts = filterProducts(products, searchInput.value, category, priceFilter.value);
-      renderProducts(filteredProducts);
-
-      // Actualizar la URL sin recargar la página
-      const urlParams = new URLSearchParams(window.location.search);
-      urlParams.set("category", category);
-      urlParams.set("search", searchInput.value);
-      urlParams.set("price", priceFilter.value);
-      history.pushState(null, "", `?${urlParams.toString()}`);
-
-      // Cerrar el menú
-      menuOverlay.classList.add("hidden");
-      document.body.style.overflow = "auto";
-    });
-  });
-}
 
 // Renderizar productos en la página
 function renderProducts(products) {
@@ -110,6 +77,20 @@ function renderProducts(products) {
 
     productsContainer.appendChild(card);
   });
+
+  // Agregar eventos al botón "Añadir al carrito"
+  document.querySelectorAll(".add-to-cart").forEach((button) =>
+    button.addEventListener("click", (e) => {
+      if (!user) {
+        alert("Inicia sesión para agregar productos al carrito.");
+        return;
+      }
+      const product = products[e.target.dataset.index];
+      cart.push(product);
+      alert("Producto agregado al carrito");
+      updateCartPopup();
+    })
+  );
 }
 
 // Llenar las opciones de filtro de etiquetas
@@ -119,12 +100,6 @@ function fillTagFilter(products) {
     product.tags.forEach(tag => tags.add(tag));
   });
 
-  // Agregar una opción "todos"
-  const allOption = document.createElement("option");
-  allOption.value = "";
-  allOption.innerText = "Todos";
-  tagsFilter.appendChild(allOption);
-
   tags.forEach(tag => {
     const option = document.createElement("option");
     option.value = tag;
@@ -133,31 +108,29 @@ function fillTagFilter(products) {
   });
 }
 
-// Configurar eventos del formulario de filtros
+// Filtrar productos según los criterios
 function setupFilters(products) {
-  searchInput.addEventListener("input", applyFilters);
-  tagsFilter.addEventListener("change", applyFilters);
-  priceFilter.addEventListener("input", () => {
-    priceValue.textContent = `${priceFilter.value}€`;
-    applyFilters();
+  // Filtrar por búsqueda
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    const filteredProducts = filterProducts(products, query, tagsFilter.value, priceFilter.value);
+    renderProducts(filteredProducts);
   });
 
-  function applyFilters() {
+  // Filtrar por etiquetas
+  tagsFilter.addEventListener("change", () => {
     const query = searchInput.value.toLowerCase();
-    const tag = tagsFilter.value;
-    const price = priceFilter.value;
-
-    // Filtrar y renderizar productos
-    const filteredProducts = filterProducts(products, query, tag, price);
+    const filteredProducts = filterProducts(products, query, tagsFilter.value, priceFilter.value);
     renderProducts(filteredProducts);
+  });
 
-    // Actualizar la URL
-    const urlParams = new URLSearchParams(window.location.search);
-    urlParams.set("category", tag);
-    urlParams.set("search", query);
-    urlParams.set("price", price);
-    history.pushState(null, "", `?${urlParams.toString()}`);
-  }
+  // Filtrar por rango de precios
+  priceFilter.addEventListener("input", () => {
+    priceValue.textContent = `${priceFilter.value}€`;
+    const query = searchInput.value.toLowerCase();
+    const filteredProducts = filterProducts(products, query, tagsFilter.value, priceFilter.value);
+    renderProducts(filteredProducts);
+  });
 }
 
 // Función de filtrado
@@ -165,7 +138,12 @@ function filterProducts(products, query, tag, price) {
   return products.filter(product => {
     const matchesQuery = product.title.toLowerCase().includes(query) || product.description.toLowerCase().includes(query);
     const matchesTag = tag ? product.tags.includes(tag) : true;
-    const matchesPrice = product.price <= price;
+
+    let matchesPrice = true;
+    if (price) {
+      matchesPrice = product.price <= price;
+    }
+
     return matchesQuery && matchesTag && matchesPrice;
   });
 }
