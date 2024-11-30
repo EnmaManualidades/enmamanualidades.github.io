@@ -36,7 +36,7 @@
     "id": 4,
     "title": "Tazas en 3D",
     "description": "Tazas en 3D con diseños únicos y personalizados. Añade un toque divertido y exclusivo a tu colección de tazas.",
-    "price": "12€ a 15€",
+    "price": "12 a 15",
     "category": "tazas personalizadas",
     "tags": [
       "tazas personalizadas"
@@ -135,7 +135,7 @@
     "id": 13,
     "title": "Lienzos Personalizados",
     "description": "Lienzos personalizados para capturar tus recuerdos más preciados o dar un toque artístico a tus espacios.",
-    "price": "nada",
+    "price": "desde 10",
     "category": "Decoración Personalizada",
     "tags": [
       "Decoración Personalizada"
@@ -355,7 +355,7 @@
     "id": 33,
     "title": "Letreros Personalizados",
     "description": "Letreros personalizados con nombres o frases, perfectos para decorar tus espacios con estilo.",
-    "price": "Cada tabla 3€",
+    "price": "Cada tabla 3",
     "category": "Decoración Personalizados",
     "tags": [
       "Decoración Personalizados"
@@ -410,7 +410,7 @@
     "id": 38,
     "title": "Tendederos con Nombres",
     "description": "Tendederos personalizados con nombres, un detalle único y funcional para decorar y organizar.",
-    "price": "5€ +1€",
+    "price": "5 +1",
     "category": "Bebes",
     "tags": [
       "Bebes"
