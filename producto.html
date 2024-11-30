@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Producto</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="producto.css">
   <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"></script>
@@ -13,7 +14,7 @@
 <body>
   <header>
     <div id="profile-icon" class="icon">👤</div>
-    <button id="menu-button"><img src="EnmaManualidadesLogo.png" alt="Enma Manualidades"></button>
+    <a class="logo" href="/"><img src="EnmaManualidadesLogo.png" alt="Enma Manualidades"></a>
     
   </header>
 
@@ -21,7 +22,31 @@
     <div id="product-details"></div>
     <button id="back-to-store">Volver a la tienda</button>
   </main>
+  <footer>
+    <iframe class="iframefootermap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d410404.8590365639!2d-6.423374270709594!3d36.52304662488185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x644bb9ec6abaa235%3A0x4fd198efdf8fa5dc!2sEnma%20Manualidades!5e0!3m2!1ses!2ses!4v1702396602259!5m2!1ses!2ses" width="230" height="180" style="border-radius:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img width="100px" src="EnmaManualidadesLogoMini.png" alt="Enma Manualidades Logo">
+      </div>
+    </div>
 
+
+    <nav class="footer-info" >
+      <a href="#">Home</a> |
+      <a href="#catalogoh2">Catálogo</a> |
+      <a href="EnmaManualidades/HacerUnEncargo.html">Hacer un Encargo</a> |
+      <a href="EnmaManualidades/AboutMe.html">About Enma</a>
+  </nav>
+  
+    <div class="footer-info">
+      
+      <p>&copy; 2024 Enma Manualidades. Todos los derechos reservados.</p>
+      <p>Dirección: [Cádiz, Spain]</p>
+      <p>Teléfono: [+34 642 70 25 29]</p>
+      <p>Página Web creada Por: <a href="https://github.com/AgustinBeniteez" target="_blank">Agustin benitez</a></p>
+    </div>
+  </footer>
   <script>
     // Leer el ID del producto desde la URL
     const productId = window.location.hash.slice(9); // Obtener el ID del producto (#productoX)
