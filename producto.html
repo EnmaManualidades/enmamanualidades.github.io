@@ -209,32 +209,48 @@
         console.error("Hubo un problema con la carga del JSON:", error);
       });
 
-  // Renderizar los detalles del producto
-  function renderProductDetails(id) {
-    const product = products.find(p => p.id == id);
-    if (product) {
-      // Cambiar el título de la página al nombre del producto seguido de " | Enma Manualidades"
-      document.title = `${product.title} | Enma Manualidades`;  // Actualiza el título de la página con el nombre del producto
+      function renderProductDetails(id) {
+      const product = products.find(p => p.id == id);
 
-      // Cambiar la imagen de la camiseta
-      shirtImage.src = product.shirtImageUrl;  // Actualiza la imagen de la camiseta con la URL del JSON
+      if (product) {
+        const productDetails = document.getElementById("product-details");
 
-      productDetailsContainer.innerHTML = `
-        <div class="product-detail">
-          <h2>${product.title}</h2>
-          <img class="img_producto" src="${product.imgUrl}" alt="${product.title}">
-          <p>${product.description}</p>
-          <p><strong>Precio:</strong> ${product.price}€</p>
-          <div class="tags">
-            ${product.tags.map(tag => `<div class="tag">${tag}</div>`).join('')}
+        // Limpiar contenido previo
+        productDetails.innerHTML = "";
+
+        // Crear HTML dinámicamente
+        productDetails.innerHTML = `
+          <div class="product-container">
+            <div class="product-gallery">
+              <img id="main-image" src="${product.shirtImageUrl}" alt="Camiseta principal">
+              <div class="thumbnail-gallery"></div>
+            </div>
+            <div class="product-info">
+              <h1 id="product-title">${product.title}</h1>
+              <p id="product-description">${product.description}</p>
+              <p id="product-price" class="price">${product.price}€</p>
+              <button id="add-to-cart-button" class="cart-button">
+                <i class="fas fa-shopping-cart"></i> Comprar
+              </button>
+            </div>
           </div>
-          <button class="add-to-cart" data-index="${id}">
-            <i class="fas fa-shopping-cart"></i> Añadir al carrito
-          </button>
-        </div>
-      `;
+        `;
+
+        // Manejar miniaturas dinámicamente
+        const thumbnailGallery = productDetails.querySelector(".thumbnail-gallery");
+
+        product.thumbnails.forEach(src => {
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = "Miniatura";
+          img.addEventListener("click", () => {
+            document.getElementById("main-image").src = src;
+          });
+          thumbnailGallery.appendChild(img);
+        });
+      }
     }
-  }
+
 
 
 

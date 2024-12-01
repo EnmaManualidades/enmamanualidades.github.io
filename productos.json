@@ -5,11 +5,14 @@
     "description": "Camisetas Personalizables, envíanos una foto o una idea\npara tu camiseta y nosotros la pondremos en tu camiseta\nDesde un Regalo para Tu padre hasta una camiseta para ti\ncon una foto con tu pareja.",
     "price": 12,
     "category": "Camisetas",
-    "tags": [
-      "Camisetas"
-    ],
+    "tags": ["Camisetas"],
     "imgUrl": "NoFound.png",
-    "shirtImageUrl": "NoFound.png"
+    "shirtImageUrl": "NoFound.png",
+    "thumbnails": [
+      "NoFound.png",
+      "NoFound.png",
+      "NoFound.png"
+    ]
   },
   {
     "id": 2,
@@ -21,7 +24,12 @@
       "Camisetas"
     ],
     "imgUrl": "camisas.png",
-    "shirtImageUrl": "camisas.png"
+    "shirtImageUrl": "camisas.png",
+    "thumbnails": [
+      "camisas.png",
+      "camisas.png",
+      "conjunto2.png"
+    ]
   },
   {
     "id": 3,
