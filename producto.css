@@ -116,7 +116,7 @@ header {
   }
   
   #main-image {
-    max-width: 100%;
+    max-width: 280px;
     border-radius: 10px;
     margin-bottom: 10px;
   }
