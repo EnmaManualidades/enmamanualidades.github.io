@@ -529,46 +529,49 @@ header {
       });
 
       function renderProductDetails(id) {
-      const product = products.find(p => p.id == id);
+  const product = products.find(p => p.id == id);
 
-      if (product) {
-        const productDetails = document.getElementById("product-details");
+  if (product) {
+    // Cambiar el título del HTML
+    document.title = product.title;
 
-        // Limpiar contenido previo
-        productDetails.innerHTML = "";
+    const productDetails = document.getElementById("product-details");
 
-        // Crear HTML dinámicamente
-        productDetails.innerHTML = `
-          <div class="product-container">
-            <div class="product-gallery">
-              <img id="main-image" src="${product.shirtImageUrl}" alt="Camiseta principal">
-              <div class="thumbnail-gallery"></div>
-            </div>
-            <div class="product-info">
-              <h1 id="product-title">${product.title}</h1>
-              <p id="product-description">${product.description}</p>
-              <p id="product-price" class="price">${product.price}€</p>
-              <button id="add-to-cart-button" class="cart-button">
-                <i class="fas fa-shopping-cart"></i> Comprar
-              </button>
-            </div>
-          </div>
-        `;
+    // Limpiar contenido previo
+    productDetails.innerHTML = "";
 
-        // Manejar miniaturas dinámicamente
-        const thumbnailGallery = productDetails.querySelector(".thumbnail-gallery");
+    // Crear HTML dinámicamente
+    productDetails.innerHTML = `
+      <div class="product-container">
+        <div class="product-gallery">
+          <img id="main-image" src="${product.shirtImageUrl}" alt="Camiseta principal">
+          <div class="thumbnail-gallery"></div>
+        </div>
+        <div class="product-info">
+          <h1 id="product-title">${product.title}</h1>
+          <p id="product-description">${product.description}</p>
+          <p id="product-price" class="price">${product.price}€</p>
+          <button id="add-to-cart-button" class="cart-button">
+            <i class="fas fa-shopping-cart"></i> Comprar
+          </button>
+        </div>
+      </div>
+    `;
 
-        product.thumbnails.forEach(src => {
-          const img = document.createElement("img");
-          img.src = src;
-          img.alt = "Miniatura";
-          img.addEventListener("click", () => {
-            document.getElementById("main-image").src = src;
-          });
-          thumbnailGallery.appendChild(img);
-        });
-      }
-    }
+    // Manejar miniaturas dinámicamente
+    const thumbnailGallery = productDetails.querySelector(".thumbnail-gallery");
+
+    product.thumbnails.forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "Miniatura";
+      img.addEventListener("click", () => {
+        document.getElementById("main-image").src = src;
+      });
+      thumbnailGallery.appendChild(img);
+    });
+  }
+}
 
 
 
