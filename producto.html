@@ -10,6 +10,112 @@
   <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #4d004d;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #4d004d;
+    }
+    .main-container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .preview-container {
+      position: relative;
+      background-color: #8c004c;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .preview {
+      position: relative;
+      display: inline-block;
+    }
+
+    .preview img {
+      max-width: 300px;
+    }
+
+    .design-preview {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      width: 100px;
+    }
+
+    .control-panel {
+      background-color: #8c004c;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    .control-panel label,
+    .control-panel input {
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    .control-panel button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      background-color: #ff0066;
+      border: none;
+      color: white;
+      border-radius: 5px;
+    }
+
+    main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-wrap: nowrap;
+}
+
+@media screen  and (max-width: 767px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-wrap: nowrap;
+}
+.main-container {
+    display: flex
+;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+}
+}
+  </style>
 </head>
 <body>
   <header>
@@ -20,8 +126,43 @@
 
   <main>
     <div id="product-details"></div>
-    <button id="back-to-store">Volver a la tienda</button>
-  </main>
+
+  
+  <div class="main-container">
+    <!-- Vista previa -->
+    <div class="preview-container">
+      <h2>Vista previa</h2>
+      <div class="preview">
+        <img id="shirt-image" src="camisas.png" alt="Camiseta">
+        <img id="design-preview" class="design-preview" src="EnmaManualidadesLogoMini.png" alt="Diseño">
+      </div>
+    </div>
+
+    <!-- Controles -->
+    <div class="control-panel">
+      <h3>Personalizar</h3>
+      <label for="upload-design">Subir diseño (PNG)</label>
+      <input type="file" id="upload-design" accept="image/png">
+      
+      <label for="shirt-color">Color de camiseta</label>
+      <select id="shirt-color">
+        <option value="shirt-black.png">Negra</option>
+        <option value="shirt-white.png">Blanca</option>
+        <option value="shirt-blue.png">Azul</option>
+      </select>
+
+      <label for="design-size">Tamaño del diseño (px)</label>
+      <input type="range" id="design-size" min="20" max="200" value="150">
+
+      <label for="design-position-x">Posición X (px)</label>
+      <input type="range" id="design-position-x" min="0" max="300" value="150">
+
+      <label for="design-position-y">Posición Y (px)</label>
+      <input type="range" id="design-position-y" min="0" max="300" value="150">
+    </div>
+  </div>
+</main>
+<button id="back-to-store">Volver a la tienda</button>
   <footer>
     <iframe class="iframefootermap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d410404.8590365639!2d-6.423374270709594!3d36.52304662488185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x644bb9ec6abaa235%3A0x4fd198efdf8fa5dc!2sEnma%20Manualidades!5e0!3m2!1ses!2ses!4v1702396602259!5m2!1ses!2ses" width="230" height="180" style="border-radius:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     
@@ -97,6 +238,46 @@
       window.location.href = "index.html";  // Redirigir a la página principal
     });
 
+    const shirtImage = document.getElementById("shirt-image");
+    const designPreview = document.getElementById("design-preview");
+    const shirtColor = document.getElementById("shirt-color");
+    const designSize = document.getElementById("design-size");
+    const designPositionX = document.getElementById("design-position-x");
+    const designPositionY = document.getElementById("design-position-y");
+    const uploadDesign = document.getElementById("upload-design");
+
+    // Cambiar color de la camiseta
+    shirtColor.addEventListener("change", (e) => {
+      shirtImage.src = e.target.value;
+    });
+
+    // Cambiar tamaño del diseño
+    designSize.addEventListener("input", (e) => {
+      designPreview.style.width = e.target.value + "px";
+    });
+
+    // Cambiar posición del diseño
+    designPositionX.addEventListener("input", (e) => {
+      designPreview.style.left = e.target.value + "px";
+    });
+
+    designPositionY.addEventListener("input", (e) => {
+      designPreview.style.top = e.target.value + "px";
+    });
+
+    // Cargar diseño personalizado
+    uploadDesign.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          designPreview.src = event.target.result;
+          designPreview.style.width = "100px"; // Tamaño predeterminado más pequeño
+        };
+
+        reader.readAsDataURL(file);
+      }
+    });
   </script>
 </body>
 </html>
