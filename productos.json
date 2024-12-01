@@ -8,7 +8,8 @@
     "tags": [
       "Camisetas"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "tags": [
       "Camisetas"
     ],
-    "imgUrl": "camisas.png"
+    "imgUrl": "camisas.png",
+    "shirtImageUrl": "camisas.png"
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "tags": [
       "tazas personalizadas"
     ],
-    "imgUrl": "tazas.png"
+    "imgUrl": "tazas.png",
+    "shirtImageUrl": "tazas.png"
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "tags": [
       "tazas personalizadas"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "tags": [
       "mantas y cojines"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "tags": [
       "Sacos y Calentadores"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "tags": [
       "Sacos y Calentadores"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 8,
@@ -85,7 +92,8 @@
     "tags": [
       "Calcetines"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 9,
@@ -96,7 +104,8 @@
     "tags": [
       "tazas personalizadas"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 10,
@@ -107,7 +116,8 @@
     "tags": [
       "Accesorios Personalizados"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 11,
@@ -118,7 +128,8 @@
     "tags": [
       "Accesorios de Resina"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 12,
@@ -129,7 +140,8 @@
     "tags": [
       "Calcetines"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 13,
@@ -140,7 +152,8 @@
     "tags": [
       "Decoración Personalizada"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 14,
@@ -151,7 +164,8 @@
     "tags": [
       "Accesorios de Resina"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 15,
@@ -162,7 +176,8 @@
     "tags": [
       "Accesorios de Resina"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 16,
@@ -173,7 +188,8 @@
     "tags": [
       "Accesorios de Resina"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 17,
@@ -184,7 +200,8 @@
     "tags": [
       "Accesorios de Resinas"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 18,
@@ -195,7 +212,8 @@
     "tags": [
       "Accesorios Personalizados"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 19,
@@ -206,18 +224,20 @@
     "tags": [
       "Bebes"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 20,
-    "title": "Bolso Playero",
-    "description": "Bolsos playeros personalizados con diseños frescos y funcionales, ideales para tus días de playa o piscina.",
-    "price": 12.5,
-    "category": "Bolsos",
+    "title": "Muñecos Personalizados",
+    "description": "Muñecos personalizados con ropa y características a medida. El regalo perfecto para los más pequeños.",
+    "price": 15,
+    "category": "Juguetes",
     "tags": [
-      "Bolsos"
+      "Juguetes"
     ],
-    "imgUrl": "NoFound.png"
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 21,
@@ -225,10 +245,9 @@
     "description": "Marcos de fotos para bebés personalizados, perfectos para inmortalizar momentos inolvidables de los más pequeños.",
     "price": 12,
     "category": "Bebes",
-    "tags": [
-      "Bebes"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Bebes"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 22,
@@ -236,21 +255,19 @@
     "description": "Conjuntos personalizados para profesores, ideales como detalles agradecidos y únicos para educadores especiales.",
     "price": 5,
     "category": "Accesorios Personalizados",
-    "tags": [
-      "Accesorios Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Accesorios Personalizados"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 23,
-    "title": "Toalla de la Foto ",
+    "title": "Toalla de la Foto",
     "description": "Toallas personalizadas con fotos, perfectas para añadir un toque especial a tus momentos de baño o playa.",
     "price": 25,
     "category": "Bebes",
-    "tags": [
-      "Bebes"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Bebes"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 24,
@@ -258,10 +275,9 @@
     "description": "Toallas de playa grandes con diseños personalizados, ideales para disfrutar del verano con estilo único.",
     "price": 20,
     "category": "Toallas",
-    "tags": [
-      "Toallas"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Toallas"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 25,
@@ -269,10 +285,9 @@
     "description": "Toallas de playa medianas personalizadas, prácticas y únicas, perfectas para días de relax en la playa.",
     "price": 17,
     "category": "Toallas",
-    "tags": [
-      "Toallas"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Toallas"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 26,
@@ -280,10 +295,9 @@
     "description": "Chupeteros personalizados, seguros y adorables, ideales para bebés y como regalos especiales.",
     "price": 16,
     "category": "Bebes",
-    "tags": [
-      "Bebes"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Bebes"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 27,
@@ -291,10 +305,9 @@
     "description": "Cubo de cervezas y botellas personalizados, perfecto para regalar o celebrar con un toque único.",
     "price": 20,
     "category": "Decoración Personalizados",
-    "tags": [
-      "Decoración Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Decoración Personalizados"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 28,
@@ -302,10 +315,9 @@
     "description": "Adornos personalizados para bebés, ideales para decorar el cuarto de tu pequeño con un toque único.",
     "price": 22,
     "category": "Bebes",
-    "tags": [
-      "Bebes"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Bebes"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 29,
@@ -313,10 +325,9 @@
     "description": "Baberos personalizados para bebés, prácticos y adorables, perfectos para hacer cada comida especial.",
     "price": 8,
     "category": "Bebes",
-    "tags": [
-      "Bebes"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Bebes"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 30,
@@ -324,10 +335,9 @@
     "description": "Colchas y antivuelco personalizados para bebés, confort y estilo en cada detalle para los más pequeños.",
     "price": 30,
     "category": "Bebes",
-    "tags": [
-      "Bebes"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Bebes"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 31,
@@ -335,10 +345,9 @@
     "description": "Conjuntos de bebé personalizados, completos y adorables, diseñados especialmente para ocasiones especiales.",
     "price": 99,
     "category": "Bebes",
-    "tags": [
-      "Bebes"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Bebes"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 32,
@@ -346,10 +355,9 @@
     "description": "Velas personalizadas, ideales para ambientar espacios o regalar con un toque único y exclusivo.",
     "price": 8,
     "category": "Decoración Personalizados",
-    "tags": [
-      "Decoración Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Decoración Personalizados"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 33,
@@ -357,10 +365,9 @@
     "description": "Letreros personalizados con nombres o frases, perfectos para decorar tus espacios con estilo.",
     "price": "Cada tabla 3",
     "category": "Decoración Personalizados",
-    "tags": [
-      "Decoración Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Decoración Personalizados"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 34,
@@ -368,10 +375,9 @@
     "description": "Monederos personalizados, prácticos y únicos, ideales como regalo o complemento personal.",
     "price": 6,
     "category": "Accesorios Personalizados",
-    "tags": [
-      "Accesorios Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Accesorios Personalizados"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 35,
@@ -379,21 +385,19 @@
     "description": "Jarras de cerveza personalizadas, perfectas para disfrutar de tus bebidas favoritas con un diseño especial.",
     "price": 9,
     "category": "Accesorios Personalizados",
-    "tags": [
-      "Accesorios Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Accesorios Personalizados"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 36,
-    "title": "Cojines ",
+    "title": "Cojines",
     "description": "Cojines personalizados, cómodos y decorativos, ideales para regalar o complementar tus espacios.",
     "price": 10,
     "category": "Mantas Cojines",
-    "tags": [
-      "Mantas Cojines"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Mantas Cojines"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 37,
@@ -401,10 +405,9 @@
     "description": "Cojines y mantas personalizados, el regalo perfecto para disfrutar de momentos cálidos y acogedores.",
     "price": 15,
     "category": "Mantas Cojines",
-    "tags": [
-      "Mantas Cojines"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Mantas Cojines"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 38,
@@ -412,10 +415,9 @@
     "description": "Tendederos personalizados con nombres, un detalle único y funcional para decorar y organizar.",
     "price": "5 +1",
     "category": "Bebes",
-    "tags": [
-      "Bebes"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Bebes"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 39,
@@ -423,10 +425,9 @@
     "description": "Mochilas personalizadas, prácticas y con estilo único, perfectas para cualquier ocasión.",
     "price": 14,
     "category": "Bolsos",
-    "tags": [
-      "Bolsos"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Bolsos"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 40,
@@ -434,10 +435,9 @@
     "description": "Bolsas de mano personalizadas, elegantes y funcionales, ideales para complementar tu estilo diario.",
     "price": 12,
     "category": "Bolsos",
-    "tags": [
-      "Bolsos"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Bolsos"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 41,
@@ -445,141 +445,129 @@
     "description": "Alfombrillas de ratón grandes personalizadas, perfectas para añadir un toque único a tu escritorio.",
     "price": 8,
     "category": "Informatica",
-    "tags": [
-      "Informatica"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Informatica"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 42,
-    "title": "Alfombrilla de Ratón pequeño",
-    "description": "Alfombrillas de ratón pequeñas personalizadas, prácticas y únicas, ideales para uso personal o como regalo.",
-    "price": 5,
+    "title": "Alfombrilla de Ratón Pequeña",
+    "description": "Alfombrillas de ratón pequeñas personalizadas, cómodas y funcionales para tu espacio de trabajo.",
+    "price": 7,
     "category": "Informatica",
-    "tags": [
-      "Informatica"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Informatica"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 43,
-    "title": "Toallas de Juego",
-    "description": "Toallas de juego personalizadas, perfectas para complementar la rutina de actividades deportivas o recreativas.",
-    "price": 25,
-    "category": "Toallas",
-    "tags": [
-      "Toallas"
-    ],
-    "imgUrl": "NoFound.png"
+    "title": "Camiseta de los Trabajadores",
+    "description": "Camisetas personalizadas para trabajadores, cómodas y con un toque profesional para cualquier ocasión.",
+    "price": 12,
+    "category": "Ropa",
+    "tags": ["Ropa"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 44,
-    "title": "Juegos de Mesas",
-    "description": "Juegos de mesa personalizados, ideales para disfrutar de momentos en familia o con amigos con un toque especial.",
-    "price": 15,
-    "category": "Accesorios Personalizados",
-    "tags": [
-      "Accesorios Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "title": "Camisetas para Casamientos",
+    "description": "Camisetas personalizadas para bodas, ideales para el día especial o para los recuerdos del evento.",
+    "price": 10,
+    "category": "Ropa",
+    "tags": ["Ropa"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 45,
-    "title": "puzzles Personalizados",
-    "description": "Puzzles personalizados, una actividad divertida que además inmortaliza tus recuerdos más queridos.",
-    "price": 15,
-    "category": "Accesorios Personalizados",
-    "tags": [
-      "Accesorios Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "title": "Tazas Personalizadas",
+    "description": "Tazas personalizadas, perfectas para regalar o disfrutar de tu bebida favorita con un toque único.",
+    "price": 8,
+    "category": "Tazas",
+    "tags": ["Tazas"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 46,
-    "title": "Letras de Fotos",
-    "description": "Letras de fotos personalizadas, decorativas y únicas, ideales para cualquier ocasión especial.",
-    "price": 6,
-    "category": "Decoración Personalizados",
-    "tags": [
-      "Decoración Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "title": "Almohada de Viaje",
+    "description": "Almohadas de viaje personalizadas, cómodas y perfectas para descansar durante tus desplazamientos.",
+    "price": 8,
+    "category": "Accesorios Personalizados",
+    "tags": ["Accesorios Personalizados"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 47,
-    "title": "Colgante de Fotos",
-    "description": "Colgantes de fotos personalizados, perfectos para llevar tus recuerdos contigo a todas partes.",
-    "price": 6,
+    "title": "Estuches Personalizados",
+    "description": "Estuches personalizados para tus pertenencias, con un diseño único y práctico para el día a día.",
+    "price": 7,
     "category": "Accesorios Personalizados",
-    "tags": [
-      "Accesorios Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Accesorios Personalizados"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 48,
-    "title": "Pulsera de Fotos",
-    "description": "Pulseras de fotos personalizadas, un detalle especial para regalar y llevar siempre contigo.",
-    "price": 6,
+    "title": "Relojes Personalizados",
+    "description": "Relojes personalizados, elegantes y únicos, perfectos para regalar o como accesorio personal.",
+    "price": 25,
     "category": "Accesorios Personalizados",
-    "tags": [
-      "Accesorios Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Accesorios Personalizados"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 49,
-    "title": "Iman de Neveras",
-    "description": "Imanes de nevera personalizados, perfectos para decorar con tus fotos o mensajes especiales.",
-    "price": 6,
+    "title": "Reloj de Pared",
+    "description": "Relojes de pared personalizados, ideales para decorar y darle un toque único a cualquier habitación.",
+    "price": 18,
     "category": "Decoración Personalizados",
-    "tags": [
-      "Decoración Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "tags": ["Decoración Personalizados"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 50,
-    "title": "Posavasos Personalizados",
-    "description": "Posavasos personalizados, ideales para proteger tus mesas mientras añades un toque decorativo único.",
-    "price": 15,
-    "category": "Decoración Personalizados",
-    "tags": [
-      "Decoración Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "title": "Botellas de Agua Personalizadas",
+    "description": "Botellas de agua personalizadas, perfectas para llevar tus bebidas de manera práctica y con estilo.",
+    "price": 10,
+    "category": "Accesorios Personalizados",
+    "tags": ["Accesorios Personalizados"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 51,
-    "title": "Toallas Albornoz",
-    "description": "Toallas albornoz personalizadas, cómodas y elegantes, perfectas para regalar o disfrutar después del baño.",
-    "price": 20,
-    "category": "Toallas",
-    "tags": [
-      "Toallas"
-    ],
-    "imgUrl": "NoFound.png"
+    "title": "Decoraciones de Navidad",
+    "description": "Decoraciones de Navidad personalizadas, ideales para darle un toque único y festivo a tu hogar.",
+    "price": 30,
+    "category": "Decoración Personalizados",
+    "tags": ["Decoración Personalizados"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 52,
-    "title": "Bolas de Navidad",
-    "description": "Bolas de Navidad personalizadas, perfectas para dar un toque único y especial a tu árbol navideño.",
-    "price": 5,
-    "category": "Decoración Personalizados",
-    "tags": [
-      "Decoración Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "title": "Juguetes Personalizados",
+    "description": "Juguetes personalizados para niños, ideales para regalar o para momentos especiales de juego.",
+    "price": 15,
+    "category": "Bebes",
+    "tags": ["Bebes"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   },
   {
     "id": 53,
-    "title": "Bolsas de Chuches",
-    "description": "Bolsas de chuches personalizadas, ideales para celebraciones o eventos especiales con un toque dulce y único.",
-    "price": 12,
-    "category": "Accesorios Personalizados",
-    "tags": [
-      "Accesorios Personalizados"
-    ],
-    "imgUrl": "NoFound.png"
+    "title": "Alfombra Infantil",
+    "description": "Alfombras infantiles personalizadas, ideales para decorar la habitación de los más pequeños con estilo.",
+    "price": 20,
+    "category": "Bebes",
+    "tags": ["Bebes"],
+    "imgUrl": "NoFound.png",
+    "shirtImageUrl": "NoFound.png"
   }
+  
 ]

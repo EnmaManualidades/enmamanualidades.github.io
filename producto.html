@@ -88,9 +88,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     flex-wrap: nowrap;
 }
 
@@ -99,16 +97,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     flex-wrap: nowrap;
 }
 .main-container {
-    display: flex
-;
+    display: flex;
     gap: 20px;
-    padding: 20px;
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
@@ -212,26 +207,34 @@
         console.error("Hubo un problema con la carga del JSON:", error);
       });
 
-    // Renderizar los detalles del producto
-    function renderProductDetails(id) {
-      const product = products.find(p => p.id == id);
-      if (product) {
-        productDetailsContainer.innerHTML = `
-          <div class="product-detail">
-            <img class="img_producto" src="${product.imgUrl}" alt="${product.title}">
-            <h2>${product.title}</h2>
-            <p>${product.description}</p>
-            <p><strong>Precio:</strong> ${product.price}€</p>
-            <div class="tags">
-              ${product.tags.map(tag => `<div class="tag">${tag}</div>`).join('')}
-            </div>
-            <button class="add-to-cart" data-index="${id}">
-              <i class="fas fa-shopping-cart"></i> Añadir al carrito
-            </button>
+  // Renderizar los detalles del producto
+  function renderProductDetails(id) {
+    const product = products.find(p => p.id == id);
+    if (product) {
+      // Cambiar el título de la página al nombre del producto seguido de " | Enma Manualidades"
+      document.title = `${product.title} | Enma Manualidades`;  // Actualiza el título de la página con el nombre del producto
+
+      // Cambiar la imagen de la camiseta
+      shirtImage.src = product.shirtImageUrl;  // Actualiza la imagen de la camiseta con la URL del JSON
+
+      productDetailsContainer.innerHTML = `
+        <div class="product-detail">
+          <h2>${product.title}</h2>
+          <img class="img_producto" src="${product.imgUrl}" alt="${product.title}">
+          <p>${product.description}</p>
+          <p><strong>Precio:</strong> ${product.price}€</p>
+          <div class="tags">
+            ${product.tags.map(tag => `<div class="tag">${tag}</div>`).join('')}
           </div>
-        `;
-      }
+          <button class="add-to-cart" data-index="${id}">
+            <i class="fas fa-shopping-cart"></i> Añadir al carrito
+          </button>
+        </div>
+      `;
     }
+  }
+
+
 
     // Volver a la tienda
     backToStoreButton.addEventListener('click', () => {

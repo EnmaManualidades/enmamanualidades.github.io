@@ -5,7 +5,7 @@
   gap: 20px;
   padding: 20px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.75);
+  background: linear-gradient(95.4deg, rgb(156 100 137) 0%, rgb(156 156 156) 100%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   margin: 10px;
@@ -42,16 +42,19 @@ header {
 }
 
 #back-to-store {
-    background-color: #800080;
-    color: white;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-  }
+  background-color: #800080;
+  color: white;
+  border: none;
+  display: flex
+;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
   
   #back-to-store:hover {
     background-color: #aa00aa;
