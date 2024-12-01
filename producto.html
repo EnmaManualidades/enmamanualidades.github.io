@@ -528,12 +528,15 @@ header {
         console.error("Hubo un problema con la carga del JSON:", error);
       });
 
-      function renderProductDetails(id) {
+function renderProductDetails(id) {
   const product = products.find(p => p.id == id);
 
   if (product) {
     // Cambiar el título del HTML
     document.title = product.title;
+
+    // Actualizar las etiquetas meta
+    updateMetaTags(product);
 
     const productDetails = document.getElementById("product-details");
 
@@ -572,6 +575,68 @@ header {
     });
   }
 }
+
+function updateMetaTags(product) {
+  // Actualizar meta descripción
+  let metaDescription = document.querySelector('meta[name="description"]');
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    document.head.appendChild(metaDescription);
+  }
+  metaDescription.content = product.description;
+
+  // Actualizar Open Graph (OG) tags
+  let ogTitle = document.querySelector('meta[property="og:title"]');
+  if (!ogTitle) {
+    ogTitle = document.createElement("meta");
+    ogTitle.setAttribute("property", "og:title");
+    document.head.appendChild(ogTitle);
+  }
+  ogTitle.content = product.title;
+
+  let ogDescription = document.querySelector('meta[property="og:description"]');
+  if (!ogDescription) {
+    ogDescription = document.createElement("meta");
+    ogDescription.setAttribute("property", "og:description");
+    document.head.appendChild(ogDescription);
+  }
+  ogDescription.content = product.description;
+
+  let ogImage = document.querySelector('meta[property="og:image"]');
+  if (!ogImage) {
+    ogImage = document.createElement("meta");
+    ogImage.setAttribute("property", "og:image");
+    document.head.appendChild(ogImage);
+  }
+  ogImage.content = product.imgUrl;
+
+  // Actualizar Twitter meta tags
+  let twitterTitle = document.querySelector('meta[name="twitter:title"]');
+  if (!twitterTitle) {
+    twitterTitle = document.createElement("meta");
+    twitterTitle.name = "twitter:title";
+    document.head.appendChild(twitterTitle);
+  }
+  twitterTitle.content = product.title;
+
+  let twitterDescription = document.querySelector('meta[name="twitter:description"]');
+  if (!twitterDescription) {
+    twitterDescription = document.createElement("meta");
+    twitterDescription.name = "twitter:description";
+    document.head.appendChild(twitterDescription);
+  }
+  twitterDescription.content = product.description;
+
+  let twitterImage = document.querySelector('meta[name="twitter:image"]');
+  if (!twitterImage) {
+    twitterImage = document.createElement("meta");
+    twitterImage.name = "twitter:image";
+    document.head.appendChild(twitterImage);
+  }
+  twitterImage.content = product.imgUrl;
+}
+
 
 
 
