@@ -619,7 +619,9 @@ header {
   </footer>
   <script>
     // Leer el ID del producto desde la URL
-    const productId = window.location.hash.slice(9); // Obtener el ID del producto (#productoX)
+    const productId = window.location.hash.slice(9);
+    console.log("Producto ID:", productId);  // Para depuración
+
     const productDetailsContainer = document.getElementById("product-details");
     const backToStoreButton = document.getElementById("back-to-store");
   
@@ -680,18 +682,22 @@ header {
           </div>
         `;
   
-        // Manejar miniaturas dinámicamente
-        const thumbnailGallery = productDetails.querySelector(".thumbnail-gallery");
-  
-        product.thumbnails.forEach(src => {
-          const img = document.createElement("img");
-          img.src = src;
-          img.alt = "Miniatura";
-          img.addEventListener("click", () => {
-            document.getElementById("main-image").src = src;
-          });
-          thumbnailGallery.appendChild(img);
-        });
+// Manejar miniaturas dinámicamente
+const thumbnailGallery = productDetails.querySelector(".thumbnail-gallery");
+
+if (product.thumbnails && product.thumbnails.length > 0) {
+  product.thumbnails.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = "Miniatura";
+    img.addEventListener("click", () => {
+      document.getElementById("main-image").src = src;
+    });
+    thumbnailGallery.appendChild(img);
+  });
+} else {
+  console.log("Este producto no tiene miniaturas.");
+}
   
         // Agregar evento para el botón de carrito
         const addToCartButton = document.getElementById("add-to-cart-button");
