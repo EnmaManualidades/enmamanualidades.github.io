@@ -645,70 +645,94 @@ header {
         console.error("Hubo un problema con la carga del JSON:", error);
       });
   
-    function renderProductDetails(id) {
-      const product = products.find(p => p.id == id);
-  
-      if (product) {
-        // Cambiar el título del HTML
-        document.title = product.title;
-  
-        // Actualizar las etiquetas meta
-        updateMetaTags(product);
-  
-        const productDetails = document.getElementById("product-details");
-  
-        // Limpiar contenido previo
-        productDetails.innerHTML = "";
-  
-        // Crear HTML dinámicamente
-        productDetails.innerHTML = `
-          <div class="product-container">
-            <div class="product-gallery">
-              <img id="main-image" src="${product.shirtImageUrl}" alt="Camiseta principal">
-              <div class="thumbnail-gallery"></div>
-            </div>
-            <div class="product-info">
-              <h1 id="product-title">${product.title}</h1>
-              <p id="product-description">${product.description}</p>
-              <p id="product-price" class="price">${product.price}€</p>
-              <button id="add-to-cart-button" class="cart-button">
-                <i class="fas fa-shopping-cart"></i> Comprar
-              </button>
-              <div id="purchase-info" class="purchase-info">
-                <p style="font-size: 0.9em; color: #555;">La compra se pagará a la hora de entregar el producto (excepto en casos especiales).</p>
-                <p style="font-size: 0.9em; color: #555;">Cuando recibamos sus datos, nos pondremos en contacto por <span style="color: green;">WhatsApp <i class="fa-brands fa-whatsapp"></i></span> mediante el teléfono proporcionado para pedir detalles como: color, nombre, imágenes, etc. (si son necesarios para la personalización).</p>
-              </div>
-            </div>
-          </div>
-        `;
-  
-// Manejar miniaturas dinámicamente
-const thumbnailGallery = productDetails.querySelector(".thumbnail-gallery");
+      function renderProductDetails(id) {
+  const product = products.find(p => p.id == id);
 
-if (product.thumbnails && product.thumbnails.length > 0) {
-  product.thumbnails.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = "Miniatura";
-    img.addEventListener("click", () => {
-      document.getElementById("main-image").src = src;
-    });
-    thumbnailGallery.appendChild(img);
-  });
-} else {
-  console.log("Este producto no tiene miniaturas.");
-}
-  
-        // Agregar evento para el botón de carrito
-        const addToCartButton = document.getElementById("add-to-cart-button");
-        addToCartButton.addEventListener("click", () => {
-          cartModal.style.display = "block";
-          // Llenar automáticamente los campos del formulario con el producto actual
-          document.getElementById("product-name").value = product.title;
+  if (product) {
+    // Cambiar el título del HTML
+    document.title = product.title;
+
+    // Actualizar las etiquetas meta
+    updateMetaTags(product);
+
+    const productDetails = document.getElementById("product-details");
+
+    // Limpiar contenido previo
+    productDetails.innerHTML = "";
+
+    // Imagen principal: Si shirtImageUrl es "NoTienePersonaliacionWeb" o vacío, usa imgUrl
+    const mainImageUrl = (product.shirtImageUrl === "NoTienePersonaliacionWeb" || product.shirtImageUrl === "") ? product.imgUrl : product.shirtImageUrl;
+
+    // Crear HTML dinámicamente
+    productDetails.innerHTML = `
+      <div class="product-container">
+        <div class="product-gallery">
+          <img id="main-image" src="${mainImageUrl}" alt="${product.title}">
+          <div class="thumbnail-gallery"></div>
+        </div>
+        <div class="product-info">
+          <h1 id="product-title">${product.title}</h1>
+          <p id="product-description">${product.description}</p>
+          <p id="product-price" class="price">${product.price}€</p>
+          <button id="add-to-cart-button" class="cart-button">
+            <i class="fas fa-shopping-cart"></i> Comprar
+          </button>
+          <div id="purchase-info" class="purchase-info">
+            <p style="font-size: 0.9em; color: #555;">La compra se pagará a la hora de entregar el producto (excepto en casos especiales).</p>
+            <p style="font-size: 0.9em; color: #555;">Cuando recibamos sus datos, nos pondremos en contacto por <span style="color: green;">WhatsApp <i class="fa-brands fa-whatsapp"></i></span> mediante el teléfono proporcionado para pedir detalles como: color, nombre, imágenes, etc. (si son necesarios para la personalización).</p>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Manejar miniaturas dinámicamente
+    const thumbnailGallery = productDetails.querySelector(".thumbnail-gallery");
+
+    if (product.thumbnails && product.thumbnails.length > 0) {
+      product.thumbnails.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = "Miniatura";
+        img.addEventListener("click", () => {
+          document.getElementById("main-image").src = src;
         });
+        thumbnailGallery.appendChild(img);
+      });
+    } else {
+      console.log("Este producto no tiene miniaturas.");
+    }
+
+    // Si el producto no tiene personalización web (cuando shirtImageUrl es "NoTienePersonaliacionWeb" o vacío), ocultamos el contenedor `.main-container`
+    const mainContainer = document.querySelector(".main-container");
+    if (mainContainer) {
+      if (product.shirtImageUrl === "NoTienePersonaliacionWeb" || product.shirtImageUrl === "") {
+        // Cambiar el src de la imagen de la vista previa a la predeterminada
+        const shirtImage = document.getElementById("shirt-image");
+        if (shirtImage) {
+          shirtImage.src = product.imgUrl || "NoFound.png"; // Establecemos la imagen predeterminada si no existe shirtImageUrl
+        }
+        mainContainer.style.display = "none";  // Ocultar la vista previa
+      } else {
+        mainContainer.style.display = "flex";  // Mostrar la vista previa
       }
     }
-  
+
+    // Restaurar la imagen de la camiseta (shirt-image) con la URL de shirtImageUrl
+    const shirtImage = document.getElementById("shirt-image");
+    if (shirtImage) {
+      shirtImage.src = product.shirtImageUrl || "NoFound.png"; // Si shirtImageUrl es vacío, usa "NoFound.png"
+    }
+
+    // Agregar evento para el botón de carrito
+    const addToCartButton = document.getElementById("add-to-cart-button");
+    addToCartButton.addEventListener("click", () => {
+      cartModal.style.display = "block";
+      // Llenar automáticamente los campos del formulario con el producto actual
+      document.getElementById("product-name").value = product.title;
+    });
+  }
+}
+
     function updateMetaTags(product) {
       // Actualizar meta descripción
       let metaDescription = document.querySelector('meta[name="description"]');
