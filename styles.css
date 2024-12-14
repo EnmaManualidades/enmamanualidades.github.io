@@ -421,6 +421,19 @@ body {
     animation: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s infinite alternate slidein;
   }
   
+  /* nav */
+  .ancord-nav {
+    color: #ffff;
+    transition: color 0.3s, transform 0.3s; /* Efecto de transición suave */
+  }
+  .ancord-nav i {
+    margin-right: 8px;       /* Espaciado entre el icono y el texto */
+  }
+  .ancord-nav:hover {
+    transform: scale(1.1)!important;
+    color: #c7950c !important;
+  }
+
   @keyframes slidein {
     0% {
       transform: translateY(-10px);

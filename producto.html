@@ -372,6 +372,35 @@ header {
   #design-preview {
   transition: all 0.2s ease; /* Añadido para que el movimiento y cambio de tamaño sean suaves */
 }
+#copy-url-button {
+  background: none;        /* Sin fondo */
+  border: none;            /* Sin borde */
+  color: white;            /* Texto blanco */
+  font-size: 16px;         /* Tamaño de texto */
+  cursor: pointer;        /* Aparece como cursor de clic */
+  padding: 5px 10px;       /* Espaciado alrededor del texto */
+  transition: color 0.3s, transform 0.3s; /* Efecto de transición suave */
+}
+
+#copy-url-button:hover {
+  color: #c7950c;          /* Cambio de color al pasar el ratón */
+  transform: scale(1.1);    /* Efecto de aumento al pasar el ratón */
+}
+
+#copy-url-button i {
+  margin-right: 8px;       /* Espaciado entre el icono y el texto */
+}
+.ancord-nav {
+  color: #ffff;
+  transition: color 0.3s, transform 0.3s; /* Efecto de transición suave */
+}
+.ancord-nav i {
+  margin-right: 8px;       /* Espaciado entre el icono y el texto */
+}
+.ancord-nav:hover {
+  transform: scale(1.1)!important;
+  color: #c7950c !important;
+}
 /* Estilos para pantallas grandes */
 @media (min-width: 1130px) {
     #filters {
@@ -541,12 +570,29 @@ header {
 </head>
 <body>
   <header>
-    <div id="profile-icon" class="icon">👤</div>
+    <div id="profile-icon" class="icon"><a class="ancord-nav" style="color: #ffff;" href="/"><i class="fa-solid fa-house fa-lg"></i></a></div>
     <a class="logo" href="/"><img src="EnmaManualidadesLogo.png" alt="Enma Manualidades"></a>
-    
+    <button id="copy-url-button">
+      <i class="fa-solid fa-share-from-square"></i>
+      </button>
   </header>
 
   <main>
+
+    
+    <script>
+      document.getElementById("copy-url-button").addEventListener("click", function() {
+        const productUrl = window.location.href; // Obtiene la URL completa, incluidas las partes después del '#'
+        
+        navigator.clipboard.writeText(productUrl).then(() => {
+          // La URL se ha copiado al portapapeles sin mostrar alerta
+        }).catch(err => {
+          console.error("Error al copiar la URL: ", err);  // Manejo de errores
+        });
+      });
+
+    </script>
+    
     <div id="product-details"></div>
 
   
@@ -645,8 +691,8 @@ header {
 
 
     <nav class="footer-info" >
-      <a href="#">Home</a> |
-      <a href="#catalogoh2">Catálogo</a> |
+      <a href="/">Home</a> |
+      <a href="/">Catálogo</a> |
       <a href="EnmaManualidades/HacerUnEncargo.html">Hacer un Encargo</a> |
       <a href="EnmaManualidades/AboutMe.html">About Enma</a>
   </nav>
@@ -717,7 +763,7 @@ header {
           <p id="product-description">${product.description}</p>
           <p id="product-price" class="price">${product.price}€</p>
           <button id="add-to-cart-button" class="cart-button">
-            <i class="fas fa-shopping-cart"></i> Comprar
+            <i class="fas fa-shopping-cart"></i> Pedir Producto
           </button>
           <div id="purchase-info" class="purchase-info">
             <p style="font-size: 0.9em; color: #555;">La compra se pagará a la hora de entregar el producto (excepto en casos especiales).</p>
@@ -870,7 +916,7 @@ header {
             <p>La compra se pagará a la hora de entregar el producto (excepto en casos especiales).</p>
             <p>Cuando recibamos sus datos, nos pondremos en contacto por <span style="color: green;">WhatsApp <i class="fa-brands fa-whatsapp"></i></span> mediante el teléfono proporcionado para pedir detalles como: color, nombre, imágenes, etc. (si son necesarios para la personalización).</p>
           </div>
-          <button type="submit">Confirmar compra</button>
+          <button type="submit">Confirmar Pedido&nbsp;&nbsp;<i class="fa-solid fa-paper-plane"></i></button>
         </form>
       </div>
     `;
