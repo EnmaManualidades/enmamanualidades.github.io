@@ -265,6 +265,43 @@ header {
     background-color: #e6005c;
   }
   
+  #cart-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color: #000;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  #close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #close-modal:hover {
+    color: #ff0066;
+  }
 
 /* Estilos para pantallas grandes */
 @media (min-width: 1130px) {
@@ -476,8 +513,18 @@ header {
       <label for="design-position-y">Posición Y (px)</label>
       <input type="range" id="design-position-y" min="0" max="300" value="150">
     </div>
-  </div>
+  </div>  
 </main>
+<div id="cart-modal" class="hidden">
+  <div class="modal-content">
+    <span id="close-modal">&times;</span>
+    <h2>Carrito de compras</h2>
+    <p>Aquí irá el contenido del carrito.</p>
+    <!-- Aquí va el resumen del producto y un botón de confirmación -->
+    <button id="confirm-purchase" class="cart-button">Confirmar compra</button>
+  </div>
+</div>
+
 <button id="back-to-store">Volver a la tienda</button>
   <footer>
     <iframe class="iframefootermap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d410404.8590365639!2d-6.423374270709594!3d36.52304662488185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x644bb9ec6abaa235%3A0x4fd198efdf8fa5dc!2sEnma%20Manualidades!5e0!3m2!1ses!2ses!4v1702396602259!5m2!1ses!2ses" width="230" height="180" style="border-radius:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -509,9 +556,9 @@ header {
     const productId = window.location.hash.slice(9); // Obtener el ID del producto (#productoX)
     const productDetailsContainer = document.getElementById("product-details");
     const backToStoreButton = document.getElementById("back-to-store");
-
+  
     let products = [];
-
+  
     // Cargar productos desde el archivo JSON
     fetch("productos.json")
       .then((response) => {
@@ -527,125 +574,177 @@ header {
       .catch((error) => {
         console.error("Hubo un problema con la carga del JSON:", error);
       });
-
-function renderProductDetails(id) {
-  const product = products.find(p => p.id == id);
-
-  if (product) {
-    // Cambiar el título del HTML
-    document.title = product.title;
-
-    // Actualizar las etiquetas meta
-    updateMetaTags(product);
-
-    const productDetails = document.getElementById("product-details");
-
-    // Limpiar contenido previo
-    productDetails.innerHTML = "";
-
-    // Crear HTML dinámicamente
-    productDetails.innerHTML = `
-      <div class="product-container">
-        <div class="product-gallery">
-          <img id="main-image" src="${product.shirtImageUrl}" alt="Camiseta principal">
-          <div class="thumbnail-gallery"></div>
-        </div>
-        <div class="product-info">
-          <h1 id="product-title">${product.title}</h1>
-          <p id="product-description">${product.description}</p>
-          <p id="product-price" class="price">${product.price}€</p>
-          <button id="add-to-cart-button" class="cart-button">
-            <i class="fas fa-shopping-cart"></i> Comprar
-          </button>
-        </div>
+  
+    function renderProductDetails(id) {
+      const product = products.find(p => p.id == id);
+  
+      if (product) {
+        // Cambiar el título del HTML
+        document.title = product.title;
+  
+        // Actualizar las etiquetas meta
+        updateMetaTags(product);
+  
+        const productDetails = document.getElementById("product-details");
+  
+        // Limpiar contenido previo
+        productDetails.innerHTML = "";
+  
+        // Crear HTML dinámicamente
+        productDetails.innerHTML = `
+          <div class="product-container">
+            <div class="product-gallery">
+              <img id="main-image" src="${product.shirtImageUrl}" alt="Camiseta principal">
+              <div class="thumbnail-gallery"></div>
+            </div>
+            <div class="product-info">
+              <h1 id="product-title">${product.title}</h1>
+              <p id="product-description">${product.description}</p>
+              <p id="product-price" class="price">${product.price}€</p>
+              <button id="add-to-cart-button" class="cart-button">
+                <i class="fas fa-shopping-cart"></i> Comprar
+              </button>
+            </div>
+          </div>
+        `;
+  
+        // Manejar miniaturas dinámicamente
+        const thumbnailGallery = productDetails.querySelector(".thumbnail-gallery");
+  
+        product.thumbnails.forEach(src => {
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = "Miniatura";
+          img.addEventListener("click", () => {
+            document.getElementById("main-image").src = src;
+          });
+          thumbnailGallery.appendChild(img);
+        });
+  
+        // Agregar evento para el botón de carrito
+        const addToCartButton = document.getElementById("add-to-cart-button");
+        addToCartButton.addEventListener("click", () => {
+          cartModal.style.display = "block";
+          // Llenar automáticamente los campos del formulario con el producto actual
+          document.getElementById("product-name").value = product.title;
+        });
+      }
+    }
+  
+    function updateMetaTags(product) {
+      // Actualizar meta descripción
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement("meta");
+        metaDescription.name = "description";
+        document.head.appendChild(metaDescription);
+      }
+      metaDescription.content = product.description;
+  
+      // Actualizar Open Graph (OG) tags
+      let ogTitle = document.querySelector('meta[property="og:title"]');
+      if (!ogTitle) {
+        ogTitle = document.createElement("meta");
+        ogTitle.setAttribute("property", "og:title");
+        document.head.appendChild(ogTitle);
+      }
+      ogTitle.content = product.title;
+  
+      let ogDescription = document.querySelector('meta[property="og:description"]');
+      if (!ogDescription) {
+        ogDescription = document.createElement("meta");
+        ogDescription.setAttribute("property", "og:description");
+        document.head.appendChild(ogDescription);
+      }
+      ogDescription.content = product.description;
+  
+      let ogImage = document.querySelector('meta[property="og:image"]');
+      if (!ogImage) {
+        ogImage = document.createElement("meta");
+        ogImage.setAttribute("property", "og:image");
+        document.head.appendChild(ogImage);
+      }
+      ogImage.content = product.imgUrl;
+  
+      // Actualizar Twitter meta tags
+      let twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (!twitterTitle) {
+        twitterTitle = document.createElement("meta");
+        twitterTitle.name = "twitter:title";
+        document.head.appendChild(twitterTitle);
+      }
+      twitterTitle.content = product.title;
+  
+      let twitterDescription = document.querySelector('meta[name="twitter:description"]');
+      if (!twitterDescription) {
+        twitterDescription = document.createElement("meta");
+        twitterDescription.name = "twitter:description";
+        document.head.appendChild(twitterDescription);
+      }
+      twitterDescription.content = product.description;
+  
+      let twitterImage = document.querySelector('meta[name="twitter:image"]');
+      if (!twitterImage) {
+        twitterImage = document.createElement("meta");
+        twitterImage.name = "twitter:image";
+        document.head.appendChild(twitterImage);
+      }
+      twitterImage.content = product.imgUrl;
+    }
+  
+    // Modal para carrito con formulario personalizado
+    const cartModal = document.createElement("div");
+    cartModal.id = "cart-modal";
+    cartModal.innerHTML = `
+      <div class="modal-content">
+        <span id="close-modal">&times;</span>
+        <h2>Carrito de compras</h2>
+        <p>Tu producto ha sido añadido al carrito.</p>
+        <form action="https://formspree.io/f/mbljenpz" method="POST">
+          <label>
+            Producto:
+            <input type="text" name="product" id="product-name" readonly>
+          </label>
+          <label>
+            Cantidad:
+            <input type="number" name="quantity" id="quantity" value="1" min="1" required>
+          </label>
+          <label>
+            Número de teléfono:
+            <input type="tel" name="phone" id="phone" required>
+          </label>
+          <label>
+            Provincia:
+            <input type="text" name="province" id="province" required>
+          </label>
+          <label>
+            Ciudad:
+            <input type="text" name="city" id="city" required>
+          </label>
+          <button type="submit">Confirmar compra</button>
+        </form>
       </div>
     `;
-
-    // Manejar miniaturas dinámicamente
-    const thumbnailGallery = productDetails.querySelector(".thumbnail-gallery");
-
-    product.thumbnails.forEach(src => {
-      const img = document.createElement("img");
-      img.src = src;
-      img.alt = "Miniatura";
-      img.addEventListener("click", () => {
-        document.getElementById("main-image").src = src;
-      });
-      thumbnailGallery.appendChild(img);
+    document.body.appendChild(cartModal);
+  
+    const closeModal = document.getElementById("close-modal");
+  
+    // Cerrar modal
+    closeModal?.addEventListener("click", () => {
+      cartModal.style.display = "none";
     });
-  }
-}
-
-function updateMetaTags(product) {
-  // Actualizar meta descripción
-  let metaDescription = document.querySelector('meta[name="description"]');
-  if (!metaDescription) {
-    metaDescription = document.createElement("meta");
-    metaDescription.name = "description";
-    document.head.appendChild(metaDescription);
-  }
-  metaDescription.content = product.description;
-
-  // Actualizar Open Graph (OG) tags
-  let ogTitle = document.querySelector('meta[property="og:title"]');
-  if (!ogTitle) {
-    ogTitle = document.createElement("meta");
-    ogTitle.setAttribute("property", "og:title");
-    document.head.appendChild(ogTitle);
-  }
-  ogTitle.content = product.title;
-
-  let ogDescription = document.querySelector('meta[property="og:description"]');
-  if (!ogDescription) {
-    ogDescription = document.createElement("meta");
-    ogDescription.setAttribute("property", "og:description");
-    document.head.appendChild(ogDescription);
-  }
-  ogDescription.content = product.description;
-
-  let ogImage = document.querySelector('meta[property="og:image"]');
-  if (!ogImage) {
-    ogImage = document.createElement("meta");
-    ogImage.setAttribute("property", "og:image");
-    document.head.appendChild(ogImage);
-  }
-  ogImage.content = product.imgUrl;
-
-  // Actualizar Twitter meta tags
-  let twitterTitle = document.querySelector('meta[name="twitter:title"]');
-  if (!twitterTitle) {
-    twitterTitle = document.createElement("meta");
-    twitterTitle.name = "twitter:title";
-    document.head.appendChild(twitterTitle);
-  }
-  twitterTitle.content = product.title;
-
-  let twitterDescription = document.querySelector('meta[name="twitter:description"]');
-  if (!twitterDescription) {
-    twitterDescription = document.createElement("meta");
-    twitterDescription.name = "twitter:description";
-    document.head.appendChild(twitterDescription);
-  }
-  twitterDescription.content = product.description;
-
-  let twitterImage = document.querySelector('meta[name="twitter:image"]');
-  if (!twitterImage) {
-    twitterImage = document.createElement("meta");
-    twitterImage.name = "twitter:image";
-    document.head.appendChild(twitterImage);
-  }
-  twitterImage.content = product.imgUrl;
-}
-
-
-
-
-
+  
+    window.addEventListener("click", (event) => {
+      if (event.target === cartModal) {
+        cartModal.style.display = "none";
+      }
+    });
+  
     // Volver a la tienda
     backToStoreButton.addEventListener('click', () => {
       window.location.href = "index.html";  // Redirigir a la página principal
     });
-
+  
     const shirtImage = document.getElementById("shirt-image");
     const designPreview = document.getElementById("design-preview");
     const shirtColor = document.getElementById("shirt-color");
@@ -653,26 +752,26 @@ function updateMetaTags(product) {
     const designPositionX = document.getElementById("design-position-x");
     const designPositionY = document.getElementById("design-position-y");
     const uploadDesign = document.getElementById("upload-design");
-
+  
     // Cambiar color de la camiseta
     shirtColor.addEventListener("change", (e) => {
       shirtImage.src = e.target.value;
     });
-
+  
     // Cambiar tamaño del diseño
     designSize.addEventListener("input", (e) => {
       designPreview.style.width = e.target.value + "px";
     });
-
+  
     // Cambiar posición del diseño
     designPositionX.addEventListener("input", (e) => {
       designPreview.style.left = e.target.value + "px";
     });
-
+  
     designPositionY.addEventListener("input", (e) => {
       designPreview.style.top = e.target.value + "px";
     });
-
+  
     // Cargar diseño personalizado
     uploadDesign.addEventListener("change", (e) => {
       const file = e.target.files[0];
@@ -682,7 +781,7 @@ function updateMetaTags(product) {
           designPreview.src = event.target.result;
           designPreview.style.width = "100px"; // Tamaño predeterminado más pequeño
         };
-
+  
         reader.readAsDataURL(file);
       }
     });
