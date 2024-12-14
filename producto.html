@@ -806,8 +806,8 @@ header {
     </div>
   </footer>
   <script>
-     // Leer el ID del producto desde la URL
-     const productId = window.location.hash.slice(9) || "9999"; // Si no hay ID, usa la predeterminada 9999
+    // Leer el ID del producto desde la URL
+    const productId = window.location.hash.slice(9) || "9999"; // Si no hay ID, usa la predeterminada 9999
     console.log("Producto ID:", productId);  // Para depuración
 
     const productDetailsContainer = document.getElementById("product-details");
@@ -875,7 +875,7 @@ header {
                         ${product.id !== "9999" ? `<p id="product-id">ID: ${product.id}</p>` : ""} <!-- Mostrar ID solo si no es 9999 -->
                         <p id="product-description">${product.description}</p>
                         <p id="product-price" class="price">${product.id === "9999" ? "" : product.price + "€"}</p>
-                        <button id="add-to-cart-button" class="cart-button" style="display: ${product.shirtImageUrl === "NoTienePersonaliacionWeb" ? "none" : "block"};">
+                        <button id="add-to-cart-button" class="cart-button" style="display: ${product.id === "9999" ? "none" : "block"};">
                             <i class="fas fa-shopping-cart"></i> Pedir Producto
                         </button>
                         <div id="purchase-info" class="purchase-info" style="display: ${product.id === "9999" ? "none" : "block"};">
