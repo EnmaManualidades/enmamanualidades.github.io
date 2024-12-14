@@ -4,12 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Producto</title>
-  <link rel="icon" href="EnmaManualidadesLogo.png">
-  <link rel="shortcut icon" href="EnmaManualidadesLogoMini.png">
+  <link rel="icon" href="src/EnmaManualidadesLogo.png">
+  <link rel="shortcut icon" href="src/EnmaManualidadesLogoMini.png">
   <link rel="stylesheet" href="styles.css">
-  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     body {
@@ -603,7 +600,7 @@ header {
 <body>
   <header>
     <div id="profile-icon" class="icon"><a class="ancord-nav" style="color: #ffff;" href="/"><i class="fa-solid fa-house fa-lg"></i></a></div>
-    <a class="logo" href="/"><img src="EnmaManualidadesLogo.png" alt="Enma Manualidades"></a>
+    <a class="logo" href="/"><img src="src/EnmaManualidadesLogo.png" alt="Enma Manualidades"></a>
     <button id="copy-url-button">
       <i class="fa-solid fa-share-from-square"></i>
       </button>
@@ -705,8 +702,8 @@ header {
       <h2>Vista previa</h2>
       <p>Hazte una idea de cómo se verá tu producto.</p>
       <div class="preview">
-        <img id="shirt-image" src="camisas.png" alt="Camiseta">
-        <img id="design-preview" class="design-preview" src="EnmaManualidadesLogoMini.png" alt="Diseño">
+        <img id="shirt-image" src="src/camisas.png" alt="Camiseta">
+        <img id="design-preview" class="design-preview" src="src/EnmaManualidadesLogoMini.png" alt="Diseño">
       </div>
     </div>
 
@@ -788,7 +785,7 @@ header {
     
     <div class="footer-container">
       <div class="footer-logo">
-        <img width="100px" src="EnmaManualidadesLogoMini.png" alt="Enma Manualidades Logo">
+        <img width="100px" src="src/EnmaManualidadesLogoMini.png" alt="Enma Manualidades Logo">
       </div>
     </div>
 
@@ -810,7 +807,7 @@ header {
   </footer>
   <script>
     // Leer el ID del producto desde la URL
-    const productId = window.location.hash.slice(9);
+    const productId = window.location.hash.slice(9) || "9999"; // Si no hay ID, usa la predeterminada 9999
     console.log("Producto ID:", productId);  // Para depuración
 
     const productDetailsContainer = document.getElementById("product-details");
@@ -819,110 +816,122 @@ header {
     let products = [];
     let provinces = [];
     let municipalities = {};
+
+    // Producto predeterminado
+    const DEFAULT_PRODUCT = {
+        id: "9999",
+        title: "Producto no encontrado",
+        description: "Lo sentimos, no pudimos encontrar este producto.<div style=\"margin-bottom:120%;\"></div>",
+        price: "", // Sin precio para ID 9999
+        imgUrl: "src/imagen_no_disponible.png", // Ruta de la imagen predeterminada
+        shirtImageUrl: "NoTienePersonaliacionWeb",
+        thumbnails: []
+    };
   
     // Cargar productos desde el archivo JSON
     fetch("productos.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error al cargar el archivo JSON");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        products = data;
-        renderProductDetails(productId);
-      })
-      .catch((error) => {
-        console.error("Hubo un problema con la carga del JSON:", error);
-      });
-  
-      function renderProductDetails(id) {
-  const product = products.find(p => p.id == id);
-
-  if (product) {
-    // Cambiar el título del HTML
-    document.title = product.title;
-
-    // Actualizar las etiquetas meta
-    updateMetaTags(product);
-
-    const productDetails = document.getElementById("product-details");
-
-    // Limpiar contenido previo
-    productDetails.innerHTML = "";
-
-    // Imagen principal: Si shirtImageUrl es "NoTienePersonaliacionWeb" o vacío, usa imgUrl
-    const mainImageUrl = (product.shirtImageUrl === "NoTienePersonaliacionWeb" || product.shirtImageUrl === "") ? product.imgUrl : product.shirtImageUrl;
-
-    // Crear HTML dinámicamente
-    productDetails.innerHTML = `
-      <div class="product-container">
-        <div class="product-gallery">
-          <img id="main-image" src="${mainImageUrl}" alt="${product.title}">
-          <div class="thumbnail-gallery"></div>
-        </div>
-        <div class="product-info">
-          <h1 id="product-title">${product.title}</h1>
-          <p id="product-description">${product.description}</p>
-          <p id="product-price" class="price">${product.price}€</p>
-          <button id="add-to-cart-button" class="cart-button">
-            <i class="fas fa-shopping-cart"></i> Pedir Producto
-          </button>
-          <div id="purchase-info" class="purchase-info">
-            <p style="font-size: 0.9em; color: #555;">La compra se pagará a la hora de entregar el producto (excepto en casos especiales).</p>
-            <p style="font-size: 0.9em; color: #555;">Cuando recibamos sus datos, nos pondremos en contacto por <span style="color: green;">WhatsApp <i class="fa-brands fa-whatsapp"></i></span> mediante el teléfono proporcionado para pedir detalles como: color, nombre, imágenes, etc. (si son necesarios para la personalización).</p>
-          </div>
-        </div>
-      </div>
-    `;
-
-    // Manejar miniaturas dinámicamente
-    const thumbnailGallery = productDetails.querySelector(".thumbnail-gallery");
-
-    if (product.thumbnails && product.thumbnails.length > 0) {
-      product.thumbnails.forEach(src => {
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = "Miniatura";
-        img.addEventListener("click", () => {
-          document.getElementById("main-image").src = src;
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Error al cargar el archivo JSON");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            products = data;
+            renderProductDetails(productId);
+        })
+        .catch((error) => {
+            console.error("Hubo un problema con la carga del JSON:", error);
+            renderProductDetails("9999"); // Renderiza el producto predeterminado en caso de error
         });
-        thumbnailGallery.appendChild(img);
-      });
-    } else {
-      console.log("Este producto no tiene miniaturas.");
-    }
+  
+    function renderProductDetails(id) {
+        const product = products.find(p => p.id == id) || DEFAULT_PRODUCT; // Busca el producto o usa el predeterminado
+  
+        if (product) {
+            // Cambiar el título del HTML
+            document.title = product.title;
 
-    // Si el producto no tiene personalización web (cuando shirtImageUrl es "NoTienePersonaliacionWeb" o vacío), ocultamos el contenedor `.main-container`
-    const mainContainer = document.querySelector(".main-container");
-    if (mainContainer) {
-      if (product.shirtImageUrl === "NoTienePersonaliacionWeb" || product.shirtImageUrl === "") {
-        // Cambiar el src de la imagen de la vista previa a la predeterminada
-        const shirtImage = document.getElementById("shirt-image");
-        if (shirtImage) {
-          shirtImage.src = product.imgUrl || "NoFound.png"; // Establecemos la imagen predeterminada si no existe shirtImageUrl
+            // Actualizar las etiquetas meta
+            updateMetaTags(product);
+
+            const productDetails = document.getElementById("product-details");
+
+            // Limpiar contenido previo
+            productDetails.innerHTML = "";
+
+            // Imagen principal: Si no hay imagen personalizada, usa imgUrl
+            const mainImageUrl = product.imgUrl;
+
+            // Crear HTML dinámicamente
+            productDetails.innerHTML = `
+                <div class="product-container">
+                    <div class="product-gallery">
+                        <img id="main-image" src="${mainImageUrl}" alt="${product.title}">
+                        <div class="thumbnail-gallery"></div>
+                    </div>
+                    <div class="product-info">
+                        <h1 id="product-title">${product.title}</h1>
+                        <p id="product-description">${product.description}</p>
+                        <p id="product-price" class="price">${product.id === "9999" ? "" : product.price + "€"}</p>
+                        <button id="add-to-cart-button" class="cart-button" style="display: ${product.shirtImageUrl === "NoTienePersonaliacionWeb" ? "none" : "block"};">
+                            <i class="fas fa-shopping-cart"></i> Pedir Producto
+                        </button>
+                        <div id="purchase-info" class="purchase-info" style="display: ${product.shirtImageUrl === "NoTienePersonaliacionWeb" ? "none" : "block"};">
+                            <p style="font-size: 0.9em; color: #9b9b9b;">La compra se pagará a la hora de entregar el producto (excepto en casos especiales).</p>
+                            <p style="font-size: 0.9em; color: #9b9b9b;">Cuando recibamos sus datos, nos pondremos en contacto por <span style="color: green;">WhatsApp <i class="fa-brands fa-whatsapp"></i></span> mediante el teléfono proporcionado para pedir detalles como: color, nombre, imágenes, etc. (si son necesarios para la personalización).</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Manejar miniaturas dinámicamente
+            const thumbnailGallery = productDetails.querySelector(".thumbnail-gallery");
+            if (product.thumbnails && product.thumbnails.length > 0) {
+                product.thumbnails.forEach(src => {
+                    const img = document.createElement("img");
+                    img.src = src;
+                    img.alt = "Miniatura";
+                    img.addEventListener("click", () => {
+                        document.getElementById("main-image").src = src;
+                    });
+                    thumbnailGallery.appendChild(img);
+                });
+            } else {
+                console.log("Este producto no tiene miniaturas.");
+            }
+
+            // Si el producto no tiene personalización web, ocultar la vista previa
+            const mainContainer = document.querySelector(".main-container");
+            if (mainContainer) {
+                if (product.shirtImageUrl === "NoTienePersonaliacionWeb" || product.shirtImageUrl === "") {
+                    const shirtImage = document.getElementById("shirt-image");
+                    if (shirtImage) {
+                        shirtImage.src = product.imgUrl || "NoFound.png"; // Establecer imagen predeterminada
+                    }
+                    mainContainer.style.display = "none"; // Ocultar la vista previa
+                } else {
+                    mainContainer.style.display = "flex"; // Mostrar la vista previa
+                }
+            }
+
+            // Restaurar la imagen de la camiseta
+            const shirtImage = document.getElementById("shirt-image");
+            if (shirtImage) {
+                shirtImage.src = product.shirtImageUrl || "NoFound.png"; // Usar predeterminada si no está definida
+            }
+
+            // Agregar evento para el botón de carrito solo si no está oculto
+            const addToCartButton = document.getElementById("add-to-cart-button");
+            if (addToCartButton.style.display !== "none") {
+                addToCartButton.addEventListener("click", () => {
+                    cartModal.style.display = "block";
+                    document.getElementById("product-name").value = product.title;
+                });
+            }
         }
-        mainContainer.style.display = "none";  // Ocultar la vista previa
-      } else {
-        mainContainer.style.display = "flex";  // Mostrar la vista previa
-      }
     }
 
-    // Restaurar la imagen de la camiseta (shirt-image) con la URL de shirtImageUrl
-    const shirtImage = document.getElementById("shirt-image");
-    if (shirtImage) {
-      shirtImage.src = product.shirtImageUrl || "NoFound.png"; // Si shirtImageUrl es vacío, usa "NoFound.png"
-    }
-
-    // Agregar evento para el botón de carrito
-    const addToCartButton = document.getElementById("add-to-cart-button");
-    addToCartButton.addEventListener("click", () => {
-      cartModal.style.display = "block";
-      // Llenar automáticamente los campos del formulario con el producto actual
-      document.getElementById("product-name").value = product.title;
-    });
-  }
-}
 
     function updateMetaTags(product) {
       // Actualizar meta descripción
@@ -990,7 +999,7 @@ header {
     cartModal.id = "cart-modal";
     cartModal.innerHTML = `
       <div class="modal-content">
-        <img style= "height: 100px;" src="EnmaManualidadesLogo.png" alt="Enma Manualidades">
+        <img style= "height: 100px;" src="src/EnmaManualidadesLogo.png" alt="Enma Manualidades">
         <form action="https://formspree.io/f/mbljenpz" method="POST">
           <h3 style="color: #ffff;">Solicitud de Pedido</h3>
           <label>
