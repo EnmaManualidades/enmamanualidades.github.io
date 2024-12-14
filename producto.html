@@ -373,33 +373,44 @@ header {
   transition: all 0.2s ease; /* Añadido para que el movimiento y cambio de tamaño sean suaves */
 }
 #copy-url-button {
-  background: none;        /* Sin fondo */
-  border: none;            /* Sin borde */
-  color: white;            /* Texto blanco */
-  font-size: 16px;         /* Tamaño de texto */
-  cursor: pointer;        /* Aparece como cursor de clic */
-  padding: 5px 10px;       /* Espaciado alrededor del texto */
-  transition: color 0.3s, transform 0.3s; /* Efecto de transición suave */
+  background: none;      
+  border: none;            
+  color: white;          
+  font-size: 16px;         
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: color 0.3s, transform 0.3s;
 }
 
 #copy-url-button:hover {
-  color: #c7950c;          /* Cambio de color al pasar el ratón */
-  transform: scale(1.1);    /* Efecto de aumento al pasar el ratón */
+  color: #c7950c;          
+  transform: scale(1.1);    
 }
 
 #copy-url-button i {
-  margin-right: 8px;       /* Espaciado entre el icono y el texto */
+  margin-right: 8px;      
 }
 .ancord-nav {
   color: #ffff;
-  transition: color 0.3s, transform 0.3s; /* Efecto de transición suave */
+  transition: color 0.3s, transform 0.3s;
 }
 .ancord-nav i {
-  margin-right: 8px;       /* Espaciado entre el icono y el texto */
+  margin-right: 8px;       
 }
 .ancord-nav:hover {
   transform: scale(1.1)!important;
   color: #c7950c !important;
+}
+#default-message {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 /* Estilos para pantallas grandes */
 @media (min-width: 1130px) {
@@ -452,6 +463,17 @@ header {
     }
     .iframefootermap{
       display: none;
+    }
+    #default-message {
+      width: 100%;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
     }
   }
   
@@ -535,17 +557,27 @@ header {
     flex-direction: row;
   
     /* Habilitar scroll pero ocultar la barra */
-    overflow-y: scroll; /* Activar desplazamiento vertical */
-    max-height: 80vh; /* Limitar la altura máxima */
+    overflow-y: scroll;
+    max-height: 80vh;
     
     /* Ocultar scroll */
-    scrollbar-width: none; /* Para navegadores compatibles (Firefox) */
+    scrollbar-width: none;
   }
   
   #menu-container::-webkit-scrollbar {
     display: none; /* Para navegadores basados en WebKit (Chrome, Safari) */
   }
-
+  #default-message {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
   }
 
 @media screen  and (max-width: 767px) {
@@ -578,8 +610,79 @@ header {
   </header>
 
   <main>
+<!-- Mensaje predeterminado -->
+<div id="default-message">
+<!-- Título -->
+<h1 style="font-size: 3rem; margin: 40px; color: #d69928;">PRODUCTO NO ENCONTRADO <i class="fa-regular fa-circle-xmark fa-lg"></i></h1>
+
+<!-- Subtítulo -->
+<p style="font-size: 1.5rem; margin: 10px 0;">
+    Buscar otro producto en
+<a href="/" style="color: #3366CC;">Catalogo</a>
+</p>
+<br>
+<br>
+<!-- Icono de búsqueda con Font Awesome -->
+<div style="margin: 50px 50px;">
+    <i class="fa-solid fa-magnifying-glass fa-2xl" style="font-size: 10rem; color: #c48330;"></i>
+</div>
+<br>
+<br>
+<!-- Contacto -->
+<p style="font-size: 1.2rem; color: #ffffff;">
+    Contacto en <span style="color: #6bbb61; font-weight: bold;">whatsapp <i class="fa-brands fa-whatsapp fa-lg"></i> 642 70 25 29</span>
+</p>
+</div>
+
+
 
     
+    <script>
+      const defaultMessage = document.getElementById("default-message");
+      const productContainer = document.querySelector(".product-container");
+  
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            defaultMessage.style.display = "none";
+          }
+        });
+      });
+  
+      if (productContainer) {
+        observer.observe(productContainer);
+      }
+  
+      const hash = window.location.hash;
+      const productDetails = document.getElementById("product-details");
+  
+      if (!hash || hash.length <= 1) {
+        defaultMessage.style.display = "block";
+        productDetails.style.display = "none";
+      } else {
+        const productId = hash.slice(9);
+        fetch("productos.json")
+          .then(response => response.json())
+          .then(data => {
+            const product = data.find(p => p.id == productId);
+            if (product) {
+              renderProductDetails(productId);
+              productDetails.style.display = "block";
+            } else {
+              defaultMessage.style.display = "block";
+              productDetails.style.display = "none";
+            }
+          })
+          .catch(() => {
+            defaultMessage.style.display = "none";
+            productDetails.style.display = "block";
+          });
+      }
+  
+      function renderProductDetails(productId) {
+        productDetails.innerHTML = `<h1>Detalles del Producto ${productId}</h1>`;
+      }
+    </script>
     <script>
       document.getElementById("copy-url-button").addEventListener("click", function() {
         const productUrl = window.location.href; // Obtiene la URL completa, incluidas las partes después del '#'
@@ -596,9 +699,9 @@ header {
     <div id="product-details"></div>
 
   
-  <div class="main-container">
+  <div style="display: none;"class="main-container">
     <!-- Vista previa -->
-    <div class="preview-container">
+    <div  class="preview-container">
       <h2>Vista previa</h2>
       <p>Hazte una idea de cómo se verá tu producto.</p>
       <div class="preview">
