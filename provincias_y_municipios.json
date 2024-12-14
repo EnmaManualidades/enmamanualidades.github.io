@@ -1,0 +1,289 @@
+{
+  "provinces": [
+    "Madrid",
+    "Barcelona",
+    "Valencia",
+    "Sevilla",
+    "Zaragoza",
+    "Málaga",
+    "Murcia",
+    "Palma",
+    "Las Palmas",
+    "Bilbao",
+    "Alicante",
+    "Córdoba",
+    "Valladolid",
+    "Vigo",
+    "Gijón",
+    "L'Hospitalet de Llobregat",
+    "La Coruña",
+    "Granada",
+    "Elche",
+    "Cádiz",
+    "Badajoz",
+    "Cáceres",
+    "Castellón",
+    "La Rioja",
+    "Girona",
+    "Tarragona",
+    "Teruel",
+    "Huelva",
+    "Jaén",
+    "León",
+    "Lugo",
+    "Ourense",
+    "Soria",
+    "Segovia",
+    "Cuenca",
+    "Toledo",
+    "Albacete",
+    "Ávila",
+    "Segovia",
+    "Huesca",
+    "Almería",
+    "Salamanca",
+    "Valladolid",
+    "Palencia",
+    "Santa Cruz de Tenerife",
+    "Albacete",
+    "Guadalajara",
+    "Zamora",
+    "Álava",
+    "Cantabria",
+    "Ciudad Real",
+    "Pontevedra",
+    "Ceuta",
+    "Melilla"
+  ],
+  "municipalities": {
+    "Madrid": [
+      "Madrid Ciudad",
+      "Alcalá de Henares",
+      "Getafe",
+      "Fuenlabrada",
+      "Leganés",
+      "Alcobendas",
+      "Móstoles"
+    ],
+    "Barcelona": [
+      "Barcelona Ciudad",
+      "Badalona",
+      "L'Hospitalet de Llobregat",
+      "Santa Coloma de Gramenet",
+      "Sabadell",
+      "Terrassa",
+      "Mataró"
+    ],
+    "Valencia": [
+      "Valencia Ciudad",
+      "Gandía",
+      "Torrent",
+      "Paterna",
+      "Sagunto",
+      "Alzira",
+      "Xàtiva"
+    ],
+    "Sevilla": [
+      "Sevilla Ciudad",
+      "Alcalá de Guadaíra",
+      "Dos Hermanas",
+      "Mairena del Aljarafe",
+      "Écija",
+      "Coria del Río"
+    ],
+    "Zaragoza": [
+      "Zaragoza Ciudad",
+      "Ejea de los Caballeros",
+      "Utebo",
+      "Cuarte de Huerva",
+      "La Almunia de Doña Godina"
+    ],
+    "Málaga": [
+      "Málaga Ciudad",
+      "Marbella",
+      "Torremolinos",
+      "Benalmádena",
+      "Ronda",
+      "Estepona",
+      "Fuengirola"
+    ],
+    "Murcia": [
+      "Murcia Ciudad",
+      "Cartagena",
+      "Lorca",
+      "Cieza",
+      "Mazarrón",
+      "Águilas"
+    ],
+    "Palma": ["Palma de Mallorca", "Inca", "Manacor", "Marratxí", "Calviá"],
+    "Las Palmas": [
+      "Las Palmas de Gran Canaria",
+      "Telde",
+      "Arucas",
+      "Santa Lucía de Tirajana",
+      "San Bartolomé de Tirajana"
+    ],
+    "Bilbao": ["Bilbao Ciudad", "Getxo", "Barakaldo", "Portugalete", "Sestao"],
+    "Alicante": [
+      "Alicante Ciudad",
+      "Elche",
+      "Benidorm",
+      "Orihuela",
+      "Torrevieja",
+      "Alcoy"
+    ],
+    "Córdoba": ["Córdoba Ciudad", "Lucena", "Puente Genil", "Montilla", "Baena"],
+    "Valladolid": [
+      "Valladolid Ciudad",
+      "Medina del Campo",
+      "Laguna de Duero",
+      "Cigales",
+      "Íscar"
+    ],
+    "Vigo": ["Vigo Ciudad", "Pontevedra", "Cangas", "Redondela", "Baiona"],
+    "Gijón": ["Gijón Ciudad", "Avilés", "Mieres", "Langreo", "Candás"],
+    "Cádiz": [
+      "Cádiz Ciudad",
+      "Jerez de la Frontera",
+      "San Fernando",
+      "Chiclana de la Frontera",
+      "Algeciras",
+      "La Línea de la Concepción",
+      "El Puerto de Santa María"
+    ],
+    "Badajoz": [
+      "Badajoz Ciudad",
+      "Mérida",
+      "Don Benito",
+      "Villanueva de la Serena",
+      "Olivenza",
+      "Zafra"
+    ],
+    "Cáceres": [
+      "Cáceres Ciudad",
+      "Plasencia",
+      "Navalmoral de la Mata",
+      "Coria",
+      "Trujillo"
+    ],
+    "Castellón": [
+      "Castellón de la Plana",
+      "Vila-real",
+      "Oropesa del Mar",
+      "Benicàssim",
+      "Burriana"
+    ],
+    "La Rioja": ["Logroño", "Calahorra", "Arnedo", "Nájera", "Ezcaray"],
+    "Girona": ["Girona Ciudad", "Figueres", "Blanes", "Olot", "Salt"],
+    "Tarragona": ["Tarragona Ciudad", "Reus", "Salou", "Cambrils", "Valls"],
+    "Teruel": ["Teruel Ciudad", "Alcañiz", "Andorra", "Calamocha"],
+    "Huelva": ["Huelva Ciudad", "Lepe", "Ayamonte", "Moguer", "Punta Umbría"],
+    "Jaén": ["Jaén Ciudad", "Andújar", "Linares", "Úbeda", "Baeza"],
+    "León": [
+      "León Ciudad",
+      "Ponferrada",
+      "San Andrés del Rabanedo",
+      "Astorga",
+      "Villablino"
+    ],
+    "Lugo": ["Lugo Ciudad", "Monforte de Lemos", "Viveiro", "Ribadeo", "Burela"],
+    "Ourense": ["Ourense Ciudad", "Verín", "O Carballiño", "Allariz", "A Rúa"],
+    "Soria": [
+      "Soria Ciudad",
+      "Ólvega",
+      "Agreda",
+      "San Esteban de Gormaz",
+      "El Burgo de Osma"
+    ],
+    "Segovia": [
+      "Segovia Ciudad",
+      "Cuéllar",
+      "Cantalejo",
+      "Becerril de la Sierra",
+      "Carbonero el Mayor"
+    ],
+    "Cuenca": [
+      "Cuenca Ciudad",
+      "Mota del Cuervo",
+      "San Clemente",
+      "Tarancón",
+      "La Almarcha"
+    ],
+    "Toledo": [
+      "Toledo Ciudad",
+      "Talavera de la Reina",
+      "Illescas",
+      "Seseña",
+      "Sonseca"
+    ],
+    "Albacete": [
+      "Albacete Ciudad",
+      "Hellín",
+      "La Rasa",
+      "Villarrobledo",
+      "Almansa"
+    ],
+    "Ávila": [
+      "Ávila Ciudad",
+      "Arévalo",
+      "El Barraco",
+      "Cebreros",
+      "Hurtumpascual"
+    ],
+    "Huesca": ["Huesca Ciudad", "Jaca", "Barbastro", "Sabiñánigo", "Monzón"],
+    "Almería": ["Almería Ciudad", "El Ejido", "Roquetas de Mar", "Adra", "Níjar"],
+    "Salamanca": [
+      "Salamanca Ciudad",
+      "Béjar",
+      "Guijuelo",
+      "Peñaranda de Bracamonte",
+      "Ciudad Rodrigo"
+    ],
+    "Palencia": [
+      "Palencia Ciudad",
+      "Dueñas",
+      "Villamuriel de Cerrato",
+      "Osorno la Mayor",
+      "Alcázar de Sirga"
+    ],
+    "Santa Cruz de Tenerife": [
+      "Santa Cruz de Tenerife",
+      "San Cristóbal de La Laguna",
+      "La Orotava",
+      "Puerto de la Cruz",
+      "Los Realejos"
+    ],
+    "Guadalajara": [
+      "Guadalajara Ciudad",
+      "Azuqueca de Henares",
+      "Marchamalo",
+      "Yebes",
+      "Alcalá del Henares"
+    ],
+    "Zamora": ["Zamora Ciudad", "Benavente", "Toro", "Fuentesaúco", "Alcañices"],
+    "Álava": ["Vitoria-Gasteiz", "Laguardia", "Sestao", "Amurrio", "Agurain"],
+    "Cantabria": [
+      "Santander",
+      "Torrelavega",
+      "Laredo",
+      "Camargo",
+      "Castro Urdiales"
+    ],
+    "Ciudad Real": [
+      "Ciudad Real Ciudad",
+      "Alcázar de San Juan",
+      "Manzanares",
+      "Valdepeñas",
+      "Tomelloso"
+    ],
+    "Pontevedra": [
+      "Pontevedra Ciudad",
+      "Vigo",
+      "Vilanova de Arousa",
+      "Marín",
+      "Poio"
+    ],
+    "Ceuta": ["Ceuta Ciudad"],
+    "Melilla": ["Melilla Ciudad"]
+  }
+}
