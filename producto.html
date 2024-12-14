@@ -84,6 +84,9 @@
       color: white;
       border-radius: 5px;
     }
+    .control-panel button:hover {
+    background-color: #e6005c;
+  }
 
     main {
     display: flex;
@@ -280,11 +283,12 @@ header {
 
   .modal-content {
     position: relative;
-    background-color: #fff;
+    background-color: #681442;
     margin: 15% auto;
     padding: 20px;
     border-radius: 10px;
     width: 80%;
+    margin-top: 100px;
     max-width: 500px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
@@ -301,6 +305,68 @@ header {
 
   #close-modal:hover {
     color: #ff0066;
+  }
+
+  /* Estilos del formulario */
+  form {
+    background: #8c004c;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  form h2 {
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  form label {
+    display: block;
+    color: #fff;
+    margin-bottom: 5px;
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+
+  form select {
+    cursor: pointer;
+  }
+
+  form input[type="text"]:focus,
+  form input[type="email"]:focus,
+  form input[type="tel"]:focus,
+  form select:focus {
+    border-color: #ff0066;
+    outline: none;
+  }
+
+  form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff0066;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  form button:hover {
+    background-color: #e6005c;
   }
 
 /* Estilos para pantallas grandes */
@@ -519,7 +585,6 @@ header {
   <div class="modal-content">
     <span id="close-modal">&times;</span>
     <h2>Carrito de compras</h2>
-    <p>Aquí irá el contenido del carrito.</p>
     <!-- Aquí va el resumen del producto y un botón de confirmación -->
     <button id="confirm-purchase" class="cart-button">Confirmar compra</button>
   </div>
@@ -609,7 +674,7 @@ header {
               </button>
               <div id="purchase-info" class="purchase-info">
                 <p style="font-size: 0.9em; color: #555;">La compra se pagará a la hora de entregar el producto (excepto en casos especiales).</p>
-                <p style="font-size: 0.9em; color: #555;">Cuando recibamos sus datos, nos pondremos en contacto por <span style="color: green;">WhatsApp</span> mediante el teléfono proporcionado para pedir detalles como: color, nombre, imágenes, etc. (si son necesarios para la personalización).</p>
+                <p style="font-size: 0.9em; color: #555;">Cuando recibamos sus datos, nos pondremos en contacto por <span style="color: green;">WhatsApp <i class="fa-brands fa-whatsapp"></i></span> mediante el teléfono proporcionado para pedir detalles como: color, nombre, imágenes, etc. (si son necesarios para la personalización).</p>
               </div>
             </div>
           </div>
@@ -704,8 +769,7 @@ header {
     cartModal.id = "cart-modal";
     cartModal.innerHTML = `
       <div class="modal-content">
-        <h2>Carrito de compras</h2>
-        <p>Tu producto ha sido añadido al carrito.</p>
+        <img style= "height: 100px;" src="EnmaManualidadesLogo.png" alt="Enma Manualidades">
         <form action="https://formspree.io/f/mbljenpz" method="POST">
           <label>
             Producto:
@@ -729,9 +793,9 @@ header {
             <input type="text" name="municipality" id="municipality-input" placeholder="Escribe un municipio" required>
             <ul id="municipality-list" style="display:none;"></ul>
           </label>
-          <div id="purchase-info-popup" class="purchase-info-popup" style="font-size: 0.9em; color: #555;">
+          <div id="purchase-info-popup" class="purchase-info-popup" style="font-size: 0.9em; color: #cfcfcf;">
             <p>La compra se pagará a la hora de entregar el producto (excepto en casos especiales).</p>
-            <p>Cuando recibamos sus datos, nos pondremos en contacto por <span style="color: green;">WhatsApp</span> mediante el teléfono proporcionado para pedir detalles como: color, nombre, imágenes, etc. (si son necesarios para la personalización).</p>
+            <p>Cuando recibamos sus datos, nos pondremos en contacto por <span style="color: green;">WhatsApp <i class="fa-brands fa-whatsapp"></i></span> mediante el teléfono proporcionado para pedir detalles como: color, nombre, imágenes, etc. (si son necesarios para la personalización).</p>
           </div>
           <button type="submit">Confirmar compra</button>
         </form>
