@@ -368,7 +368,9 @@ header {
   form button:hover {
     background-color: #e6005c;
   }
-
+  #design-preview {
+  transition: all 0.2s ease; /* Añadido para que el movimiento y cambio de tamaño sean suaves */
+}
 /* Estilos para pantallas grandes */
 @media (min-width: 1130px) {
     #filters {
@@ -551,6 +553,7 @@ header {
     <!-- Vista previa -->
     <div class="preview-container">
       <h2>Vista previa</h2>
+      <p>Hazte una idea de cómo se verá tu producto.</p>
       <div class="preview">
         <img id="shirt-image" src="camisas.png" alt="Camiseta">
         <img id="design-preview" class="design-preview" src="EnmaManualidadesLogoMini.png" alt="Diseño">
@@ -562,14 +565,26 @@ header {
       <h3>Personalizar</h3>
       <label for="upload-design">Subir diseño (PNG)</label>
       <input type="file" id="upload-design" accept="image/png">
-      
-      <label for="shirt-color">Color de camiseta</label>
-      <select id="shirt-color">
-        <option value="shirt-black.png">Negra</option>
-        <option value="shirt-white.png">Blanca</option>
-        <option value="shirt-blue.png">Azul</option>
-      </select>
-
+      <script>
+        document.getElementById("upload-design").addEventListener("change", function(event) {
+          // Verificamos si el archivo fue seleccionado
+          const file = event.target.files[0];
+          
+          if (file) {
+            // Creamos un objeto URL para la imagen seleccionada
+            const reader = new FileReader();
+            
+            // Cuando la imagen es cargada, actualizamos el src del img
+            reader.onload = function(e) {
+              const designPreviewImage = document.getElementById("design-preview");
+              designPreviewImage.src = e.target.result;  // Establece la nueva imagen
+            };
+            
+            // Leemos la imagen como una URL de datos
+            reader.readAsDataURL(file);
+          }
+        });
+      </script>
       <label for="design-size">Tamaño del diseño (px)</label>
       <input type="range" id="design-size" min="20" max="200" value="150">
 
@@ -578,6 +593,32 @@ header {
 
       <label for="design-position-y">Posición Y (px)</label>
       <input type="range" id="design-position-y" min="0" max="300" value="150">
+      <script>
+        document.getElementById("design-size").addEventListener("input", function() {
+          const size = this.value; // Obtiene el tamaño de diseño
+          const designPreviewImage = document.getElementById("design-preview");
+          
+          // Establece el tamaño de la imagen (en píxeles)
+          designPreviewImage.style.width = `${size}px`;
+          designPreviewImage.style.height = `${size}px`; // Para mantener la proporción de la imagen
+        });
+
+        document.getElementById("design-position-x").addEventListener("input", function() {
+          const positionX = this.value; // Obtiene la posición X
+          const designPreviewImage = document.getElementById("design-preview");
+          
+          // Establece la posición en el eje X
+          designPreviewImage.style.left = `${positionX}px`;
+        });
+
+        document.getElementById("design-position-y").addEventListener("input", function() {
+          const positionY = this.value; // Obtiene la posición Y
+          const designPreviewImage = document.getElementById("design-preview");
+          
+          // Establece la posición en el eje Y
+          designPreviewImage.style.top = `${positionY}px`;
+        });
+      </script>
     </div>
   </div>  
 </main>
