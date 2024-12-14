@@ -806,8 +806,8 @@ header {
     </div>
   </footer>
   <script>
-    // Leer el ID del producto desde la URL
-    const productId = window.location.hash.slice(9) || "9999"; // Si no hay ID, usa la predeterminada 9999
+     // Leer el ID del producto desde la URL
+     const productId = window.location.hash.slice(9) || "9999"; // Si no hay ID, usa la predeterminada 9999
     console.log("Producto ID:", productId);  // Para depuración
 
     const productDetailsContainer = document.getElementById("product-details");
@@ -821,7 +821,7 @@ header {
     const DEFAULT_PRODUCT = {
         id: "9999",
         title: "Producto no encontrado",
-        description: "Lo sentimos, no pudimos encontrar este producto.<div style=\"margin-bottom:120%;\"></div>",
+        description: "Lo sentimos, no pudimos encontrar este producto.",
         price: "", // Sin precio para ID 9999
         imgUrl: "src/imagen_no_disponible.png", // Ruta de la imagen predeterminada
         shirtImageUrl: "NoTienePersonaliacionWeb",
@@ -872,12 +872,13 @@ header {
                     </div>
                     <div class="product-info">
                         <h1 id="product-title">${product.title}</h1>
+                        ${product.id !== "9999" ? `<p id="product-id">ID: ${product.id}</p>` : ""} <!-- Mostrar ID solo si no es 9999 -->
                         <p id="product-description">${product.description}</p>
                         <p id="product-price" class="price">${product.id === "9999" ? "" : product.price + "€"}</p>
                         <button id="add-to-cart-button" class="cart-button" style="display: ${product.shirtImageUrl === "NoTienePersonaliacionWeb" ? "none" : "block"};">
                             <i class="fas fa-shopping-cart"></i> Pedir Producto
                         </button>
-                        <div id="purchase-info" class="purchase-info" style="display: ${product.shirtImageUrl === "NoTienePersonaliacionWeb" ? "none" : "block"};">
+                        <div id="purchase-info" class="purchase-info" style="display: ${product.id === "9999" ? "none" : "block"};">
                             <p style="font-size: 0.9em; color: #9b9b9b;">La compra se pagará a la hora de entregar el producto (excepto en casos especiales).</p>
                             <p style="font-size: 0.9em; color: #9b9b9b;">Cuando recibamos sus datos, nos pondremos en contacto por <span style="color: green;">WhatsApp <i class="fa-brands fa-whatsapp"></i></span> mediante el teléfono proporcionado para pedir detalles como: color, nombre, imágenes, etc. (si son necesarios para la personalización).</p>
                         </div>
