@@ -84,20 +84,26 @@
     "thumbnails": [
       "src/productos/manta_1.png",
       "src/productos/manta_2.png",
-      "src/productos/manta_3.png"
+      "src/productos/manta_3.png",
+      "src/productos/manta_4.png"
     ]
   },
   {
     "id": 6,
-    "title": "Saco de semillas",
-    "description": "Sacos de semillas personalizados, ideales para aliviar tensiones musculares y mantener el calor de manera natural.",
-    "price": 10,
-    "category": "Sacos y Calentadores",
+    "title": "Carteras grabadas a láser",
+    "description": "Carteras grabadas a láser personalizadas , con imagenes y nombres a tu gusto, ideales para un regalo.",
+    "price": 15,
+    "category": "Accesorios Personalizados",
     "tags": [
-      "Sacos y Calentadores"
+      "Accesorios Personalizados"
     ],
-    "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "NoTienePersonaliacionWeb"
+    "imgUrl": "src/productos/cartera_laser_1.png",
+    "shirtImageUrl": "NoTienePersonaliacionWeb",
+    "thumbnails": [
+      "src/productos/cartera_laser_1.png",
+      "src/productos/cartera_laser_2.png",
+      "src/productos/cartera_laser_3.png"
+    ]
   },
   {
     "id": 7,
@@ -108,44 +114,53 @@
     "tags": [
       "Sacos y Calentadores"
     ],
-    "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "NoTienePersonaliacionWeb"
+    "imgUrl": "src/productos/calienta_pies_1.png",
+    "shirtImageUrl": "NoTienePersonaliacionWeb",
+    "thumbnails": [
+      "src/productos/calienta_pies_1.png",
+      "src/productos/calienta_pies_2.png",
+      "src/productos/calienta_pies_3.png"
+    ]
   },
   {
     "id": 8,
-    "title": "Calcetines Personalizados",
-    "description": "Calcetines personalizados con diseños divertidos o emotivos. El regalo perfecto para cualquier ocasión.",
-    "price": 8,
-    "category": "Calcetines",
-    "tags": [
-      "Calcetines"
-    ],
-    "imgUrl": "src/NoFound.png",
+    "title": "Joyero con Cajones",
+    "description": "Joyero con cajones personalizados, perfectos para decorar y guardar tus accesorios.",
+    "price": 23,
+    "category": "Decoración Personalizada",
+    "tags": ["Decoración Personalizada"],
+    "imgUrl": "src/productos/joyero_cajon.png",
     "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 9,
-    "title": "Botellas Personalizadas",
-    "description": "Botellas personalizadas ideales para mantenerte hidratado mientras muestras tu estilo único o mensaje especial.",
-    "price": 9,
-    "category": "tazas personalizadas",
-    "tags": [
-      "tazas personalizadas"
-    ],
-    "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "NoTienePersonaliacionWeb"
+    "title": "Joyero con Bandeja",
+    "description": "Joyero con bandeja, perfectos para decorar y guardar tus accesorios.",
+    "price": 19,
+    "category": "Decoración Personalizada",
+    "tags": ["Decoración Personalizada"],
+    "imgUrl": "src/productos/joyero_bandeja_2.png",
+    "shirtImageUrl": "NoTienePersonaliacionWeb",
+    "thumbnails": [
+      "src/productos/joyero_bandeja_2.png",
+      "src/productos/joyero_bandeja_1.png"
+    ]
   },
   {
     "id": 10,
-    "title": "Delantal Personalizado",
-    "description": "Delantales personalizados con diseños originales, perfectos para los amantes de la cocina o como regalo único.",
-    "price": 12.5,
-    "category": "Accesorios Personalizados",
+    "title": "Bolas de Navidad",
+    "description": "Bolas de Navidad personalizadas, ideales para decorar el arbol de Navidad con un toque familiar.",
+    "price": 5,
+    "category": "Decoración Personalizada",
     "tags": [
-      "Accesorios Personalizados"
+      "Decoración Personalizada"
     ],
-    "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "NoTienePersonaliacionWeb"
+    "imgUrl": "src/productos/bolas_navidad_1.png",
+    "shirtImageUrl": "NoTienePersonaliacionWeb",
+    "thumbnails": [
+      "src/productos/bolas_navidad_1.png",
+      "src/productos/bolas_navidad_2.png"
+    ]
   },
   {
     "id": 11,
@@ -154,7 +169,8 @@
     "price": 9,
     "category": "Accesorios de Resina",
     "tags": [
-      "Accesorios de Resina"
+      "Accesorios de Resina",
+      "Decoración Personalizada"
     ],
     "imgUrl": "src/productos/arbol_navidad_resina.png",
     "shirtImageUrl": "NoTienePersonaliacionWeb"
@@ -185,24 +201,29 @@
   },
   {
     "id": 14,
-    "title": "Detalle de Fotos",
-    "description": "Detalles de fotos personalizados, ideales para regalar y conservar momentos especiales de manera única.",
-    "price": 13,
-    "category": "Accesorios de Resina",
-    "tags": [
-      "Accesorios de Resina"
-    ],
-    "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "NoTienePersonaliacionWeb"
-  },
-  {
-    "id": 15,
     "title": "Marco de Fotos",
     "description": "Marcos de fotos personalizados, perfectos para mostrar tus recuerdos más queridos con un diseño exclusivo.",
     "price": 18,
     "category": "Accesorios de Resina",
     "tags": [
       "Accesorios de Resina"
+    ],
+    "imgUrl": "src/productos/marcos_personalizados_resina_3.png",
+    "shirtImageUrl": "NoTienePersonaliacionWeb",
+    "thumbnails": [
+      "src/productos/marcos_personalizados_resina_3.png",
+      "src/productos/marcos_personalizados_resina_1.png",
+      "src/productos/marcos_personalizados_resina_2.png"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Botellas Personalizadas",
+    "description": "Botellas personalizadas ideales para mantenerte hidratado mientras muestras tu estilo único o mensaje especial.",
+    "price": 9,
+    "category": "tazas personalizadas",
+    "tags": [
+      "tazas personalizadas"
     ],
     "imgUrl": "src/NoFound.png",
     "shirtImageUrl": "NoTienePersonaliacionWeb"
@@ -539,21 +560,25 @@
   },
   {
     "id": 48,
-    "title": "Relojes Personalizados",
-    "description": "Relojes personalizados, elegantes y únicos, perfectos para regalar o como accesorio personal.",
-    "price": 25,
-    "category": "Accesorios Personalizados",
-    "tags": ["Accesorios Personalizados"],
+    "title": "Calcetines Personalizados",
+    "description": "Calcetines personalizados con diseños divertidos o emotivos. El regalo perfecto para cualquier ocasión.",
+    "price": 8,
+    "category": "Calcetines",
+    "tags": [
+      "Calcetines"
+    ],
     "imgUrl": "src/NoFound.png",
     "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 49,
-    "title": "Reloj de Pared",
-    "description": "Relojes de pared personalizados, ideales para decorar y darle un toque único a cualquier habitación.",
-    "price": 18,
-    "category": "Decoración Personalizados",
-    "tags": ["Decoración Personalizados"],
+    "title": "Saco de semillas",
+    "description": "Sacos de semillas personalizados, ideales para aliviar tensiones musculares y mantener el calor de manera natural.",
+    "price": 10,
+    "category": "Sacos y Calentadores",
+    "tags": [
+      "Sacos y Calentadores"
+    ],
     "imgUrl": "src/NoFound.png",
     "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
