@@ -25,7 +25,11 @@ menuOverlay.addEventListener("click", (e) => {
     document.body.style.overflow = "auto"; // Rehabilitar scroll
   }
 });
+// Seleccionamos el contenedor de carga
+const loadingPlaceholder = document.getElementById("loading-placeholder");
 
+// Mostrar el placeholder antes de hacer la petición
+loadingPlaceholder.style.display = "flex";
 // Cargar productos desde el archivo JSON
 fetch("productos.json")
   .then((response) => {
@@ -39,6 +43,8 @@ fetch("productos.json")
     renderNextProducts(); // Carga los primeros productos
     fillTagFilter(allProducts);
     setupFilters(allProducts);
+    // Ocultar los "divs" de carga cuando los productos se han cargado
+    loadingPlaceholder.style.display = "none";
 
     // Configurar eventos de clic para los elementos del menú
     menuItems.forEach((item) => {

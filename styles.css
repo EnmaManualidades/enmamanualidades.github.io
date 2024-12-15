@@ -123,7 +123,120 @@ body {
     justify-content: center;
     padding: 20px;
   }
-  
+  #pagination{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+/* Estilos para los contenedores de carga */
+.loading-placeholder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.loading-item {
+  background-color: #5c2641;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 10px;
+  animation: loadingAnimation 1.5s infinite ease-in-out;
+}
+
+.loading-item:nth-child(1) {
+  background-color: #5c2641;
+  width: 340px;
+  height: 400px;
+  margin: 10px;
+}
+
+.loading-item:nth-child(2) {
+  background-color: #5c2641;
+  width: 340px;
+  height: 400px;
+  margin: 10px;
+}
+
+.loading-item:nth-child(3) {
+  background-color: #5c2641;
+  width: 340px;
+  height: 400px;
+  margin: 10px;
+}
+
+.loading-item:nth-child(4) {
+  background-color: #5c2641;
+  width: 340px;
+  height: 400px;
+  margin: 10px;
+}
+.loading-item:nth-child(5) {
+  background-color: #5c2641;
+  width: 340px;
+  height: 400px;
+  margin: 10px;
+}
+.loading-item:nth-child(6) {
+  background-color: #5c2641;
+  width: 340px;
+  height: 400px;
+  margin: 10px;
+}
+.loading-item:nth-child(7) {
+  background-color: #5c2641;
+  width: 340px;
+  height: 400px;
+  margin: 10px;
+}
+.loading-item:nth-child(8) {
+  background-color: #5c2641;
+  width: 340px;
+  height: 400px;
+  margin: 10px;
+}
+
+/* Animación de "skeleton loading" */
+@keyframes loadingAnimation {
+  0% {
+    background-color: #720c36;
+  }
+  50% {
+    background-color: #cc7f38;
+  }
+  100% {
+    background-color: #58102e;
+  }
+}
+
+.loading-item {
+  position: relative;
+}
+
+.loading-box {
+  background-color: rgba(230, 218, 204, 0.164);
+  border-radius: 10px;
+  width: 88%;
+  height: 60%;
+  position: relative;
+  top: 30px;
+  left: 20px;
+}
+
+.loading-box.small {
+  height: 10%;
+  top: 50px;
+}
+
+.loading-box.small:nth-child(3) {
+  top: 60px;
+}
+
   .card {
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
