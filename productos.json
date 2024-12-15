@@ -159,7 +159,8 @@
     "shirtImageUrl": "NoTienePersonaliacionWeb",
     "thumbnails": [
       "src/productos/bolas_navidad_1.png",
-      "src/productos/bolas_navidad_2.png"
+      "src/productos/bolas_navidad_2.png",
+      "src/productos/bolas_navidad_3.png"
     ]
   },
   {
@@ -177,15 +178,18 @@
   },
   {
     "id": 12,
-    "title": "Calcetines de Navidad",
-    "description": "Calcetines de Navidad personalizados para añadir un toque especial y festivo a la temporada navideña.",
-    "price": 10,
-    "category": "Calcetines",
-    "tags": [
-      "Calcetines"
-    ],
-    "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "NoTienePersonaliacionWeb"
+    "title": "Jarras de Cerveza",
+    "description": "Jarras de cerveza personalizadas, perfectas para disfrutar de tus bebidas favoritas con un diseño especial.",
+    "price": 9,
+    "category": "tazas personalizadas",
+    "tags": ["tazas personalizadas"],
+    "imgUrl": "src/productos/jarras_de_cerveza_2.png",
+    "shirtImageUrl": "NoTienePersonaliacionWeb",
+    "thumbnails": [
+      "src/productos/jarras_de_cerveza_2.png",
+      "src/productos/jarras_de_cerveza_1.png",
+      "src/productos/jarras_de_cerveza_3.png"
+    ]
   },
   {
     "id": 13,
@@ -196,8 +200,12 @@
     "tags": [
       "Decoración Personalizada"
     ],
-    "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "NoTienePersonaliacionWeb"
+    "imgUrl": "src/productos/lienzos_img_2.png",
+    "shirtImageUrl": "NoTienePersonaliacionWeb",
+        "thumbnails": [
+          "src/productos/lienzos_img_2.png",
+          "src/productos/lienzos_img_1.png"
+        ]
   },
   {
     "id": 14,
@@ -218,15 +226,20 @@
   },
   {
     "id": 15,
-    "title": "Botellas Personalizadas",
-    "description": "Botellas personalizadas ideales para mantenerte hidratado mientras muestras tu estilo único o mensaje especial.",
-    "price": 9,
-    "category": "tazas personalizadas",
+    "title": "LLavero de Pared Personalizado",
+    "description": "LLavero de pared personalizado, ideal para decorar y darle un toque único a cualquier habitación.",
+    "price": 15,
+    "category": "Decoración Personalizada",
     "tags": [
-      "tazas personalizadas"
+      "Decoración Personalizada"
     ],
-    "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "NoTienePersonaliacionWeb"
+    "imgUrl": "src/productos/llavero_pared_3.png",
+    "shirtImageUrl": "NoTienePersonaliacionWeb",
+    "thumbnails": [
+      "src/productos/llavero_pared_3.png",
+      "src/productos/llavero_pared_2.png",
+      "src/productos/llavero_pared_1.png"
+    ]
   },
   {
     "id": 16,
@@ -430,11 +443,13 @@
   },
   {
     "id": 35,
-    "title": "Jarras de Cerveza",
-    "description": "Jarras de cerveza personalizadas, perfectas para disfrutar de tus bebidas favoritas con un diseño especial.",
-    "price": 9,
-    "category": "Accesorios Personalizados",
-    "tags": ["Accesorios Personalizados"],
+    "title": "Calcetines de Navidad",
+    "description": "Calcetines de Navidad personalizados para añadir un toque especial y festivo a la temporada navideña.",
+    "price": 10,
+    "category": "Calcetines",
+    "tags": [
+      "Calcetines"
+    ],
     "imgUrl": "src/NoFound.png",
     "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
