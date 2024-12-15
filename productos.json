@@ -6,12 +6,12 @@
     "price": 12,
     "category": "Camisetas",
     "tags": ["Camisetas"],
-    "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png",
+    "imgUrl": "src/productos/camiseta_sublimada.png",
+    "shirtImageUrl": "src/camiseta_blanco.png",
     "thumbnails": [
-      "src/NoFound.png",
-      "src/NoFound.png",
-      "src/NoFound.png"
+      "src/productos/camiseta_sublimada.png",
+      "src/productos/camiseta_sublimada_2.png",
+      "src/productos/camiseta_sublimada_3.png"
     ]
   },
   {
@@ -23,12 +23,13 @@
     "tags": [
       "Camisetas"
     ],
-    "imgUrl": "src/productos/camisas.png",
-    "shirtImageUrl": "src/productos/camisas.png",
+    "imgUrl": "src/productos/camisas_2.png",
+    "shirtImageUrl": "src/camiseta_negro.png",
     "thumbnails": [
-      "src/productos/camisas.png",
-      "src/productos/camisas.png",
-      "src/productos/conjunto2.png"
+      "src/productos/camisas_2.png",
+      "src/productos/camisas_1.png",
+      "src/productos/camisas_3.png",
+      "src/productos/camisas_4.png"
     ]
   },
   {
@@ -41,7 +42,14 @@
       "tazas personalizadas"
     ],
     "imgUrl": "src/productos/tazas.png",
-    "shirtImageUrl": "src/productos/tazas.png"
+    "thumbnails": [
+      "src/productos/tazas.png",
+      "src/productos/tazas_sublimada_1.png",
+      "src/productos/tazas_sublimada_2.png",
+      "src/productos/tazas_sublimada_3.png"
+
+    ],
+    "shirtImageUrl": "src/taza_blanco.png"
   },
   {
     "id": 4,
@@ -52,12 +60,14 @@
     "tags": [
       "tazas personalizadas"
     ],
-    "imgUrl": "src/productos/tazas.png",
+    "imgUrl": "src/productos/tazas3d.png",
     "shirtImageUrl": "NoTienePersonaliacionWeb",
     "thumbnails": [
       "src/productos/tazas3d.png",
-      "src/productos/tazas3d.png",
-      "src/taza3d.png"
+      "src/productos/tazas3d_2.png",
+      "src/productos/tazas3d_3.png",
+      "src/productos/tazas3d_4.png",
+      "src/productos/tazas3d_5.png"
     ]
   },
   {
@@ -69,8 +79,13 @@
     "tags": [
       "mantas y cojines"
     ],
-    "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "imgUrl": "src/productos/manta_1.png",
+    "shirtImageUrl": "NoTienePersonaliacionWeb",
+    "thumbnails": [
+      "src/productos/manta_1.png",
+      "src/productos/manta_2.png",
+      "src/productos/manta_3.png"
+    ]
   },
   {
     "id": 6,
@@ -82,7 +97,7 @@
       "Sacos y Calentadores"
     ],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 7,
@@ -118,7 +133,7 @@
       "tazas personalizadas"
     ],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 10,
@@ -130,7 +145,7 @@
       "Accesorios Personalizados"
     ],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 11,
@@ -141,8 +156,8 @@
     "tags": [
       "Accesorios de Resina"
     ],
-    "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "imgUrl": "src/productos/arbol_navidad_resina.png",
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 12,
@@ -154,7 +169,7 @@
       "Calcetines"
     ],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 13,
@@ -166,7 +181,7 @@
       "Decoración Personalizada"
     ],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 14,
@@ -178,7 +193,7 @@
       "Accesorios de Resina"
     ],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 15,
@@ -190,7 +205,7 @@
       "Accesorios de Resina"
     ],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 16,
@@ -202,7 +217,7 @@
       "Accesorios de Resina"
     ],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 17,
@@ -214,7 +229,7 @@
       "Accesorios de Resinas"
     ],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 18,
@@ -226,7 +241,7 @@
       "Accesorios Personalizados"
     ],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 19,
@@ -238,7 +253,7 @@
       "Bebes"
     ],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 20,
@@ -250,7 +265,7 @@
       "Juguetes"
     ],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 21,
@@ -260,7 +275,7 @@
     "category": "Bebes",
     "tags": ["Bebes"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 22,
@@ -270,7 +285,7 @@
     "category": "Accesorios Personalizados",
     "tags": ["Accesorios Personalizados"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 23,
@@ -280,7 +295,7 @@
     "category": "Bebes",
     "tags": ["Bebes"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 24,
@@ -290,7 +305,7 @@
     "category": "Toallas",
     "tags": ["Toallas"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 25,
@@ -300,7 +315,7 @@
     "category": "Toallas",
     "tags": ["Toallas"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 26,
@@ -310,7 +325,7 @@
     "category": "Bebes",
     "tags": ["Bebes"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 27,
@@ -320,7 +335,7 @@
     "category": "Decoración Personalizados",
     "tags": ["Decoración Personalizados"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 28,
@@ -330,7 +345,7 @@
     "category": "Bebes",
     "tags": ["Bebes"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 29,
@@ -340,7 +355,7 @@
     "category": "Bebes",
     "tags": ["Bebes"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 30,
@@ -350,7 +365,7 @@
     "category": "Bebes",
     "tags": ["Bebes"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 31,
@@ -360,7 +375,7 @@
     "category": "Bebes",
     "tags": ["Bebes"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 32,
@@ -370,7 +385,7 @@
     "category": "Decoración Personalizados",
     "tags": ["Decoración Personalizados"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 33,
@@ -380,7 +395,7 @@
     "category": "Decoración Personalizados",
     "tags": ["Decoración Personalizados"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 34,
@@ -390,7 +405,7 @@
     "category": "Accesorios Personalizados",
     "tags": ["Accesorios Personalizados"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 35,
@@ -400,7 +415,7 @@
     "category": "Accesorios Personalizados",
     "tags": ["Accesorios Personalizados"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 36,
@@ -410,7 +425,7 @@
     "category": "Mantas Cojines",
     "tags": ["Mantas Cojines"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 37,
@@ -420,7 +435,7 @@
     "category": "Mantas Cojines",
     "tags": ["Mantas Cojines"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 38,
@@ -430,7 +445,7 @@
     "category": "Bebes",
     "tags": ["Bebes"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 39,
@@ -440,7 +455,7 @@
     "category": "Bolsos",
     "tags": ["Bolsos"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 40,
@@ -450,7 +465,7 @@
     "category": "Bolsos",
     "tags": ["Bolsos"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 41,
@@ -460,7 +475,7 @@
     "category": "Informatica",
     "tags": ["Informatica"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 42,
@@ -470,7 +485,7 @@
     "category": "Informatica",
     "tags": ["Informatica"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 43,
@@ -480,7 +495,7 @@
     "category": "Ropa",
     "tags": ["Ropa"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 44,
@@ -490,7 +505,7 @@
     "category": "Ropa",
     "tags": ["Ropa"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 45,
@@ -500,7 +515,7 @@
     "category": "Tazas",
     "tags": ["Tazas"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 46,
@@ -510,7 +525,7 @@
     "category": "Accesorios Personalizados",
     "tags": ["Accesorios Personalizados"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 47,
@@ -520,7 +535,7 @@
     "category": "Accesorios Personalizados",
     "tags": ["Accesorios Personalizados"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 48,
@@ -530,7 +545,7 @@
     "category": "Accesorios Personalizados",
     "tags": ["Accesorios Personalizados"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 49,
@@ -540,7 +555,7 @@
     "category": "Decoración Personalizados",
     "tags": ["Decoración Personalizados"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 50,
@@ -550,7 +565,7 @@
     "category": "Accesorios Personalizados",
     "tags": ["Accesorios Personalizados"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 51,
@@ -560,7 +575,7 @@
     "category": "Decoración Personalizados",
     "tags": ["Decoración Personalizados"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 52,
@@ -570,7 +585,7 @@
     "category": "Bebes",
     "tags": ["Bebes"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   },
   {
     "id": 53,
@@ -580,7 +595,7 @@
     "category": "Bebes",
     "tags": ["Bebes"],
     "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "src/NoFound.png"
+    "shirtImageUrl": "NoTienePersonaliacionWeb"
   }
   
 ]
