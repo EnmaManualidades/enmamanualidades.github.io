@@ -243,7 +243,7 @@
           Puede mandarme más detalles?
           <animate attributeName="opacity" from="0" to="1" begin="1s" dur="0.5s" fill="freeze" />
         </text>
-        <image id="imageToallaTaza" x="115" y="220" width="200" height="200" href="src/conjuntos.png" opacity="1">
+        <image id="imageToallaTaza" x="115" y="210" width="200" height="200" href="src/productos/tazas3d_2.png" opacity="1">
           <animate attributeName="opacity" from="0" to="1" begin="1.5s" dur="0.5s" fill="freeze" />
         </image>
         
@@ -294,9 +294,9 @@
       
           setInterval(() => {
             if (isToalla) {
-              imageElement.setAttribute('href', 'src/tazas.png'); // Cambiar a taza
+              imageElement.setAttribute('href', 'src/productos/camisas_2.png'); // Cambiar a taza
             } else {
-              imageElement.setAttribute('href', 'src/conjuntos.png'); // Cambiar a toalla
+              imageElement.setAttribute('href', 'src/productos/tazas3d_3.png'); // Cambiar a toalla
             }
             isToalla = !isToalla; // Alternar entre toalla y taza
           }, 5000); // Cambiar cada 5 segundos
