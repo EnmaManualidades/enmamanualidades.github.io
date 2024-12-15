@@ -3,410 +3,276 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mas Sobre Enma Manualidades</title>
-  <link rel="icon" href="src/EnmaManualidadesLogo.png">
-  <link rel="shortcut icon" href="src/EnmaManualidadesLogoMini.png">
-  <link rel="stylesheet" href="styles.css">
+  <title>Sobre Enma Manualidades</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
+    * {
+      color: #ffff;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #4d004d;
+      background: linear-gradient(
+        180deg,
+        rgba(128, 25, 93, 1) 0%,
+        rgba(30, 9, 28, 1) 45.5%,
+        rgba(11, 27, 36, 1) 58%,
+        rgba(30, 78, 32, 1) 100%
+      );
+      color: white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+    header nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-direction: row;
+    color: white;
+    }
+    header nav a {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Asegura que el texto y el ícono estén alineados */
+    gap: 5px; /* Espacio entre texto e ícono */
+    transition: color 0.4s ease, text-shadow 0.4s ease; /* Animación suave para color y sombra */
+    }
+  /* Hover para pantallas normales */
+  header nav a:hover span {
+    color: rgb(224, 156, 30); /* Color del texto al pasar el cursor */
+    text-shadow: 0px 0px 8px rgba(224, 156, 30, 0.8); /* Efecto de brillo */
+    transition: color 0.4s ease; /* Animación para el color del ícono */
+  }
+
+  /* Hover general del ícono (sin cambiar) */
+  header nav a:hover i {
+    color: rgb(224, 156, 30); /* Asegura que el ícono también cambie */
+    transition: color 0.4s ease; /* Animación para el color del ícono */
+  }
+
+    header nav a:hover {
+      color: rgb(224, 156, 30); /* Color del hover */
+      text-shadow: 0px 0px 8px rgba(224, 156, 30, 0.8); /* Agrega un efecto de brillo */
+    }
+
+    header nav a:hover i {
+      color: rgb(224, 156, 30); /* Asegura que el ícono tenga el mismo color durante el hover */
+    }
+
+
+    
+    header img {
+      max-width: 150px;
+    }
+
+    .logowhatasapp {
+      width: 40%;
+      margin: auto;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      width: 100%;
+    }
+    .about-section {
+      flex-direction: row;
+      background: none;
+    }
+    .about-content {
+      width: 50%;
+      padding: 20px;
+      text-align: left;
+    }
+    .about-content h1 {
+      font-size: 2.5rem;
+      color: #ffcc00;
+    }
+    .about-content p {
+      font-size: 1.2rem;
+      margin: 15px 0;
+    }
+    .about-image {
+      width: 50%;
+      text-align: center;
+    }
+    .about-image img {
+      max-width: 300px;
+      border-radius: 50%;
+    }
+    .whatsapp-section {
+      flex-direction: row;
+      background: none;
+    }
+    .whatsapp-logo {
+      width: 50%;
+      text-align: center;
+    }
+    .whatsapp-logo img {
+      max-width: 200px;
+    }
+    .whatsapp-content {
+      width: 45%;
+      text-align: left;
+      padding: 20px;
+    }
+    .whatsapp-content p {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+    .whatsapp-content a {
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    footer {
+      background-color: #2c2c2c;
+      padding: 20px;
+      text-align: center;
       color: white;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #4d004d;
-    }
-
-
-
-    .preview img {
-      max-width: 300px;
-    }
-
-    .design-preview {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      width: 100px;
-    }
-
-
-    main {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-radius: 10px;
-    flex-wrap: nowrap;
-}
-.product-detail {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  background: linear-gradient(95.4deg, rgb(156 100 137) 0%, rgb(156 156 156) 100%);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  margin: 10px;
-  color: black;
-}
-
-.logo {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    margin-left: 40%;
-}
-  
-.logo img {
-    width: 25%;
-    height: 100%;
-    object-fit: contain;
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    flex-wrap: nowrap;
-    flex-direction: row;
-}
-
-
-
-#back-to-store {
-  background-color: #800080;
-  color: white;
-  border: none;
-  display: flex
-;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border-radius: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-}
-  
-  #back-to-store:hover {
-    background-color: #aa00aa;
-  }
-  
-  .cart-icon {
-    font-size: 20px;
+    @media (max-width: 768px) {
+  header nav a span {
+    display: none; /* Oculta el texto en los enlaces del menú */
   }
 
-  
-  .hidden {
-    display: none;
-  }
-  
-  /* Carrito */
-  #cart-popup {
-    position: fixed;
-    top: 20%;
-    right: 20px;
-    background: #fff;
-    color: #000;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-  }
-  
-  #cart-popup h3 {
-    margin: 0 0 10px;
+  header nav a i {
+    font-size: 1.5rem; /* Ajusta el tamaño del ícono para ser más visible */
   }
 
-
-  h1 {
-    font-size: 24px;
-    color: #ff0066;
+  section.about-section {
+    flex-direction: column; /* Las imágenes y texto en vertical */
   }
 
-  
-  
-.ancord-nav {
-  color: #ffff;
-  transition: color 0.3s, transform 0.3s;
-}
-.ancord-nav i {
-  margin-right: 8px;       
-}
-.ancord-nav:hover {
-  transform: scale(1.1)!important;
-  color: #c7950c !important;
-}
-#default-message {
-  width: 100%;
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-/* Estilos para pantallas grandes */
-@media (min-width: 1130px) {
-    #filters {
-      position: fixed;
-      width: 200px;
-    }
-    #menu-button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-      }
-      
-      #menu-button img {
-        width: 20%;
-        height: 100%;
-        object-fit: contain;
-      }
-      footer {
-        bottom: 0;
-        height: 0;
-        width: 100%;
-        padding: 10px 20px;
-        background-color: rgba(0, 0, 0, 0.2);
-        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-evenly;
-      }
-    footer .footer-container {
-      display: flex;
-      align-items: center;
-    }
-    footer .footer-logo {
-      margin-right: 20px;
-    }
-    footer .footer-info {
-      align-items: center;
-      gap: 10px;
-    }
-    footer .footer-info a {
-      color: #fff;
-      text-decoration: none;
-    }
-    footer p {
-      margin: 0;
-      font-size: 14px;
-      color: #fff;
-    }
-    .iframefootermap{
-      display: none;
-    }
-    #default-message {
-      width: 100%;
-      height: 60vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-  }
-  
-  /* Estilos para pantallas pequeñas */
-  @media (max-width: 767px) {
-    .logo img {
-      width: 45%;
-      height: 100%;
-      object-fit: contain;
-  }
-    #filters {
-      width: 100%;
-      position: relative;
-      margin: 10px 10px;
-    }
-    #menu-button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-      }
-      
-      #menu-button img {
-        width: 45%;
-        height: 100%;
-        object-fit: contain;
-      }
-      footer {
-        bottom: 0;
-        height: 0;
-        width: 100%;
-        padding: 10px 20px;
-        background-color: rgba(0, 0, 0, 0.2);
-        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-evenly;
-      }
-    footer .footer-container {
-      display: flex;
-      align-items: center;
-    }
-    footer .footer-logo {
-      margin-right: 20px;
-    }
-    footer .footer-info {
-      align-items: center;
-      gap: 10px;
-    }
-    footer .footer-info a {
-      color: #fff;
-      text-decoration: none;
-    }
-    footer p {
-      margin: 0;
-      font-size: 14px;
-      color: #fff;
-    }
-    .iframefootermap{
-      display: none;
-    }
-
-    #products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      padding: 20px;
-      width: 100%;
+  .about-content, .about-image {
+    width: 100%; /* Ocupa todo el ancho */
+    text-align: center;
   }
 
-  #menu-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    color: #fff;
-    margin-left: 10px;
-    margin-right: 10px;
-    flex-direction: row;
-  
-    /* Habilitar scroll pero ocultar la barra */
-    overflow-y: scroll;
-    max-height: 80vh;
-    
-    /* Ocultar scroll */
-    scrollbar-width: none;
-  }
-  
-  #menu-container::-webkit-scrollbar {
-    display: none; /* Para navegadores basados en WebKit (Chrome, Safari) */
-  }
-  #default-message {
-  width: 100%;
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
+  .about-content p {
+    margin: 10px 0; /* Ajusta los márgenes */
   }
 
-@media screen  and (max-width: 767px) {
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    flex-wrap: nowrap;
+  .about-image img {
+    max-width: 80%; /* Ajusta el tamaño de las imágenes */
+  }
+
+  .whatsapp-section {
+    flex-direction: column; /* Ordena en columna */
+    align-items: center; /* Centra el contenido */
+  }
+
+  .whatsapp-logo, .whatsapp-content {
+    width: 100%; /* Ocupa todo el ancho */
+    text-align: center;
+  }
+  .logowhatasapp {
+      width: 90%!important;
+      height: auto;
+    }
 }
-.main-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column-reverse;
-    flex-wrap: nowrap;
-}
-}
+
   </style>
 </head>
 <body>
   <header>
-    <div id="profile-icon" class="icon"><a class="ancord-nav" style="color: #ffff;" href="/"><i class="fa-solid fa-house fa-lg"></i></a></div>
-    <a class="logo" href="/"><img src="src/EnmaManualidadesLogo.png" alt="Enma Manualidades"></a>
-  </header>
-
-  <main>
-<!-- Mensaje predeterminado -->
-<div id="default-message">
-<!-- Título -->
-<h1 style="font-size: 3rem; margin: 40px; color: #d69928;">APARTADO NO ENCONTRADO <i class="fa-regular fa-circle-xmark fa-lg"></i></h1>
-
-<!-- Subtítulo -->
-<p style="font-size: 1.5rem; margin: 10px 0;">
-    Encuentra lo que buscas en
-<a href="/" style="color: #3366CC;">EnmaManualidades.com</a>
-</p>
-<br>
-<br>
-<!-- Icono de búsqueda con Font Awesome -->
-<div style="margin: 50px 50px;">
-    <i class="fa-solid fa-magnifying-glass fa-2xl" style="font-size: 10rem; color: #c48330;"></i>
-</div>
-<br>
-<br>
-<!-- Contacto -->
-<p style="font-size: 1.2rem; color: #ffffff;">
-    Contacto en <span style="color: #6bbb61; font-weight: bold;">whatsapp <i class="fa-brands fa-whatsapp fa-lg"></i> 642 70 25 29</span>
-</p><a href="/" id="back-to-store">Volver a la tienda</a>
-</div>
-  </div>  
-</main>
-
-  <footer>
-    <iframe class="iframefootermap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d410404.8590365639!2d-6.423374270709594!3d36.52304662488185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x644bb9ec6abaa235%3A0x4fd198efdf8fa5dc!2sEnma%20Manualidades!5e0!3m2!1ses!2ses!4v1702396602259!5m2!1ses!2ses" width="230" height="180" style="border-radius:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <img src="src/EnmaManualidadesLogo.png" alt="Logo de Enma Manualidades">
+    <nav>
+      <a href="/">
+        <i class="fa-solid fa-house"></i> <span>Home</span>
+      </a>
+      <a href="AboutMe.html#whatsapp-section">
+        <i class="fa-solid fa-address-book"></i> <span>Contacto</span>
+      </a>
+      <a href="https://github.com/AgustinBeniteez" target="_blank">
+        <i class="fa-solid fa-code"></i> <span>Desarrollador web</span>
+      </a>
+    </nav>
     
-    <div class="footer-container">
-      <div class="footer-logo">
-        <img width="100px" src="src/EnmaManualidadesLogoMini.png" alt="Enma Manualidades Logo">
-      </div>
-    </div>
-
-
-    <nav class="footer-info" >
-      <a href="/">Home</a> |
-      <a href="/">Catálogo</a> |
-      <a href="ComoHacerUnEncargo.html">Hacer un Encargo</a> |
-      <a href="AboutMe.html">About Enma</a>
-  </nav>
+  </header>
   
-    <div class="footer-info">
+  </header>
+  <main>
+    <section class="about-section">
+      <div class="about-content">
+        <img src="src/EnmaManualidadesLogo.png" style="width: 90%" alt="Enma Manualidades">
+        <p>Descubre la magia de lo personalizado con Enma Manualidades.</p>
+        <p>Creemos productos únicos con tus imágenes, nombres, personajes favoritos y mucho más...</p>
+        <p>Somos un pequeño taller ubicado en Chiclana de la Frontera.</p>
+        <p>¡Haz tus momentos inolvidables con nuestros toques personalizados & regala productos únicos!</p>
+      </div>
+      <div class="about-image">
+        <img style="margin-top: 30%;"  src="src/EnmaManualidadesLogoMini.png" alt="Logo Enma Manualidades">
+      </div>
+    </section>
+    <br><br><br><br><br><br><br>
+    <img src="src/EnmaManualidadeswhatsapp.png" class="logowhatasapp" alt="Logo de WhatsApp">
+    <section id="whatsapp-section" class="whatsapp-section">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 460" width="400" height="600" style="font-family: Arial, sans-serif; border-radius: 10px;">
+        <!-- Fondo del chat con imagen de fondo -->
+        <image width="100%" style="overflow: hidden;" href="src/fondowhatasapp.png" />
       
-      <p>&copy; 2024 Enma Manualidades. Todos los derechos reservados.</p>
-      <p>Dirección: [Cádiz, Spain]</p>
-      <p>Teléfono: [+34 642 70 25 29]</p>
-      <p>Página Web creada Por: <a href="https://github.com/AgustinBeniteez" target="_blank">Agustin benitez</a></p>
-    </div>
+        <!-- Mensaje del usuario -->
+        <rect x="50" y="100" width="250" height="50" rx="20" ry="20" fill="#1e1e1e" />
+        <text x="105" y="130" fill="#ffffff" font-size="14">Pregunta sin Compromiso! </text>
+      
+        <!-- Mensaje del otro usuario -->
+        <rect x="100" y="180" width="250" height="230" rx="20" ry="20" fill="#0a7e5c" />
+        <text x="115" y="210" fill="#ffffff" font-size="14">Hola! Esta Toalla que tamaño tiene?</text>
+        <image x="115" y="220" width="200" height="200" href="src/conjuntos.png" />
+      
+        <!-- Barra superior con imagen de perfil y nombre -->
+        <rect width="400" height="60" fill="#075e54" rx="20" ry="20" />
+        <image x="10" y="10" width="40" height="40" href="src/fotoperfil.png" />
+        <text x="60" y="35" fill="#ffffff" font-size="18">Enma Manualidades</text>
+        <image x="330" y="10" width="35" height="40" href="src/iconotienda.png" />
+      
+        <!-- Barra de escribir -->
+        <rect x="10" y="480" width="340" height="40" rx="20" ry="20" fill="#1e1e1e" />
+        <text x="20" y="505" fill="#aaaaaa" font-size="14">Escribe un mensaje</text>
+        <circle cx="370" cy="500" r="20" fill="#075e54" />
+        <image x="362" y="490" width="15" height="15" href="src/microphone-solid.svg" />
+        <text x="320" y="400" fill="#00ffff" style="color: #00ffff;" font-size="14">✓✓</text>
+      </svg>
+      
+      
+        
+        
+      </div>
+      <div class="whatsapp-content" style="font-size: 20px;">
+        <p style="font-size: 20px;">Cuando hagas un pedido, nos pondremos en contacto contigo mediante <br> WhatsApp <i style="font-size: 20px;" class="fa-brands fa-whatsapp"></i> para hablar sobre el pedido, como la imagen para <br>una camiseta o diseños para un producto concreto.</p>
+        <p style="font-size: 20px;">También nos puedes hablar directamente <br> mediante este número: <br> <strong style="font-size: 30px;">642 70 25 29 </strong><i style="font-size: 30px;" class="fa-brands fa-whatsapp"></i></p>
+        <a href="https://api.whatsapp.com/send?phone=34642702529" style="border-radius: 30px;" target="_blank">Preguntar alguna duda <i style="font-size: 20px;" class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Enma Manualidades. Todos los derechos reservados.</p>
+    <p>Dirección: Chiclana de la Frontera, Cádiz, España.</p>
+    <p>Teléfono: 642 70 25 29</p>
   </footer>
 </body>
 </html>

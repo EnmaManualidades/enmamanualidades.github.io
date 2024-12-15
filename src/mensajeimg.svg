@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600" style="font-family: Arial, sans-serif;">
+  <!-- Fondo del chat en modo oscuro -->
+  <rect width="400" height="600" fill="#121212" />
+
+  <!-- Mensaje del usuario -->
+  <rect x="50" y="100" width="250" height="50" rx="10" ry="10" fill="#1e1e1e" />
+  <text x="65" y="130" fill="#ffffff" font-size="14">Hola, ¿cómo estás?</text>
+
+  <!-- Mensaje del otro usuario -->
+  <rect x="100" y="180" width="250" height="50" rx="10" ry="10" fill="#0a7e5c" />
+  <text x="115" y="210" fill="#ffffff" font-size="14">¡Hola! Estoy bien, gracias.</text>
+
+  <!-- Barra superior con imagen de perfil y nombre -->
+  <rect width="400" height="60" fill="#075e54" />
+  <image x="10" y="10" width="40" height="40" href="src/EnmaManualidadesLogoMini.png" />
+  <text x="60" y="40" fill="#ffffff" font-size="18">Enma Manualidades</text>
+</svg>
