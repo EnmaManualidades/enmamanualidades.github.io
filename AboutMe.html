@@ -240,10 +240,10 @@
           <animate attributeName="opacity" from="0" to="1" begin="1s" dur="0.5s" fill="freeze" />
         </rect>
         <text x="115" y="210" fill="#ffffff" font-size="14" opacity="0">
-          Hola! Esta Toalla que tamaño tiene?
+          Puede mandarme más detalles?
           <animate attributeName="opacity" from="0" to="1" begin="1s" dur="0.5s" fill="freeze" />
         </text>
-        <image x="115" y="220" width="200" height="200" href="src/conjuntos.png" opacity="0">
+        <image id="imageToallaTaza" x="115" y="220" width="200" height="200" href="src/conjuntos.png" opacity="1">
           <animate attributeName="opacity" from="0" to="1" begin="1.5s" dur="0.5s" fill="freeze" />
         </image>
         
@@ -272,7 +272,7 @@
         <!-- Tick de mensaje enviado (bucle de gris a azul) -->
         <text id="tick" x="320" y="400" fill="#00ffff" font-size="14" opacity="0">✓✓
           <animate attributeName="opacity" from="0" to="1" begin="1s" dur="1.9s" fill="freeze"/></text>
-      
+        
         <!-- Rectángulo gris para indicar que alguien está escribiendo -->
         <rect x="10" y="430" width="75" height="40" rx="10" ry="10" fill="#1e1e1e" />
         
@@ -286,13 +286,23 @@
         <circle cx="65" cy="450" r="5" fill="#ffffff">
           <animate attributeName="cy" values="450;445;450" dur="1s" keyTimes="0;0.5;1" repeatCount="indefinite" begin="0.4s" />
         </circle>
+      
+        <script>
+          // JavaScript para cambiar la imagen cada 5 segundos
+          let imageElement = document.getElementById('imageToallaTaza');
+          let isToalla = true;
+      
+          setInterval(() => {
+            if (isToalla) {
+              imageElement.setAttribute('href', 'src/tazas.png'); // Cambiar a taza
+            } else {
+              imageElement.setAttribute('href', 'src/conjuntos.png'); // Cambiar a toalla
+            }
+            isToalla = !isToalla; // Alternar entre toalla y taza
+          }, 5000); // Cambiar cada 5 segundos
+        </script>
       </svg>
       
-      
-      
-      
-        
-        
       </div>
       <div class="whatsapp-content" style="font-size: 20px;">
         <p style="font-size: 20px;">Cuando hagas un pedido, nos pondremos en contacto contigo mediante <br> WhatsApp <i style="font-size: 20px;" class="fa-brands fa-whatsapp"></i> para hablar sobre el pedido, como la imagen para <br>una camiseta o diseños para un producto concreto.</p>
