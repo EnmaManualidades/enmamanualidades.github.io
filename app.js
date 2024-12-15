@@ -196,64 +196,217 @@ function filterProducts(products, query, category, price) {
     return matchesQuery && matchesCategory && matchesTag && matchesPrice;
   });
 }
+(function() {
+  // Fecha actual
+  const today = new Date(); // Puedes probar con new Date('2025-02-14') para San Valentín, o '2024-11-29' para Black Friday
 
-  (function() {
-  // Cambiar logo y fondo si es temporada navideña
-  //cambiar a esta fecha para comprobar como se ve sin ser navideña
-  //const today = new Date('2024-02-01');
-  const today = new Date();
-  const startNavidad = new Date(today.getFullYear(), 11, 1); // 1 de diciembre
-  const endNavidad = new Date(today.getFullYear() + 1, 0, 10); // 10 de enero del siguiente año
+  // Función para restablecer la hora a las 00:00:00 en UTC
+  function resetTimeToUTC(date) {
+    date.setUTCHours(0, 0, 0, 0);
+    return date;
+  }
 
+  // Fechas de Navidad (1 diciembre - 10 enero)
+  const startNavidad = resetTimeToUTC(new Date(today.getFullYear(), 11, 1));
+  const endNavidad = resetTimeToUTC(new Date(today.getFullYear() + 1, 0, 10));
+
+  // Fechas de San Valentín (semana del 14 de febrero)
+  const sanValentinStart = resetTimeToUTC(new Date(today.getFullYear(), 1, 7)); // Lunes de la semana del 14 de febrero
+  const sanValentinEnd = resetTimeToUTC(new Date(today.getFullYear(), 1, 20)); // Domingo de la semana del 14 de febrero
+
+  // Fechas de Black Friday (semana antes del último viernes de noviembre)
+  const lastDayNov = new Date(today.getFullYear(), 10, 30); // El último día de noviembre
+  const blackFridayStart = resetTimeToUTC(new Date(lastDayNov.getFullYear(), lastDayNov.getMonth(), lastDayNov.getDate() - 7)); // Lunes antes del último viernes
+  const blackFridayEnd = resetTimeToUTC(new Date(lastDayNov.getFullYear(), lastDayNov.getMonth(), lastDayNov.getDate())); // Domingo del último día de noviembre
+
+  // Fechas de Comuniones (finales de marzo hasta finales de mayo)
+  const comunionesStart = resetTimeToUTC(new Date(today.getFullYear(), 2, 31)); // Último día de marzo
+  const comunionesEnd = resetTimeToUTC(new Date(today.getFullYear(), 4, 31)); // Último día de mayo
+
+  // Comprobación de Navidad
   if (today >= startNavidad && today <= endNavidad) {
-    // Cambiar el logo del nav
+    // Cambiar el logo de Navidad
     document.getElementById('nav-logo').src = 'TEMPORADAS/Temporada Navidad/EnmaManualidadesNavidadLogo.png';
-
-    // Cambiar el logo de la clase menu-logo
     const menuLogo = document.querySelector('.menu-logo');
     if (menuLogo) {
       menuLogo.src = 'TEMPORADAS/Temporada Navidad/EnmaManualidadesNavidadLogo.png';
     }
 
-    // Cambiar el fondo
+    // Cambiar fondo para Navidad
     document.body.style.background = 'linear-gradient(0deg, rgba(202, 169, 106, 1) 0%, rgba(77, 11, 70, 1) 100%)';
 
-    // Cambiar estilos adicionales
     const style = document.createElement('style');
     style.textContent = `
       .card {
         background-color: rgb(221, 206, 175);
         border: 1px solid rgb(255, 255, 255);
       }
-
       #search-bar input {
         background-color: rgb(221, 206, 175);
       }
-
       #filters {
         background-color: rgb(221, 206, 175);
       }
-
-      /* Cambiar el color del precio */
       .card-image-container .price {
         color: #6d0a38;
       }
-
-      /* Cambiar el color del título h3 */
       .card h3 {
         color: #6d0a38;
       }
-
-      /* Cambiar el color de fondo de las etiquetas */
       .card .tags div {
         background-color: #6d0a38;
       }
-
-      /* Cambiar el color de fondo del botón de añadir al carrito */
       .add-to-cart {
         background-color: #6d0a38;
       }
     `;
     document.head.appendChild(style);
+
+  // Comprobación de San Valentín (Semana del 14 de febrero)
+  } else if (today >= sanValentinStart && today <= sanValentinEnd) {
+    // Cambiar el logo de San Valentín
+    document.getElementById('nav-logo').src = 'TEMPORADAS/San Valentin/EnmaManualidadesSanValentinLogo.png';
+    const menuLogo = document.querySelector('.menu-logo');
+    if (menuLogo) {
+      menuLogo.src = 'TEMPORADAS/San Valentin/EnmaManualidadesSanValentinLogo.png';
+    }
+
+    // Cambiar fondo para San Valentín
+    document.body.style.background = 'linear-gradient(1.48deg, rgba(225, 0, 82, 1) 0%, rgba(37, 1, 34, 1) 100%)';
+
+    const style = document.createElement('style');
+    style.textContent = `
+      .card {
+        background-color: rgb(255, 192, 203); /* Rosa claro */
+        border: 1px solid rgb(255, 255, 255);
+      }
+      #search-bar input {
+        background-color: rgb(255, 192, 203);
+      }
+      #filters {
+        background-color: rgb(255, 192, 203);
+      }
+      .card-image-container .price {
+        color: #d5004c; /* Color rosa fuerte */
+      }
+      .card h3 {
+        color: #d5004c;
+      }
+      .card .tags div {
+        background-color: #d5004c;
+      }
+      .add-to-cart {
+        background-color: #d5004c;
+      }
+
+      /* Cambiar el :hover para San Valentín */
+      .card:hover {
+        background-color: rgb(73 1 43); /* Fondo rojo oscuro para hover */
+        color: #fff; /* Texto blanco */
+      }
+        .card:hover p {
+        color: white; /* Texto blanco */
+      }
+    `;
+    document.head.appendChild(style);
+
+  // Comprobación de Black Friday (semana antes del último viernes de noviembre)
+  } else if (today >= blackFridayStart && today <= blackFridayEnd) {
+    // Cambiar el logo de Black Friday
+    document.getElementById('nav-logo').src = 'TEMPORADAS/BLACK FRIDAY/EnmaManualidadesBlackFridayLogo.png';
+    const menuLogo = document.querySelector('.menu-logo');
+    if (menuLogo) {
+      menuLogo.src = 'TEMPORADAS/BLACK FRIDAY/EnmaManualidadesBlackFridayLogo.png';
+    }
+
+    // Cambiar fondo para Black Friday
+    document.body.style.background = 'conic-gradient(from 149.48deg at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(200, 200, 200, 1) 100%)';
+
+    const style = document.createElement('style');
+    style.textContent = `
+      .card {
+        background-color: #000; /* Fondo negro */
+        border: 1px solid #fff; /* Borde blanco */
+      }
+      #search-bar input {
+        background-color: #000; /* Fondo negro */
+        color: #fff; /* Texto blanco */
+      }
+      #filters {
+        background-color: #000; /* Fondo negro */
+        color: #fff; /* Texto blanco */
+      }
+      .card-image-container .price {
+        color: #fff; /* Precio en blanco */
+      }
+      .card h3 {
+        color: #fff; /* Títulos en blanco */
+      }
+      .card .tags div {
+        background-color: #fff; /* Fondo blanco para las etiquetas */
+        color: #000; /* Texto negro para las etiquetas */
+      }
+      .add-to-cart {
+        background-color: #fff; /* Fondo blanco para el botón */
+        color: #000; /* Texto negro para el botón */
+      }
+
+      /* Cambiar todos los párrafos a blanco */
+      p {
+        color: #fff;
+      }
+
+      /* Estilo para el :hover de .card en Black Friday */
+      .card:hover {
+        background-color: #6b6b6b; /* Fondo gris al hacer hover */
+      }
+    `;
+    document.head.appendChild(style);
+
+  // Comprobación de Comuniones (finales de marzo hasta finales de mayo)
+  } else if (today >= comunionesStart && today <= comunionesEnd) {
+    // Cambiar el logo de Comuniones
+    document.getElementById('nav-logo').src = 'TEMPORADAS/Comuniones/EnmaManualidadesComunionesLogo.png';
+    const menuLogo = document.querySelector('.menu-logo');
+    if (menuLogo) {
+      menuLogo.src = 'TEMPORADAS/Comuniones/EnmaManualidadesComunionesLogo.png';
+    }
+
+    // Cambiar fondo para Comuniones
+    document.body.style.background = 'linear-gradient(0deg, rgba(202, 169, 106, 1) 0%, rgba(106, 168, 210, 1) 100%)';
+
+    const style = document.createElement('style');
+    style.textContent = `
+      .card {
+        background-color: #f9f5e1; /* Fondo suave para las tarjetas */
+        border: 1px solid #fff;
+      }
+      #search-bar input {
+        background-color: #f9f5e1;
+      }
+      #filters {
+        background-color: #f9f5e1;
+      }
+      .card-image-container .price {
+        color: #1f63a6; /* Color azul para el precio */
+      }
+      .card h3 {
+        color: #1f63a6;
+      }
+      .card .tags div {
+        background-color: #1f63a6;
+      }
+      .add-to-cart {
+        background-color: #1f63a6;
+      }
+      /* Estilo para el :hover de .card en Black Friday */
+      .card:hover {
+        background-color:rgb(117, 183, 199); /* Fondo gris al hacer hover */
+      }
+    `;
+    document.head.appendChild(style);
+
+  } else {
+    // No hacer cambios si no es ninguna de las festividades
   }
 })();
