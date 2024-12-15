@@ -196,3 +196,64 @@ function filterProducts(products, query, category, price) {
     return matchesQuery && matchesCategory && matchesTag && matchesPrice;
   });
 }
+
+  (function() {
+  // Cambiar logo y fondo si es temporada navideña
+  //cambiar a esta fecha para comprobar como se ve sin ser navideña
+  //const today = new Date('2024-02-01');
+  const today = new Date();
+  const startNavidad = new Date(today.getFullYear(), 11, 1); // 1 de diciembre
+  const endNavidad = new Date(today.getFullYear() + 1, 0, 10); // 10 de enero del siguiente año
+
+  if (today >= startNavidad && today <= endNavidad) {
+    // Cambiar el logo del nav
+    document.getElementById('nav-logo').src = 'TEMPORADAS/Temporada Navidad/EnmaManualidadesNavidadLogo.png';
+
+    // Cambiar el logo de la clase menu-logo
+    const menuLogo = document.querySelector('.menu-logo');
+    if (menuLogo) {
+      menuLogo.src = 'TEMPORADAS/Temporada Navidad/EnmaManualidadesNavidadLogo.png';
+    }
+
+    // Cambiar el fondo
+    document.body.style.background = 'linear-gradient(0deg, rgba(202, 169, 106, 1) 0%, rgba(77, 11, 70, 1) 100%)';
+
+    // Cambiar estilos adicionales
+    const style = document.createElement('style');
+    style.textContent = `
+      .card {
+        background-color: rgb(221, 206, 175);
+        border: 1px solid rgb(255, 255, 255);
+      }
+
+      #search-bar input {
+        background-color: rgb(221, 206, 175);
+      }
+
+      #filters {
+        background-color: rgb(221, 206, 175);
+      }
+
+      /* Cambiar el color del precio */
+      .card-image-container .price {
+        color: #6d0a38;
+      }
+
+      /* Cambiar el color del título h3 */
+      .card h3 {
+        color: #6d0a38;
+      }
+
+      /* Cambiar el color de fondo de las etiquetas */
+      .card .tags div {
+        background-color: #6d0a38;
+      }
+
+      /* Cambiar el color de fondo del botón de añadir al carrito */
+      .add-to-cart {
+        background-color: #6d0a38;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+})();

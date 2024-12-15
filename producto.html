@@ -1119,7 +1119,52 @@ header {
     function removeAccents(str) {
       return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
-  
+// Cambiar logo y fondo si es temporada navideña
+(function() {
+    const today = new Date();
+    const startNavidad = new Date(today.getFullYear(), 11, 1); // 1 de diciembre
+    const endNavidad = new Date(today.getFullYear() + 1, 0, 10); // 10 de enero del siguiente año
+
+    if (today >= startNavidad && today <= endNavidad) {
+        // Cambiar el logo dentro del <a>
+        const logoImg = document.querySelector('a.logo img');
+        if (logoImg) {
+            logoImg.src = 'TEMPORADAS/Temporada Navidad/EnmaManualidadesNavidadLogo.png';
+        }
+
+        // Cambiar el logo de la vista previa (design-preview)
+        const previewImg = document.getElementById('design-preview');
+        if (previewImg) {
+            previewImg.src = 'TEMPORADAS/Temporada Navidad/EnmaManualidadesNavidadLogoSmall.png';
+        }
+
+        // Cambiar el fondo
+        document.body.style.background = 'linear-gradient(0deg, rgb(97, 86, 67) 0%, rgb(77, 11, 70) 100%)';
+
+        // Cambiar estilos adicionales para todos los h1, h2 y h3
+        const headings = document.querySelectorAll('h1, h2, h3');
+        headings.forEach(heading => {
+            heading.style.setProperty('color', '#e1c99b', 'important');
+        });
+
+        const previewContainer = document.querySelector('.preview-container');
+        if (previewContainer) {
+            previewContainer.style.backgroundColor = '#500e47';
+        }
+
+        const controlPanel = document.querySelector('.control-panel');
+        if (controlPanel) {
+            controlPanel.style.backgroundColor = '#500e47';
+        }
+
+        // Cambiar imagen en modal-content
+        const modalImage = document.querySelector('.modal-content img[src="src/EnmaManualidadesLogo.png"]');
+        if (modalImage) {
+            modalImage.src = 'TEMPORADAS/Temporada Navidad/EnmaManualidadesNavidadLogo.png';
+        }
+    }
+})();
+
     // Cargar provincias al inicio
     loadProvinces();
   </script>
