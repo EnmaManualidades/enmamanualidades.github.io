@@ -23,12 +23,12 @@
     "tags": [
       "Camisetas"
     ],
-    "imgUrl": "src/camisas.png",
-    "shirtImageUrl": "src/camisas.png",
+    "imgUrl": "src/productos/camisas.png",
+    "shirtImageUrl": "src/productos/camisas.png",
     "thumbnails": [
-      "src/camisas.png",
-      "src/camisas.png",
-      "src/conjunto2.png"
+      "src/productos/camisas.png",
+      "src/productos/camisas.png",
+      "src/productos/conjunto2.png"
     ]
   },
   {
@@ -40,8 +40,8 @@
     "tags": [
       "tazas personalizadas"
     ],
-    "imgUrl": "src/tazas.png",
-    "shirtImageUrl": "src/tazas.png"
+    "imgUrl": "src/productos/tazas.png",
+    "shirtImageUrl": "src/productos/tazas.png"
   },
   {
     "id": 4,
@@ -52,8 +52,13 @@
     "tags": [
       "tazas personalizadas"
     ],
-    "imgUrl": "src/NoFound.png",
-    "shirtImageUrl": "NoTienePersonaliacionWeb"
+    "imgUrl": "src/productos/tazas.png",
+    "shirtImageUrl": "NoTienePersonaliacionWeb",
+    "thumbnails": [
+      "src/productos/tazas3d.png",
+      "src/productos/tazas3d.png",
+      "src/taza3d.png"
+    ]
   },
   {
     "id": 5,
