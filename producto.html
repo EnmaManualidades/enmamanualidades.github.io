@@ -409,6 +409,25 @@ header {
   font-family: Arial, sans-serif;
   text-align: center;
 }
+  /* Estilo de la barra de carga */
+  #loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%; /* Inicialmente está en 0% */
+            height: 4px;
+            background-color: #d39a2f; /* Azul claro */
+            z-index: 9999;
+            transition: width 1s ease-out; /* Transición suave para el aumento de la barra */
+        }
+
+        /* Estilos del contenido principal */
+        #content {
+            margin-top: 20px;
+            padding: 20px;
+        }
+            /* Estilos para las partículas de nieve */
+
 /* Estilos para pantallas grandes */
 @media (min-width: 1130px) {
     #filters {
@@ -610,6 +629,9 @@ header {
   </style>
 </head>
 <body>
+  <!-- Barra de carga -->
+  <div id="loading-bar"></div>
+  <!-- Fin de la barra de carga -->
   <header>
     <div id="profile-icon" class="icon"><a class="ancord-nav" style="color: #ffff;" href="/"><i class="fa-solid fa-house fa-lg"></i></a></div>
     <a class="logo" href="/"><img src="src/EnmaManualidadesLogo.png" alt="Enma Manualidades"></a>
@@ -1122,189 +1144,139 @@ header {
 
 // Cambiar logo y fondo si es temporada navideña
 (function() {
-    const today = new Date();// Puedes probar con new Date('2025-02-14') para San Valentín, o '2024-11-29' para Black Friday
+        const today = new Date('2024-11-29'); // Puedes usar new Date('2025-02-14') para hacer pruebas
 
-    // Fechas de Navidad (1 diciembre - 10 enero)
-    const startNavidad = new Date(today.getFullYear(), 11, 1); // 1 de diciembre
-    const endNavidad = new Date(today.getFullYear() + 1, 0, 10); // 10 de enero del siguiente año
+        // Fechas de Navidad (1 diciembre - 10 enero)
+        const startNavidad = new Date(today.getFullYear(), 11, 1); // 1 de diciembre
+        const endNavidad = new Date(today.getFullYear() + 1, 0, 10); // 10 de enero del siguiente año
 
-    // Fechas de San Valentín (semana del 14 de febrero)
-    const sanValentinStart = new Date(today.getFullYear(), 1, 7); // Lunes de la semana del 14 de febrero
-    const sanValentinEnd = new Date(today.getFullYear(), 1, 20); // Domingo de la semana del 14 de febrero
+        // Fechas de San Valentín (semana del 14 de febrero)
+        const sanValentinStart = new Date(today.getFullYear(), 1, 7); // Lunes de la semana del 14 de febrero
+        const sanValentinEnd = new Date(today.getFullYear(), 1, 20); // Domingo de la semana del 14 de febrero
 
-    // Fechas de Black Friday (semana antes del último viernes de noviembre)
-    const lastDayNov = new Date(today.getFullYear(), 10, 30); // El último día de noviembre
-    const blackFridayStart = new Date(lastDayNov.getFullYear(), lastDayNov.getMonth(), lastDayNov.getDate() - 7); // Lunes antes del último viernes
-    const blackFridayEnd = new Date(lastDayNov.getFullYear(), lastDayNov.getMonth(), lastDayNov.getDate()); // Domingo del último día de noviembre
+        // Fechas de Black Friday (semana antes del último viernes de noviembre)
+        const lastDayNov = new Date(today.getFullYear(), 10, 30); // El último día de noviembre
+        const blackFridayStart = new Date(lastDayNov.getFullYear(), lastDayNov.getMonth(), lastDayNov.getDate() - 7); // Lunes antes del último viernes
+        const blackFridayEnd = new Date(lastDayNov.getFullYear(), lastDayNov.getMonth(), lastDayNov.getDate()); // Domingo del último día de noviembre
 
-    // Fechas de Comuniones (finales de marzo hasta finales de mayo)
-    const comunionesStart = new Date(today.getFullYear(), 2, 31); // Último día de marzo
-    const comunionesEnd = new Date(today.getFullYear(), 4, 31); // Último día de mayo
+        // Fechas de Comuniones (finales de marzo hasta finales de mayo)
+        const comunionesStart = new Date(today.getFullYear(), 2, 31); // Último día de marzo
+        const comunionesEnd = new Date(today.getFullYear(), 4, 31); // Último día de mayo
 
-    // Comprobación de Navidad
-    if (today >= startNavidad && today <= endNavidad) {
-        // Cambiar el logo de Navidad
-        const logoImg = document.querySelector('a.logo img');
-        if (logoImg) {
-            logoImg.src = 'TEMPORADAS/Temporada Navidad/EnmaManualidadesNavidadLogo.png';
+        // Variables para verificar las temporadas
+        const isNavidad = today >= startNavidad && today <= endNavidad;
+        const isSanValentin = today >= sanValentinStart && today <= sanValentinEnd;
+        const isBlackFriday = today >= blackFridayStart && today <= blackFridayEnd;
+        const isComuniones = today >= comunionesStart && today <= comunionesEnd;
+
+        // Cambiar el logo, fondo y estilos dependiendo de la temporada
+        if (isNavidad) {
+            // Cambiar el logo de Navidad
+            const logoImg = document.querySelector('a.logo img');
+            if (logoImg) {
+                logoImg.src = 'TEMPORADAS/Temporada Navidad/EnmaManualidadesNavidadLogo.png';
+            }
+
+            // Cambiar el fondo y estilos para Navidad
+            document.body.style.background = 'linear-gradient(0deg, rgb(97, 86, 67) 0%, rgb(77, 11, 70) 100%)';
+            document.querySelectorAll('h1, h2, h3').forEach(heading => heading.style.setProperty('color', '#e1c99b', 'important'));
+            const previewContainer = document.querySelector('.preview-container');
+            if (previewContainer) previewContainer.style.backgroundColor = '#500e47';
+            const controlPanel = document.querySelector('.control-panel');
+            if (controlPanel) controlPanel.style.backgroundColor = '#500e47';
+
+            // Cambiar color de la barra de carga
+            const loadingBar = document.getElementById('loading-bar');
+            if (loadingBar) loadingBar.style.backgroundColor = 'rgb(225, 201, 155)'; // Navidad: color dorado
+
+        } else if (isSanValentin) {
+            // Cambiar el logo de San Valentín
+            const logoImg = document.querySelector('a.logo img');
+            if (logoImg) {
+                logoImg.src = 'TEMPORADAS/San Valentin/EnmaManualidadesSanValentinLogo.png';
+            }
+
+            // Cambiar el fondo y estilos para San Valentín
+            document.body.style.background = 'linear-gradient(1.48deg, rgba(225, 0, 82, 1) 0%, rgba(37, 1, 34, 1) 100%)';
+            document.querySelectorAll('h1, h2, h3').forEach(heading => heading.style.setProperty('color', '#ffffff', 'important'));
+            const previewContainer = document.querySelector('.preview-container');
+            if (previewContainer) previewContainer.style.backgroundColor = '#d5004c';
+            const controlPanel = document.querySelector('.control-panel');
+            if (controlPanel) controlPanel.style.backgroundColor = '#d5004c';
+
+            // Cambiar color de la barra de carga
+            const loadingBar = document.getElementById('loading-bar');
+            if (loadingBar) loadingBar.style.backgroundColor = '#ff0066'; // San Valentín: color anaranjado
+
+        } else if (isBlackFriday) {
+            // Cambiar el logo de Black Friday
+            const logoImg = document.querySelector('a.logo img');
+            if (logoImg) {
+                logoImg.src = 'TEMPORADAS/BLACK FRIDAY/EnmaManualidadesBlackFridayLogo.png';
+            }
+
+            // Cambiar el fondo y estilos para Black Friday
+            document.body.style.background = 'conic-gradient(from 149.48deg at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(200, 200, 200, 1) 100%)';
+            document.querySelectorAll('h1, h2, h3').forEach(heading => heading.style.setProperty('color', '#fff', 'important'));
+            const previewContainer = document.querySelector('.preview-container');
+            if (previewContainer) previewContainer.style.backgroundColor = '#000';
+            const controlPanel = document.querySelector('.control-panel');
+            if (controlPanel) controlPanel.style.backgroundColor = '#000';
+
+            // Cambiar color de la barra de carga
+            const loadingBar = document.getElementById('loading-bar');
+            if (loadingBar) loadingBar.style.backgroundColor = '#000'; // Black Friday: color negro
+
+        } else if (isComuniones) {
+            // Cambiar el logo de Comuniones
+            const logoImg = document.querySelector('a.logo img');
+            if (logoImg) {
+                logoImg.src = 'TEMPORADAS/Comuniones/EnmaManualidadesComunionesLogo.png';
+            }
+
+            // Cambiar el fondo y estilos para Comuniones
+            document.body.style.background = 'linear-gradient(0deg, rgba(202, 169, 106, 1) 0%, rgba(106, 168, 210, 1) 100%)';
+            document.querySelectorAll('h1, h2, h3').forEach(heading => heading.style.setProperty('color', '#ffffff', 'important'));
+            const previewContainer = document.querySelector('.preview-container');
+            if (previewContainer) previewContainer.style.backgroundColor = '#1f63a6';
+            const controlPanel = document.querySelector('.control-panel');
+            if (controlPanel) controlPanel.style.backgroundColor = '#1f63a6';
+
+            // Cambiar color de la barra de carga
+            const loadingBar = document.getElementById('loading-bar');
+            if (loadingBar) loadingBar.style.backgroundColor = '#1f63a6'; // Comuniones: color azul
+
         }
 
-        // Cambiar el logo de la vista previa
-        const previewImg = document.getElementById('design-preview');
-        if (previewImg) {
-            previewImg.src = 'TEMPORADAS/Temporada Navidad/EnmaManualidadesNavidadLogoSmall.png';
+        // Animación de la barra de carga
+        function loadingAnimation() {
+            const loadingBar = document.getElementById('loading-bar');
+            if (!loadingBar) return;
+
+            loadingBar.style.width = '0%'; // Inicialmente en 0%
+            setTimeout(() => {
+                loadingBar.style.transition = 'width 1s ease-out'; // Transición suave
+                loadingBar.style.width = '100%'; // Llega al 100%
+            }, 300); // Retardo inicial para empezar la animación
         }
 
-        // Cambiar fondo para Navidad
-        document.body.style.background = 'linear-gradient(0deg, rgb(97, 86, 67) 0%, rgb(77, 11, 70) 100%)';
+        // Iniciar la animación de la barra de carga
+        loadingAnimation();
 
-        // Cambiar estilos adicionales para todos los h1, h2 y h3
-        const headings = document.querySelectorAll('h1, h2, h3');
-        headings.forEach(heading => {
-            heading.style.setProperty('color', '#e1c99b', 'important');
+        // Desaparecer la barra cuando la carga termine
+        window.addEventListener('load', () => {
+            const loadingBar = document.getElementById('loading-bar');
+            if (loadingBar) {
+                setTimeout(() => {
+                    loadingBar.style.transition = 'width 0.5s ease-out'; // Transición suave para desaparecer
+                    setTimeout(() => {
+                        loadingBar.style.width = '0%'; // Desaparece después de que llegue al 100%
+                    }, 500); // Después de un pequeño retraso para dar el efecto de desaparecer
+                }, 300); // Retardo para asegurar que la animación se inicie
+            }
         });
 
-        const previewContainer = document.querySelector('.preview-container');
-        if (previewContainer) {
-            previewContainer.style.backgroundColor = '#500e47';
-        }
-
-        const controlPanel = document.querySelector('.control-panel');
-        if (controlPanel) {
-            controlPanel.style.backgroundColor = '#500e47';
-        }
-
-        // Cambiar imagen en modal-content
-        const modalImage = document.querySelector('.modal-content img[src="src/EnmaManualidadesLogo.png"]');
-        if (modalImage) {
-            modalImage.src = 'TEMPORADAS/Temporada Navidad/EnmaManualidadesNavidadLogo.png';
-        }
-
-    // Comprobación de San Valentín
-    } else if (today >= sanValentinStart && today <= sanValentinEnd) {
-        // Cambiar el logo de San Valentín
-        const logoImg = document.querySelector('a.logo img');
-        if (logoImg) {
-            logoImg.src = 'TEMPORADAS/San Valentin/EnmaManualidadesSanValentinLogo.png';
-        }
-
-        // Cambiar el logo de la vista previa
-        const previewImg = document.getElementById('design-preview');
-        if (previewImg) {
-            previewImg.src = 'TEMPORADAS/San Valentin/EnmaManualidadesSanValentinLogoSmall.png';
-        }
-
-        // Cambiar fondo para San Valentín
-        document.body.style.background = 'linear-gradient(1.48deg, rgba(225, 0, 82, 1) 0%, rgba(37, 1, 34, 1) 100%)';
-
-        // Cambiar estilos adicionales para todos los h1, h2 y h3
-        const headings = document.querySelectorAll('h1, h2, h3');
-        headings.forEach(heading => {
-            heading.style.setProperty('color', '#ffffff', 'important');
-        });
-
-        const previewContainer = document.querySelector('.preview-container');
-        if (previewContainer) {
-            previewContainer.style.backgroundColor = '#d5004c';
-        }
-
-        const controlPanel = document.querySelector('.control-panel');
-        if (controlPanel) {
-            controlPanel.style.backgroundColor = '#d5004c';
-        }
-
-        // Cambiar imagen en modal-content
-        const modalImage = document.querySelector('.modal-content img[src="src/EnmaManualidadesLogo.png"]');
-        if (modalImage) {
-            modalImage.src = 'TEMPORADAS/San Valentin/EnmaManualidadesSanValentinLogo.png';
-        }
-
-    // Comprobación de Black Friday
-    } else if (today >= blackFridayStart && today <= blackFridayEnd) {
-        // Cambiar el logo de Black Friday
-        const logoImg = document.querySelector('a.logo img');
-        if (logoImg) {
-            logoImg.src = 'TEMPORADAS/BLACK FRIDAY/EnmaManualidadesBlackFridayLogo.png';
-        }
-
-        // Cambiar el logo de la vista previa
-        const previewImg = document.getElementById('design-preview');
-        if (previewImg) {
-            previewImg.src = 'TEMPORADAS/BLACK FRIDAY/EnmaManualidadesBlackFridayLogoSmall.png';
-        }
-
-        // Cambiar fondo para Black Friday
-        document.body.style.background = 'conic-gradient(from 149.48deg at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(200, 200, 200, 1) 100%)';
-
-        // Cambiar estilos adicionales para todos los h1, h2 y h3
-        const headings = document.querySelectorAll('h1, h2, h3');
-        headings.forEach(heading => {
-            heading.style.setProperty('color', '#fff', 'important');
-        });
-
-        const previewContainer = document.querySelector('.preview-container');
-        if (previewContainer) {
-            previewContainer.style.backgroundColor = '#000';
-        }
-
-        const controlPanel = document.querySelector('.control-panel');
-        if (controlPanel) {
-            controlPanel.style.backgroundColor = '#000';
-        }
-
-        // Cambiar imagen en modal-content
-        const modalImage = document.querySelector('.modal-content img[src="src/EnmaManualidadesLogo.png"]');
-        if (modalImage) {
-            modalImage.src = 'TEMPORADAS/BLACK FRIDAY/EnmaManualidadesBlackFridayLogo.png';
-        }
-
-    // Comprobación de Comuniones
-    } else if (today >= comunionesStart && today <= comunionesEnd) {
-        // Cambiar el logo de Comuniones
-        const logoImg = document.querySelector('a.logo img');
-        if (logoImg) {
-            logoImg.src = 'TEMPORADAS/Comuniones/EnmaManualidadesComunionesLogo.png';
-        }
-
-        // Cambiar el logo de la vista previa
-        const previewImg = document.getElementById('design-preview');
-        if (previewImg) {
-            previewImg.src = 'TEMPORADAS/Comuniones/EnmaManualidadesComunionesLogoSmall.png';
-        }
-
-        // Cambiar fondo para Comuniones
-        document.body.style.background = 'linear-gradient(0deg, rgba(202, 169, 106, 1) 0%, rgba(106, 168, 210, 1) 100%)';
-
-        // Cambiar estilos adicionales para todos los h1, h2 y h3
-        const headings = document.querySelectorAll('h1, h2, h3');
-        headings.forEach(heading => {
-            heading.style.setProperty('color', '#ffffff', 'important');
-        });
-        
-        const previewContainer = document.querySelector('.preview-container');
-        if (previewContainer) {
-            previewContainer.style.backgroundColor = '#1f63a6';
-        }
-
-        const controlPanel = document.querySelector('.control-panel');
-        if (controlPanel) {
-            controlPanel.style.backgroundColor = '#1f63a6';
-        }
-
-        // Cambiar imagen en modal-content
-        const modalImage = document.querySelector('.modal-content img[src="src/EnmaManualidadesLogo.png"]');
-        if (modalImage) {
-            modalImage.src = 'TEMPORADAS/Comuniones/EnmaManualidadesComunionesLogo.png';
-        }
-
-        const purchaseinfocolor = document.querySelector('.purchase-info');
-        if (previewContainer) {
-            heading.style.setProperty('color', '#ffffff', 'important');
-        }
-
-    }
-})();
-    // Cargar provincias al inicio
+    })();   // Cargar provincias al inicio
     loadProvinces();
   </script>
   

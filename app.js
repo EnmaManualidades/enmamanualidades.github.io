@@ -410,3 +410,5 @@ function filterProducts(products, query, category, price) {
     // No hacer cambios si no es ninguna de las festividades
   }
 })();
+
+
