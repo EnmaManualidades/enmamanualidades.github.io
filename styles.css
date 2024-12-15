@@ -574,7 +574,31 @@ body {
     font-weight: bold;
   }
   
-
+  #load-more {
+    display: block; /* Asegura que el botón se muestre */
+    margin: 20px auto; /* Centra horizontalmente y agrega espacio alrededor */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    color: white; /* Color del texto */
+    background-color: #701a42; /* Color de fondo */
+    border: none; /* Sin bordes */
+    border-radius: 20px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a "puntero" al pasar por encima */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto 3D */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+  }
+  
+  /* Efecto hover */
+  #load-more:hover {
+    background-color: #701a45; /* Color más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Ligero aumento de tamaño */
+  }
+  
+  /* Efecto de clic */
+  #load-more:active {
+    transform: scale(0.95); /* Pequeña reducción al hacer clic */
+  }
+  
 
 /* Estilos para pantallas grandes */
 @media (min-width: 1130px) {

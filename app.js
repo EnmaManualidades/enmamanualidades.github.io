@@ -43,9 +43,8 @@ fetch("productos.json")
     renderNextProducts(); // Carga los primeros productos
     fillTagFilter(allProducts);
     setupFilters(allProducts);
-    // Ocultar los "divs" de carga cuando los productos se han cargado
-    loadingPlaceholder.style.display = "none";
-
+    loadingPlaceholder.style.display = "none"; // Oculta el placeholder
+  })
     // Configurar eventos de clic para los elementos del menú
     menuItems.forEach((item) => {
       item.addEventListener("click", () => {
@@ -55,10 +54,24 @@ fetch("productos.json")
         document.body.style.overflow = "auto"; // Rehabilitar scroll
       });
     });
-  })
-  .catch((error) => {
-    console.error("Hubo un problema con la carga del JSON:", error);
-  });
+    // Cargar productos desde el archivo JSON
+    fetch("productos.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al cargar el archivo JSON");
+        }
+        return response.json();
+      })
+      .then((products) => {
+        allProducts = products; // Almacena todos los productos
+        renderNextProducts(); // Carga los primeros productos
+        fillTagFilter(allProducts);
+        setupFilters(allProducts);
+        loadingPlaceholder.style.display = "none"; // Oculta el placeholder
+      })
+      .catch((error) => {
+        console.error("Hubo un problema con la carga del JSON:", error);
+      });
 
 // Función para resetear el filtro de categoría
 function resetCategoryFilter(category) {
@@ -77,9 +90,9 @@ function resetCategoryFilter(category) {
 // Función para renderizar los próximos productos
 function renderNextProducts() {
   const nextProducts = allProducts.slice(displayedProducts, displayedProducts + PRODUCTS_PER_LOAD);
-  
   renderProducts(nextProducts, false); // No limpiar productos previos
   displayedProducts += nextProducts.length; // Incrementa el contador
+  toggleLoadMoreButton(); // Verifica si debe mostrar/ocultar el botón
 }
 
 // Renderizar productos en la página
@@ -123,13 +136,20 @@ function renderProducts(products, clear = true) {
   );
 }
 
-// Cargar más productos cuando se hace scroll
-window.addEventListener("scroll", () => {
-  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-  if (scrollTop + clientHeight >= scrollHeight - 10 && displayedProducts < allProducts.length) {
-    renderNextProducts(); // Cargar más productos
-  }
+const loadMoreButton = document.getElementById("load-more");
+
+loadMoreButton.addEventListener("click", () => {
+  renderNextProducts();
+  toggleLoadMoreButton();
 });
+
+function toggleLoadMoreButton() {
+  if (displayedProducts >= allProducts.length) {
+    loadMoreButton.style.display = "none"; // Oculta el botón si no hay más productos
+  } else {
+    loadMoreButton.style.display = "block"; // Muestra el botón si hay productos por cargar
+  }
+}
 
 // Función para resetear la visualización de productos
 function resetDisplay() {
