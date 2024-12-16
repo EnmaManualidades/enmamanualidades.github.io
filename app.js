@@ -346,16 +346,16 @@ function filterProducts(products, query, category, price) {
     }
 
     // Cambiar fondo para Black Friday
-    document.body.style.background = 'conic-gradient(from 149.48deg at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(200, 200, 200, 1) 100%)';
+    document.body.style.background = 'conic-gradient(from 149.48deg at 50% 50%, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%)';
 
     const style = document.createElement('style');
     style.textContent = `
       .card {
-        background-color: #000; /* Fondo negro */
+        background-color: #111; /* Fondo negro */
         border: 1px solid #fff; /* Borde blanco */
       }
       #search-bar input {
-        background-color: #000; /* Fondo negro */
+        background-color: #111; /* Fondo negro */
         color: #fff; /* Texto blanco */
       }
       #filters {
@@ -384,6 +384,12 @@ function filterProducts(products, query, category, price) {
 
       /* Estilo para el :hover de .card en Black Friday */
       .card:hover {
+        background-color: #6b6b6b; /* Fondo gris al hacer hover */
+      }
+      #load-more {
+        background-color: #6b6b6b; /* Fondo gris al hacer hover */
+      }
+        #load-more:hover {
         background-color: #6b6b6b; /* Fondo gris al hacer hover */
       }
     `;
