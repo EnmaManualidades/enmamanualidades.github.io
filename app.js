@@ -1,7 +1,7 @@
 // Seleccionamos los elementos del DOM
 let allProducts = []; // Para almacenar todos los productos
 let displayedProducts = 0; // Contador de productos ya mostrados
-const PRODUCTS_PER_LOAD = 10; // Cantidad de productos a cargar por bloque
+const PRODUCTS_PER_LOAD = 5; // Cantidad de productos a cargar por bloque
 
 const productsContainer = document.getElementById("products");
 const searchInput = document.getElementById("search-input");
